@@ -17,12 +17,88 @@ Um site pessoal com:
 - **Responsividade**: Site que funciona em qualquer dispositivo
 - **Cores e tipografia**: Design visual
 
-## 🛠️ Preparação
+## 🛠️ Preparação do Ambiente
 
-### 1. Abra o VS Code
-### 2. Navegue até a pasta do projeto
-### 3. Execute o comando: `npm run dev`
-### 4. Abra o navegador em `http://localhost:3000`
+### **Passo 1: Instalar o Node.js**
+1. Acesse [nodejs.org](https://nodejs.org)
+2. Baixe a versão LTS (recomendada)
+3. Instale seguindo as instruções
+4. Abra o terminal e teste: `node --version`
+
+### **Passo 2: Criar o Projeto Next.js**
+1. Abra o terminal
+2. Navegue até a pasta onde quer criar o projeto:
+   ```bash
+   cd /caminho/para/sua/pasta
+   ```
+3. Crie o projeto Next.js:
+   ```bash
+   npx create-next-app@latest meu-primeiro-site --typescript --tailwind --eslint --app --src-dir --import-alias "@/*"
+   ```
+4. Entre na pasta do projeto:
+   ```bash
+   cd meu-primeiro-site
+   ```
+
+### **Passo 3: Instalar Extensões do VS Code**
+1. Abra o VS Code
+2. Instale estas extensões importantes:
+   - **ES7+ React/Redux/React-Native snippets**
+   - **Tailwind CSS IntelliSense**
+   - **TypeScript Importer**
+   - **Auto Rename Tag**
+
+### **Passo 4: Executar o Projeto**
+1. No terminal, execute:
+   ```bash
+   npm run dev
+   ```
+2. Abra o navegador em: `http://localhost:3000`
+3. Você deve ver a página inicial do Next.js
+
+### **Passo 5: Explorar a Estrutura**
+Abra o VS Code na pasta do projeto e explore:
+- `src/app/page.tsx` - Página principal
+- `src/app/layout.tsx` - Layout geral
+- `src/app/globals.css` - Estilos globais
+- `package.json` - Dependências do projeto
+
+### **🔧 Solução de Problemas**
+
+#### **Se o comando `npx` não funcionar:**
+```bash
+# Instale o npm globalmente primeiro
+npm install -g npm@latest
+```
+
+#### **Se der erro de permissão:**
+```bash
+# No Windows (PowerShell como administrador)
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+# No Mac/Linux
+sudo chown -R $(whoami) ~/.npm
+```
+
+#### **Se o projeto não abrir no navegador:**
+1. Verifique se a porta 3000 está livre
+2. Tente uma porta diferente: `npm run dev -- -p 3001`
+3. Acesse: `http://localhost:3001`
+
+#### **Se der erro de dependências:**
+```bash
+# Limpe o cache e reinstale
+rm -rf node_modules package-lock.json
+npm install
+```
+
+### **✅ Verificação Final**
+Antes de continuar, certifique-se de que:
+- [ ] Node.js está instalado (`node --version`)
+- [ ] O projeto foi criado com sucesso
+- [ ] O servidor está rodando (`npm run dev`)
+- [ ] A página abre no navegador
+- [ ] As extensões do VS Code estão instaladas
 
 ## 📝 Passo a Passo
 
