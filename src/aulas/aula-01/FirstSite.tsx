@@ -32,7 +32,7 @@ export default function FirstSite() {
             Minhas Fotos
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="relative h-48 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300 bg-gradient-to-br from-pink-200 to-pink-300">
+            <div className="relative h-48 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300 bg-gradient-to-br from-pink-200 to-pink-300 border-2 border-red-500">
               <img 
                 src="/images/photo1.jpg" 
                 alt="Lago Moraine, Banff, Canadá" 
@@ -45,7 +45,7 @@ export default function FirstSite() {
                 <span className="text-white text-lg font-semibold">● Lago Moraine</span>
               </div>
             </div>
-            <div className="relative h-48 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300 bg-gradient-to-br from-blue-200 to-blue-300">
+            <div className="relative h-48 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300 bg-gradient-to-br from-blue-200 to-blue-300 border-2 border-green-500">
               <img 
                 src="/images/photo2.jpg" 
                 alt="Paisagem natural" 
@@ -58,7 +58,7 @@ export default function FirstSite() {
                 <span className="text-white text-lg font-semibold">● Paisagem</span>
               </div>
             </div>
-            <div className="relative h-48 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300 bg-gradient-to-br from-green-200 to-green-300">
+            <div className="relative h-48 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300 bg-gradient-to-br from-green-200 to-green-300 border-2 border-blue-500">
               <img 
                 src="/images/photo3.jpg" 
                 alt="Manhã ensolarada" 
