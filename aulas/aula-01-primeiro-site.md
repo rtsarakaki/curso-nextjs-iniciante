@@ -131,11 +131,107 @@ export default function Home() {
 - O `return` mostra o que aparece na tela
 - **Nomenclatura em inglês**: `Home` é o nome do componente
 
-### **Passo 2: Adicionar estrutura HTML com CSS inline**
+### **Passo 2: Criar o container principal**
 
-Agora vamos criar a estrutura do nosso site usando CSS inline (mais fácil para iniciantes):
+Vamos começar criando a estrutura básica do nosso site. Substitua o conteúdo do arquivo `src/app/page.tsx`:
 
 ```tsx
+export default function Home() {
+  return (
+    <div style={{ backgroundColor: '#3B82F6', minHeight: '100vh', padding: '20px' }}>
+      <h1>Olá! Este é meu primeiro site!</h1>
+    </div>
+  );
+}
+```
+
+**🎯 O que fizemos?**
+- **`<div>`**: Container principal da página
+- **`backgroundColor: '#3B82F6'`**: Cor de fundo azul
+- **`minHeight: '100vh'`**: Altura mínima de 100% da tela
+- **`padding: '20px'`**: Espaçamento interno de 20 pixels
+
+### **Passo 3: Adicionar o cabeçalho**
+
+Agora vamos criar o cabeçalho com seu nome:
+
+```tsx
+export default function Home() {
+  return (
+    <div style={{ backgroundColor: '#3B82F6', minHeight: '100vh', padding: '20px' }}>
+      {/* Cabeçalho */}
+      <header style={{ textAlign: 'center', marginBottom: '40px' }}>
+        <h1 style={{ color: 'white', fontSize: '32px', marginBottom: '10px' }}>
+          Olá! Eu sou [SEU NOME]
+        </h1>
+        <p style={{ color: '#DBEAFE', fontSize: '18px' }}>
+          Desenvolvedor em formação ⚡
+        </p>
+      </header>
+    </div>
+  );
+}
+```
+
+**🎯 O que aprendemos?**
+- **`<header>`**: Tag semântica para cabeçalho
+- **`textAlign: 'center'`**: Centraliza o texto
+- **`marginBottom: '40px'`**: Espaçamento inferior
+- **`<h1>`**: Título principal com `color: 'white'`
+- **`<p>`**: Parágrafo com cor azul claro `#DBEAFE`
+
+### **Passo 4: Criar a seção "Sobre Mim"**
+
+Agora vamos adicionar uma seção com informações sobre você:
+
+```tsx
+export default function Home() {
+  return (
+    <div style={{ backgroundColor: '#3B82F6', minHeight: '100vh', padding: '20px' }}>
+      {/* Cabeçalho */}
+      <header style={{ textAlign: 'center', marginBottom: '40px' }}>
+        <h1 style={{ color: 'white', fontSize: '32px', marginBottom: '10px' }}>
+          Olá! Eu sou [SEU NOME]
+        </h1>
+        <p style={{ color: '#DBEAFE', fontSize: '18px' }}>
+          Desenvolvedor em formação ⚡
+        </p>
+      </header>
+
+      {/* Conteúdo principal */}
+      <main style={{ maxWidth: '800px', margin: '0 auto' }}>
+        <section style={{ backgroundColor: 'white', padding: '30px', marginBottom: '30px', borderRadius: '8px' }}>
+          <h2 style={{ color: '#1F2937', fontSize: '24px', marginBottom: '15px' }}>
+            Sobre Mim
+          </h2>
+          <p style={{ color: '#6B7280', fontSize: '16px', lineHeight: '1.6' }}>
+            Estou aprendendo a criar sites incríveis! 
+            Meu objetivo é combinar design bonito com programação funcional.
+            Cada dia é uma nova descoberta no mundo da programação web.
+          </p>
+        </section>
+      </main>
+    </div>
+  );
+}
+```
+
+**🎯 O que aprendemos?**
+- **`<main>`**: Conteúdo principal com `maxWidth: '800px'` e `margin: '0 auto'` (centraliza)
+- **`<section>`**: Seção de conteúdo com fundo branco
+- **`backgroundColor: 'white'`**: Fundo branco
+- **`padding: '30px'`**: Espaçamento interno
+- **`borderRadius: '8px'`**: Bordas arredondadas
+- **`<h2>`**: Subtítulo com cor cinza escuro
+- **`lineHeight: '1.6'`**: Espaçamento entre linhas do texto
+
+### **Passo 5: Adicionar galeria de fotos**
+
+Agora vamos criar uma galeria com suas fotos. Primeiro, adicione o import do Image no topo do arquivo:
+
+```tsx
+import Image from 'next/image';
+
 export default function Home() {
   return (
     <div style={{ backgroundColor: '#3B82F6', minHeight: '100vh', padding: '20px' }}>
@@ -233,6 +329,28 @@ export default function Home() {
             </div>
           </div>
         </section>
+      </main>
+    </div>
+  );
+}
+```
+
+**🎯 O que aprendemos?**
+- **`import Image from 'next/image'`**: Importa o componente otimizado do Next.js
+- **`display: 'flex'`**: Layout flexbox (elementos em linha)
+- **`gap: '15px'`**: Espaçamento entre elementos
+- **`flexWrap: 'wrap'`**: Quebra linha quando necessário
+- **`position: 'relative'`**: Para posicionar elementos filhos
+- **`<Image>`**: Componente otimizado com `src`, `alt`, `width`, `height`
+- **`position: 'absolute'`**: Sobreposição de texto sobre a imagem
+- **`backgroundColor: 'rgba(0,0,0,0.7)'`**: Fundo preto com 70% de transparência
+
+### **Passo 6: Adicionar seção de hobbies**
+
+Agora vamos criar cards coloridos para seus hobbies:
+
+```tsx
+// Adicione esta seção dentro do <main>, após a galeria de fotos:
 
         {/* Seção de hobbies */}
         <section style={{ backgroundColor: 'white', padding: '30px', marginBottom: '30px', borderRadius: '8px' }}>
@@ -282,7 +400,21 @@ export default function Home() {
             </div>
           </div>
         </section>
-      </main>
+```
+
+**🎯 O que aprendemos?**
+- **Cards coloridos**: Cada hobby tem uma cor diferente
+- **`textAlign: 'center'`**: Centraliza o conteúdo
+- **`width: '150px'`**: Largura fixa para os cards
+- **`fontSize: '30px'`**: Ícones grandes
+- **`fontWeight: 'bold'`**: Texto em negrito
+
+### **Passo 7: Adicionar o rodapé**
+
+Por último, vamos criar o rodapé da página:
+
+```tsx
+// Adicione antes do fechamento do </div> principal:
 
       {/* Rodapé */}
       <footer style={{ textAlign: 'center', color: 'white', marginTop: '40px' }}>
@@ -293,10 +425,13 @@ export default function Home() {
           <span style={{ margin: '0 10px', color: '#FECACA' }}>●</span>
         </div>
       </footer>
-    </div>
-  );
-}
 ```
+
+**🎯 O que aprendemos?**
+- **`<footer>`**: Tag semântica para rodapé
+- **`marginTop: '40px'`**: Espaçamento superior
+- **`<span>`**: Tag inline para ícones
+- **`margin: '0 10px'`**: Espaçamento horizontal entre ícones
 
 **🎯 O que aprendemos?**
 - **JSX**: Mistura HTML com JavaScript
