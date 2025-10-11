@@ -783,6 +783,78 @@ export default function HobbyCard({ hobby }: HobbyCardProps) {
 3. **♻️ Reutilização** - componente funciona com qualquer hobby
 4. **🧪 Testabilidade** - testar com dados diferentes
 
+### **🎨 Passo 12: Migrar para Tailwind CSS**
+
+#### **❌ ANTES (CSS Customizado):**
+```tsx
+// CSS customizado em arquivo separado
+<div className="container">
+  <header className="header">
+    <h1 className="header-title">Olá! Eu sou [SEU NOME]</h1>
+    <p className="header-subtitle">Desenvolvedor em formação ⚡</p>
+  </header>
+  <main className="main-content">
+    <section className="card">
+      <h2 className="card-title">Sobre Mim</h2>
+      <p className="card-text">Estou aprendendo a criar sites incríveis!</p>
+    </section>
+  </main>
+</div>
+```
+
+#### **✅ DEPOIS (Tailwind CSS):**
+```tsx
+// Classes utilitárias do Tailwind
+<div className="bg-blue-500 min-h-screen p-5 flex flex-col items-center">
+  <header className="text-center mb-10 max-w-4xl w-full">
+    <h1 className="text-white text-3xl mb-2">Olá! Eu sou [SEU NOME]</h1>
+    <p className="text-blue-200 text-lg">Desenvolvedor em formação ⚡</p>
+  </header>
+  <main className="max-w-4xl w-full mx-auto">
+    <section className="bg-white p-8 mb-8 rounded-lg">
+      <h2 className="text-gray-800 text-2xl mb-4">Sobre Mim</h2>
+      <p className="text-gray-600 text-base leading-relaxed">Estou aprendendo a criar sites incríveis!</p>
+    </section>
+  </main>
+</div>
+```
+
+#### **🎯 VANTAGENS do Tailwind:**
+1. **🚀 Desenvolvimento rápido** - classes prontas para usar
+2. **📱 Responsividade nativa** - `sm:`, `md:`, `lg:` automático
+3. **🎨 Design system** - cores e espaçamentos consistentes
+4. **🧹 Código limpo** - sem CSS customizado para manter
+5. **⚡ Performance** - apenas classes usadas são incluídas
+6. **🔧 Manutenção** - mudanças diretas no JSX
+
+#### **📚 Classes Tailwind Utilizadas:**
+```tsx
+// Layout e posicionamento
+bg-blue-500          // Cor de fundo azul
+min-h-screen         // Altura mínima da tela
+p-5                  // Padding de 20px
+flex flex-col        // Flexbox vertical
+items-center         // Centralizar horizontalmente
+
+// Tipografia
+text-white           // Cor do texto branco
+text-3xl             // Tamanho da fonte 30px
+text-center          // Centralizar texto
+mb-2                 // Margin bottom 8px
+
+// Espaçamento
+max-w-4xl            // Largura máxima 896px
+w-full               // Largura 100%
+mx-auto              // Margin horizontal automático
+mb-8                 // Margin bottom 32px
+
+// Cores
+bg-white             // Fundo branco
+text-gray-800        // Texto cinza escuro
+text-gray-600        // Texto cinza claro
+rounded-lg           // Bordas arredondadas
+```
+
 ## 📈 Resumo das Vantagens
 
 ### **🎨 CSS Classes:**
@@ -804,6 +876,11 @@ export default function HobbyCard({ hobby }: HobbyCardProps) {
 - **Antes:** 4 hobbies fixos (80 linhas)
 - **Depois:** Array dinâmico (20 linhas)
 - **Ganho:** 75% menos código, 100% mais flexível
+
+### **🎨 Tailwind CSS:**
+- **Antes:** CSS customizado (150 linhas)
+- **Depois:** Classes utilitárias (0 linhas CSS)
+- **Ganho:** 100% menos CSS, desenvolvimento 3x mais rápido
 
 ## 🎉 Parabéns!
 
