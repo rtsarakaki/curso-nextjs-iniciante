@@ -20,7 +20,7 @@ export default function Home() {
       <nav className="bg-white shadow-lg p-4">
         <div className="max-w-6xl mx-auto">
           <h1 className="text-2xl font-bold text-gray-800 mb-4">
-            🎮 Curso Next.js para Iniciantes
+            ⚡ Curso Next.js para Iniciantes
           </h1>
           <div className="flex flex-wrap gap-2">
             {lessons.map((lesson) => (
@@ -49,17 +49,17 @@ export default function Home() {
       <footer className="bg-gray-800 text-white p-8">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-2xl font-bold mb-4">
-            🚀 Curso Next.js para Iniciantes
+            ⚡ Curso Next.js para Iniciantes
           </h2>
           <p className="text-gray-300 mb-4">
             Aprenda programação de forma divertida e visual!
           </p>
           <div className="flex justify-center space-x-8 text-sm">
             <div>
-              <span className="font-semibold">📚 Aulas:</span> 12 aulas completas
+              <span className="font-semibold">📖 Aulas:</span> 12 aulas completas
             </div>
             <div>
-              <span className="font-semibold">🎮 Projetos:</span> Jogos e apps interativos
+              <span className="font-semibold">⚡ Projetos:</span> Jogos e apps interativos
             </div>
             <div>
               <span className="font-semibold">🎨 Foco:</span> Design e experiência do usuário

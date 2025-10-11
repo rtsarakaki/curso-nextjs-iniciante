@@ -7,7 +7,7 @@ export default function FirstSite() {
           Olá! Eu sou [SEU NOME]
         </h1>
         <p className="text-xl text-blue-100">
-          Desenvolvedor em formação 🚀
+          Desenvolvedor em formação ⚡
         </p>
       </header>
 
@@ -31,13 +31,13 @@ export default function FirstSite() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="bg-gradient-to-br from-pink-200 to-pink-300 h-48 rounded-lg flex items-center justify-center hover:scale-105 transition-transform duration-300">
-              <span className="text-pink-600 text-lg font-semibold">📸 Foto 1</span>
+              <span className="text-pink-600 text-lg font-semibold">📷 Foto 1</span>
             </div>
             <div className="bg-gradient-to-br from-blue-200 to-blue-300 h-48 rounded-lg flex items-center justify-center hover:scale-105 transition-transform duration-300">
-              <span className="text-blue-600 text-lg font-semibold">📸 Foto 2</span>
+              <span className="text-blue-600 text-lg font-semibold">📷 Foto 2</span>
             </div>
             <div className="bg-gradient-to-br from-green-200 to-green-300 h-48 rounded-lg flex items-center justify-center hover:scale-105 transition-transform duration-300">
-              <span className="text-green-600 text-lg font-semibold">📸 Foto 3</span>
+              <span className="text-green-600 text-lg font-semibold">📷 Foto 3</span>
             </div>
           </div>
         </section>
@@ -49,19 +49,19 @@ export default function FirstSite() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             <div className="text-center p-4 bg-gradient-to-br from-yellow-100 to-yellow-200 rounded-lg">
-              <div className="text-3xl mb-2">🎮</div>
+              <div className="text-3xl mb-2">⚡</div>
               <h3 className="font-semibold text-gray-800">Gaming</h3>
             </div>
             <div className="text-center p-4 bg-gradient-to-br from-purple-100 to-purple-200 rounded-lg">
-              <div className="text-3xl mb-2">🎨</div>
+              <div className="text-3xl mb-2">★</div>
               <h3 className="font-semibold text-gray-800">Design</h3>
             </div>
             <div className="text-center p-4 bg-gradient-to-br from-green-100 to-green-200 rounded-lg">
-              <div className="text-3xl mb-2">🌱</div>
+              <div className="text-3xl mb-2">●</div>
               <h3 className="font-semibold text-gray-800">Natureza</h3>
             </div>
             <div className="text-center p-4 bg-gradient-to-br from-red-100 to-red-200 rounded-lg">
-              <div className="text-3xl mb-2">🍕</div>
+              <div className="text-3xl mb-2">▲</div>
               <h3 className="font-semibold text-gray-800">Culinária</h3>
             </div>
           </div>
@@ -72,9 +72,9 @@ export default function FirstSite() {
       <footer className="text-center py-8 text-white">
         <p>© 2024 - Feito com ❤️ e muito aprendizado!</p>
         <div className="mt-4 flex justify-center space-x-4">
-          <span className="text-blue-200">🚀</span>
-          <span className="text-purple-200">💻</span>
-          <span className="text-pink-200">✨</span>
+          <span className="text-blue-200">⚡</span>
+          <span className="text-purple-200">★</span>
+          <span className="text-pink-200">●</span>
         </div>
       </footer>
     </div>
