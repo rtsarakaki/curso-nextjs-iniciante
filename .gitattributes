@@ -1,0 +1,41 @@
+# Configurações do Git
+
+# Arquivos de texto
+*.md text
+*.txt text
+*.json text
+*.yml text
+*.yaml text
+
+# Arquivos de código
+*.tsx text
+*.ts text
+*.js text
+*.jsx text
+*.css text
+*.html text
+
+# Arquivos binários
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.svg text
+
+# Arquivos de configuração
+*.gitignore text
+*.gitattributes text
+*.env* text
+*.config.* text
+
+# Arquivos de build
+dist/ export-ignore
+build/ export-ignore
+.next/ export-ignore
+node_modules/ export-ignore
+
+# Arquivos de sistema
+.DS_Store export-ignore
+Thumbs.db export-ignore
+*.log export-ignore
