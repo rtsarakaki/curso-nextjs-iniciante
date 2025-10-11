@@ -1,9 +1,9 @@
-# 🎨 Aula 1: Meu Primeiro Site Bonito
+# ⚡ Aula 1: Meu Primeiro Site Bonito
 
 ## 🎯 Objetivo da Aula
 Criar seu primeiro site bonito e responsivo, aprendendo os fundamentos de HTML e CSS de forma visual e divertida.
 
-## 🎮 O que vamos criar
+## ⚡ O que vamos criar
 Um site pessoal com:
 - Cabeçalho com seu nome
 - Seção sobre você
@@ -11,7 +11,7 @@ Um site pessoal com:
 - Rodapé estilizado
 - Cores e animações bonitas
 
-## 📚 O que vamos aprender
+## 📖 O que vamos aprender
 - **HTML**: Estrutura de uma página web
 - **CSS**: Estilização e layout
 - **Responsividade**: Site que funciona em qualquer dispositivo
@@ -48,6 +48,12 @@ Um site pessoal com:
 
 #### **💡 Dica Importante:**
 Não se preocupe com extensões agora! Vamos instalar apenas o que precisarmos conforme formos avançando no curso. O VS Code já vem com tudo que precisamos para começar.
+
+#### **🌍 Lembre-se: Nomenclatura em Inglês**
+- **SEMPRE use inglês** para nomes de variáveis, funções e componentes
+- **NUNCA use português** no código
+- **Comentários em português** para facilitar o aprendizado
+- **Exemplo**: `const [currentLesson, setCurrentLesson]` ✅ | `const [aulaAtual, setAulaAtual]` ❌
 
 ### **Passo 4: Executar o Projeto**
 1. No terminal, execute:
@@ -121,6 +127,7 @@ export default function Home() {
 - Criamos nossa primeira página React
 - O `export default` significa "esta é a página principal"
 - O `return` mostra o que aparece na tela
+- **Nomenclatura em inglês**: `Home` é o nome do componente
 
 ### **Passo 2: Adicionar estrutura HTML**
 
@@ -136,7 +143,7 @@ export default function Home() {
           Olá! Eu sou [SEU NOME]
         </h1>
         <p className="text-xl text-blue-100">
-          Desenvolvedor em formação 🚀
+          Desenvolvedor em formação ⚡
         </p>
       </header>
 
@@ -158,14 +165,39 @@ export default function Home() {
             Minhas Fotos
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="bg-gray-200 h-48 rounded-lg flex items-center justify-center">
-              <span className="text-gray-500">Foto 1</span>
+            <div className="bg-gradient-to-br from-pink-200 to-pink-300 h-48 rounded-lg flex items-center justify-center hover:scale-105 transition-transform duration-300">
+              <span className="text-pink-600 text-lg font-semibold">📷 Foto 1</span>
             </div>
-            <div className="bg-gray-200 h-48 rounded-lg flex items-center justify-center">
-              <span className="text-gray-500">Foto 2</span>
+            <div className="bg-gradient-to-br from-blue-200 to-blue-300 h-48 rounded-lg flex items-center justify-center hover:scale-105 transition-transform duration-300">
+              <span className="text-blue-600 text-lg font-semibold">📷 Foto 2</span>
             </div>
-            <div className="bg-gray-200 h-48 rounded-lg flex items-center justify-center">
-              <span className="text-gray-500">Foto 3</span>
+            <div className="bg-gradient-to-br from-green-200 to-green-300 h-48 rounded-lg flex items-center justify-center hover:scale-105 transition-transform duration-300">
+              <span className="text-green-600 text-lg font-semibold">📷 Foto 3</span>
+            </div>
+          </div>
+        </section>
+
+        {/* Seção de hobbies */}
+        <section className="bg-white rounded-lg shadow-xl p-8 mb-8 hover:shadow-2xl transition-shadow duration-300">
+          <h2 className="text-3xl font-bold text-gray-800 mb-6">
+            Meus Hobbies
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="text-center p-4 bg-gradient-to-br from-yellow-100 to-yellow-200 rounded-lg">
+              <div className="text-3xl mb-2">⚡</div>
+              <h3 className="font-semibold text-gray-800">Gaming</h3>
+            </div>
+            <div className="text-center p-4 bg-gradient-to-br from-purple-100 to-purple-200 rounded-lg">
+              <div className="text-3xl mb-2">★</div>
+              <h3 className="font-semibold text-gray-800">Design</h3>
+            </div>
+            <div className="text-center p-4 bg-gradient-to-br from-green-100 to-green-200 rounded-lg">
+              <div className="text-3xl mb-2">●</div>
+              <h3 className="font-semibold text-gray-800">Natureza</h3>
+            </div>
+            <div className="text-center p-4 bg-gradient-to-br from-red-100 to-red-200 rounded-lg">
+              <div className="text-3xl mb-2">▲</div>
+              <h3 className="font-semibold text-gray-800">Culinária</h3>
             </div>
           </div>
         </section>
@@ -174,6 +206,11 @@ export default function Home() {
       {/* Rodapé */}
       <footer className="text-center py-8 text-white">
         <p>© 2024 - Feito com ❤️ e muito aprendizado!</p>
+        <div className="mt-4 flex justify-center space-x-4">
+          <span className="text-blue-200">⚡</span>
+          <span className="text-purple-200">★</span>
+          <span className="text-pink-200">●</span>
+        </div>
       </footer>
     </div>
   );
@@ -219,7 +256,12 @@ Vamos deixar o site mais dinâmico! Adicione estas classes CSS:
 1. **Mude as cores** - Experimente diferentes gradientes
 2. **Adicione mais seções** - Hobbies, projetos, contato
 3. **Personalize as fontes** - Use fontes diferentes
-4. **Adicione ícones** - Use emojis ou símbolos
+4. **Adicione ícones** - Use ícones Unicode simples (⚡, ★, ●, ▲)
+
+### **💡 Dica sobre Ícones:**
+- **Use ícones Unicode simples** - ⚡, ★, ●, ▲, 📷
+- **Evite emojis complexos** - Podem não funcionar em todos os sistemas
+- **Mantenha consistência** - Use o mesmo estilo de ícones
 
 ### **Cores que funcionam bem:**
 - `from-pink-400 to-red-500` (Rosa para vermelho)
@@ -235,6 +277,7 @@ Vamos deixar o site mais dinâmico! Adicione estas classes CSS:
 - **JSX**: Mistura HTML com JavaScript
 - **Componentes React**: Blocos reutilizáveis
 - **Tailwind CSS**: Estilização rápida
+- **Nomenclatura em inglês**: Variáveis e funções em inglês
 
 ### **Habilidades:**
 - Criar estrutura semântica
@@ -242,6 +285,7 @@ Vamos deixar o site mais dinâmico! Adicione estas classes CSS:
 - Personalizar design
 - Adicionar animações
 - Fazer sites responsivos
+- Usar ícones Unicode compatíveis
 
 ## 🎯 Próxima Aula
 Na próxima aula vamos criar um **Jogo da Memória Visual** e aprender sobre CSS Grid e Flexbox!
@@ -260,12 +304,20 @@ Na próxima aula vamos criar um **Jogo da Memória Visual** e aprender sobre CSS
 - JSX é como misturar as duas coisas
 - "Vamos fazer juntos!"
 
+### **Para nomenclatura em inglês:**
+- **Explique a regra** - "Sempre inglês no código, português nos comentários"
+- **Dê exemplos** - `currentLesson` ✅ | `aulaAtual` ❌
+- **Mostre benefícios** - "Funciona em qualquer lugar do mundo"
+- **Pratique junto** - "Vamos pensar em inglês para o nome desta variável"
+
 ## 🎉 Parabéns!
 
-Você criou seu primeiro site! 🚀
+Você criou seu primeiro site! ⚡
 - É responsivo (funciona no celular)
 - Tem animações bonitas
 - É personalizado com suas informações
 - Usa as melhores práticas de design
+- Tem ícones compatíveis e funcionais
+- Segue nomenclatura profissional em inglês
 
-**Na próxima aula vamos criar um jogo! 🎮**
+**Na próxima aula vamos criar um jogo! ⚡**
