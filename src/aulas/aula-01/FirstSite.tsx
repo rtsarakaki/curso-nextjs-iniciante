@@ -1,4 +1,4 @@
-import Image from 'next/image';
+// import Image from 'next/image';
 
 export default function FirstSite() {
   return (
@@ -33,11 +33,10 @@ export default function FirstSite() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="relative h-48 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300 bg-gradient-to-br from-pink-200 to-pink-300">
-              <Image 
+              <img 
                 src="/images/photo1.jpg" 
                 alt="Lago Moraine, Banff, Canadá" 
-                fill
-                className="object-cover"
+                className="w-full h-full object-cover"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none';
                 }}
@@ -47,11 +46,10 @@ export default function FirstSite() {
               </div>
             </div>
             <div className="relative h-48 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300 bg-gradient-to-br from-blue-200 to-blue-300">
-              <Image 
+              <img 
                 src="/images/photo2.jpg" 
                 alt="Paisagem natural" 
-                fill
-                className="object-cover"
+                className="w-full h-full object-cover"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none';
                 }}
@@ -61,11 +59,10 @@ export default function FirstSite() {
               </div>
             </div>
             <div className="relative h-48 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300 bg-gradient-to-br from-green-200 to-green-300">
-              <Image 
+              <img 
                 src="/images/photo3.jpg" 
                 alt="Manhã ensolarada" 
-                fill
-                className="object-cover"
+                className="w-full h-full object-cover"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none';
                 }}
