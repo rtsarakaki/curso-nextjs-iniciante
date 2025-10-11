@@ -1,6 +1,6 @@
 # 🔄 Refatorações e Boas Práticas - Curso Next.js
 
-## 📚 Conceitos a Ensinar Progressivamente
+## 📚 Conceitos Fundamentais para Aula 1
 
 ### **🎨 Passo 8: CSS Classes (Substituir CSS Inline)**
 **Conceitos:**
@@ -13,7 +13,7 @@
 - Criar `styles/globals.css`
 - Converter estilos inline para classes
 - Nomenclatura semântica (`.container`, `.header`, `.card`)
-- Responsividade com media queries
+- Responsividade básica
 
 ### **🧩 Passo 9: Componentes Reutilizáveis**
 **Conceitos:**
@@ -26,7 +26,6 @@
 - `<Card>` - para seções (Sobre Mim, Hobbies)
 - `<ImageCard>` - para galeria de fotos
 - `<HobbyCard>` - para cards de hobbies
-- `<Button>` - para botões reutilizáveis
 
 ### **📁 Passo 10: Estrutura de Pastas**
 **Conceitos:**
@@ -61,164 +60,6 @@ src/
 - Estado para interações
 - Personalização via props
 
-### **🔧 Passo 12: TypeScript Avançado**
-**Conceitos:**
-- Interfaces
-- Tipos customizados
-- Type safety
-- IntelliSense
-
-**Implementação:**
-```typescript
-interface Hobby {
-  id: string;
-  name: string;
-  icon: string;
-  color: string;
-}
-
-interface Photo {
-  src: string;
-  alt: string;
-  label: string;
-}
-```
-
-### **🎨 Passo 13: Design System**
-**Conceitos:**
-- Variáveis CSS
-- Tema consistente
-- Design tokens
-- Escalabilidade
-
-**Implementação:**
-```css
-:root {
-  --primary-color: #3B82F6;
-  --secondary-color: #DBEAFE;
-  --spacing-sm: 10px;
-  --spacing-md: 20px;
-  --spacing-lg: 40px;
-}
-```
-
-### **📱 Passo 14: Responsividade**
-**Conceitos:**
-- Mobile-first
-- Breakpoints
-- Flexbox/Grid avançado
-- Adaptação de layout
-
-**Implementação:**
-- Media queries
-- Grid responsivo
-- Imagens adaptáveis
-- Navegação mobile
-
-### **⚡ Passo 15: Performance**
-**Conceitos:**
-- Lazy loading
-- Image optimization
-- Bundle size
-- Core Web Vitals
-
-**Implementação:**
-- Next.js Image otimizado
-- Dynamic imports
-- Code splitting
-- Preload critical resources
-
-### **🧪 Passo 16: Testes**
-**Conceitos:**
-- Testes unitários
-- Testes de integração
-- Jest/Testing Library
-- TDD básico
-
-**Implementação:**
-- Testes de componentes
-- Testes de interação
-- Mocks e fixtures
-- Coverage reports
-
-### **🔒 Passo 17: Acessibilidade**
-**Conceitos:**
-- ARIA attributes
-- Semantic HTML
-- Keyboard navigation
-- Screen readers
-
-**Implementação:**
-- Alt texts descritivos
-- Focus management
-- Color contrast
-- ARIA labels
-
-### **📦 Passo 18: Gerenciamento de Estado**
-**Conceitos:**
-- Context API
-- useState vs useReducer
-- Estado global
-- Prop drilling
-
-**Implementação:**
-- Theme context
-- User preferences
-- Global state
-- Custom hooks
-
-### **🔄 Passo 19: Hooks Customizados**
-**Conceitos:**
-- Reutilização de lógica
-- Custom hooks
-- useEffect avançado
-- Cleanup functions
-
-**Implementação:**
-- `useLocalStorage`
-- `useTheme`
-- `useImageLoader`
-- `useResponsive`
-
-### **🌐 Passo 20: API Integration**
-**Conceitos:**
-- Fetch API
-- Async/await
-- Error handling
-- Loading states
-
-**Implementação:**
-- Carregar dados externos
-- Estados de loading
-- Error boundaries
-- Retry logic
-
-### **📊 Passo 21: Analytics e SEO**
-**Conceitos:**
-- Meta tags
-- Open Graph
-- Google Analytics
-- Performance monitoring
-
-**Implementação:**
-- SEO optimization
-- Social sharing
-- Analytics tracking
-- Performance metrics
-
-### **🚀 Passo 22: Deploy e CI/CD**
-**Conceitos:**
-- Vercel deployment
-- GitHub Actions
-- Environment variables
-- Production optimization
-
-**Implementação:**
-- Deploy automático
-- Environment configs
-- Build optimization
-- Monitoring
-
 ## 🎯 Ordem de Implementação Sugerida
 
 ### **Fase 1: Fundamentos (Passos 8-11)**
@@ -226,18 +67,6 @@ interface Photo {
 - Componentes básicos
 - Estrutura de pastas
 - Props e estado
-
-### **Fase 2: Intermediário (Passos 12-15)**
-- TypeScript avançado
-- Design system
-- Responsividade
-- Performance
-
-### **Fase 3: Avançado (Passos 16-22)**
-- Testes e acessibilidade
-- Gerenciamento de estado
-- Hooks customizados
-- API e deploy
 
 ## 📝 Benefícios Pedagógicos
 
