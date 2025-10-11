@@ -34,7 +34,7 @@ export default function FirstSite() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="relative h-48 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300 bg-gradient-to-br from-pink-200 to-pink-300">
               <Image 
-                src="https://gorafa.com.br/wp-content/uploads/2024/05/lago-moraine-banff-canada3-820x546-1.jpeg" 
+                src="https://picsum.photos/400/300?random=1" 
                 alt="Lago Moraine, Banff, Canadá" 
                 fill
                 className="object-cover"
@@ -48,7 +48,7 @@ export default function FirstSite() {
             </div>
             <div className="relative h-48 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300 bg-gradient-to-br from-blue-200 to-blue-300">
               <Image 
-                src="https://wallpapers.com/images/featured/imagens-de-paisagens-a3hr6gk3xfx36dyg.jpg" 
+                src="https://picsum.photos/400/300?random=2" 
                 alt="Paisagem natural" 
                 fill
                 className="object-cover"
@@ -62,7 +62,7 @@ export default function FirstSite() {
             </div>
             <div className="relative h-48 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300 bg-gradient-to-br from-green-200 to-green-300">
               <Image 
-                src="https://cdn.pixabay.com/photo/2019/08/17/04/18/morning-4411421_1280.jpg" 
+                src="https://picsum.photos/400/300?random=3" 
                 alt="Manhã ensolarada" 
                 fill
                 className="object-cover"
