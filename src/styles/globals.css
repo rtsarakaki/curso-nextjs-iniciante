@@ -1,0 +1,141 @@
+/* Estilos globais para o projeto */
+
+/* Container principal */
+.container {
+  background-color: #3B82F6;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Cabeçalho */
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.header-title {
+  color: white;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.header-subtitle {
+  color: #DBEAFE;
+  font-size: 18px;
+}
+
+/* Conteúdo principal */
+.main-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Cards */
+.card {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.card-title {
+  color: #1F2937;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.card-text {
+  color: #6B7280;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Galeria de fotos */
+.photos-grid {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.photo-card {
+  width: 200px;
+  height: 150px;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.photo-card-red {
+  border: 2px solid #EF4444;
+}
+
+.photo-card-green {
+  border: 2px solid #10B981;
+}
+
+.photo-card-blue {
+  border: 2px solid #3B82F6;
+}
+
+.photo-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px;
+  text-align: center;
+}
+
+/* Hobbies */
+.hobbies-grid {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.hobby-card {
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
+  width: 150px;
+}
+
+.hobby-icon {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.hobby-name {
+  color: #1F2937;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Rodapé */
+.footer {
+  text-align: center;
+  color: white;
+  margin-top: 40px;
+}
+
+.footer-icons {
+  margin-top: 15px;
+}
+
+.footer-icon {
+  margin: 0 10px;
+}
+
+.footer-icon-blue {
+  color: #DBEAFE;
+}
+
+.footer-icon-purple {
+  color: #E9D5FF;
+}
+
+.footer-icon-red {
+  color: #FECACA;
+}
