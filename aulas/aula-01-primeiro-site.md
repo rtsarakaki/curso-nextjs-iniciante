@@ -785,47 +785,128 @@ export default function HobbyCard({ hobby }: HobbyCardProps) {
 
 ### **🎨 Passo 12: Migrar para Tailwind CSS**
 
-#### **❌ ANTES (CSS Customizado):**
+#### **❌ ANTES (CSS Customizado + Componentes):**
 ```tsx
-// CSS customizado em arquivo separado
-<div className="container">
-  <header className="header">
-    <h1 className="header-title">Olá! Eu sou [SEU NOME]</h1>
-    <p className="header-subtitle">Desenvolvedor em formação ⚡</p>
-  </header>
-  <main className="main-content">
-    <section className="card">
-      <h2 className="card-title">Sobre Mim</h2>
-      <p className="card-text">Estou aprendendo a criar sites incríveis!</p>
-    </section>
-  </main>
-</div>
+// CSS customizado em arquivo separado (150+ linhas)
+import Card from '@/components/aula-01/Card/Card';
+import ImageCard from '@/components/aula-01/ImageCard/ImageCard';
+import HobbyCard from '@/components/aula-01/HobbyCard/HobbyCard';
+
+export default function FirstSite() {
+  return (
+    <div className="container">
+      <header className="header">
+        <h1 className="header-title">Olá! Eu sou [SEU NOME]</h1>
+        <p className="header-subtitle">Desenvolvedor em formação ⚡</p>
+      </header>
+      <main className="main-content">
+        <Card title="Sobre Mim">
+          <p className="card-text">Estou aprendendo a criar sites incríveis!</p>
+        </Card>
+        <Card title="Minhas Fotos">
+          <div className="photos-grid">
+            <ImageCard src="/images/photo1.jpg" alt="Lago" label="Lago" borderColor="red" />
+            <ImageCard src="/images/photo2.jpg" alt="Paisagem" label="Paisagem" borderColor="green" />
+            <ImageCard src="/images/photo3.jpg" alt="Manhã" label="Manhã" borderColor="blue" />
+          </div>
+        </Card>
+        <Card title="Meus Hobbies">
+          <div className="hobbies-grid">
+            {hobbies.map(hobby => (
+              <HobbyCard key={hobby.id} hobby={hobby} />
+            ))}
+          </div>
+        </Card>
+      </main>
+    </div>
+  );
+}
 ```
 
-#### **✅ DEPOIS (Tailwind CSS):**
+#### **✅ DEPOIS (Tailwind CSS + Componentes Simplificados):**
 ```tsx
-// Classes utilitárias do Tailwind
-<div className="bg-blue-500 min-h-screen p-5 flex flex-col items-center">
-  <header className="text-center mb-10 max-w-4xl w-full">
-    <h1 className="text-white text-3xl mb-2">Olá! Eu sou [SEU NOME]</h1>
-    <p className="text-blue-200 text-lg">Desenvolvedor em formação ⚡</p>
-  </header>
-  <main className="max-w-4xl w-full mx-auto">
-    <section className="bg-white p-8 mb-8 rounded-lg">
-      <h2 className="text-gray-800 text-2xl mb-4">Sobre Mim</h2>
-      <p className="text-gray-600 text-base leading-relaxed">Estou aprendendo a criar sites incríveis!</p>
-    </section>
-  </main>
-</div>
+// Sem CSS customizado, apenas Tailwind
+import Image from 'next/image';
+
+export default function FirstSite() {
+  const photos = [
+    { id: 1, src: "/images/photo1.jpg", alt: "Lago Moraine", label: "Lago Moraine", borderColor: "red" },
+    { id: 2, src: "/images/photo2.jpg", alt: "Paisagem", label: "Paisagem", borderColor: "green" },
+    { id: 3, src: "/images/photo3.jpg", alt: "Manhã", label: "Manhã", borderColor: "blue" }
+  ];
+
+  const hobbies = [
+    { id: 1, name: 'Gaming', icon: '⚡', color: 'bg-yellow-100' },
+    { id: 2, name: 'Design', icon: '★', color: 'bg-purple-100' },
+    { id: 3, name: 'Natureza', icon: '●', color: 'bg-green-100' },
+    { id: 4, name: 'Culinária', icon: '▲', color: 'bg-red-100' }
+  ];
+
+  return (
+    <div className="bg-blue-500 min-h-screen p-5 flex flex-col items-center">
+      <header className="text-center mb-10 max-w-4xl w-full">
+        <h1 className="text-white text-3xl mb-2">Olá! Eu sou [SEU NOME]</h1>
+        <p className="text-blue-200 text-lg">Desenvolvedor em formação ⚡</p>
+      </header>
+      
+      <main className="max-w-4xl w-full mx-auto">
+        <section className="bg-white p-8 mb-8 rounded-lg">
+          <h2 className="text-gray-800 text-2xl mb-4">Sobre Mim</h2>
+          <p className="text-gray-600 text-base leading-relaxed">
+            Estou aprendendo a criar sites incríveis! 
+            Meu objetivo é combinar design bonito com programação funcional.
+          </p>
+        </section>
+
+        <section className="bg-white p-8 mb-8 rounded-lg">
+          <h2 className="text-gray-800 text-2xl mb-4">Minhas Fotos</h2>
+          <div className="flex gap-4 flex-wrap">
+            {photos.map(photo => (
+              <div key={photo.id} className={`w-48 h-36 relative rounded-lg overflow-hidden border-2 border-${photo.borderColor}-500`}>
+                <Image src={photo.src} alt={photo.alt} fill className="object-cover" />
+                <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 text-white p-1 text-center">
+                  ● {photo.label}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="bg-white p-8 mb-8 rounded-lg">
+          <h2 className="text-gray-800 text-2xl mb-4">Meus Hobbies</h2>
+          <div className="flex gap-4 flex-wrap">
+            {hobbies.map(hobby => (
+              <div key={hobby.id} className={`${hobby.color} text-center p-5 rounded-lg w-36`}>
+                <div className="text-3xl mb-2">{hobby.icon}</div>
+                <h3 className="text-gray-800 font-bold">{hobby.name}</h3>
+              </div>
+            ))}
+          </div>
+        </section>
+      </main>
+
+      <footer className="text-center text-white mt-10 max-w-4xl w-full">
+        <p>© 2024 - Feito com ❤️ e muito aprendizado!</p>
+        <div className="mt-4">
+          <span className="text-blue-200 mx-2">⚡</span>
+          <span className="text-purple-200 mx-2">★</span>
+          <span className="text-red-200 mx-2">●</span>
+        </div>
+      </footer>
+    </div>
+  );
+}
 ```
 
 #### **🎯 VANTAGENS do Tailwind:**
-1. **🚀 Desenvolvimento rápido** - classes prontas para usar
+1. **🚀 Desenvolvimento 3x mais rápido** - classes prontas para usar
 2. **📱 Responsividade nativa** - `sm:`, `md:`, `lg:` automático
-3. **🎨 Design system** - cores e espaçamentos consistentes
-4. **🧹 Código limpo** - sem CSS customizado para manter
-5. **⚡ Performance** - apenas classes usadas são incluídas
-6. **🔧 Manutenção** - mudanças diretas no JSX
+3. **🎨 Design system consistente** - cores e espaçamentos padronizados
+4. **🧹 Código mais limpo** - sem CSS customizado para manter
+5. **⚡ Performance otimizada** - apenas classes usadas são incluídas
+6. **🔧 Manutenção simplificada** - mudanças diretas no JSX
+7. **📦 Menos dependências** - não precisa de componentes customizados
+8. **🎯 Foco no conteúdo** - mais tempo para lógica, menos para CSS
 
 #### **📚 Classes Tailwind Utilizadas:**
 ```tsx
@@ -848,11 +929,14 @@ w-full               // Largura 100%
 mx-auto              // Margin horizontal automático
 mb-8                 // Margin bottom 32px
 
-// Cores
+// Cores e estilos
 bg-white             // Fundo branco
 text-gray-800        // Texto cinza escuro
 text-gray-600        // Texto cinza claro
 rounded-lg           // Bordas arredondadas
+border-2             // Borda de 2px
+border-red-500       // Cor da borda vermelha
+object-cover         // Imagem cobrindo container
 ```
 
 ## 📈 Resumo das Vantagens

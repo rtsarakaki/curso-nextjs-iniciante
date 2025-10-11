@@ -1,95 +1,81 @@
-import Card from '@/components/aula-01/Card/Card';
-import ImageCard from '@/components/aula-01/ImageCard/ImageCard';
-import HobbyCard from '@/components/aula-01/HobbyCard/HobbyCard';
+import Image from 'next/image';
 
 export default function FirstSite() {
   // Dados dinâmicos para fotos
   const photos = [
-    { 
-      id: 1, 
-      src: "/images/photo1.jpg", 
-      alt: "Lago Moraine, Banff, Canadá", 
-      label: "Lago Moraine",
-      borderColor: "red" as const
-    },
-    { 
-      id: 2, 
-      src: "/images/photo2.jpg", 
-      alt: "Paisagem natural", 
-      label: "Paisagem",
-      borderColor: "green" as const
-    },
-    { 
-      id: 3, 
-      src: "/images/photo3.jpg", 
-      alt: "Manhã ensolarada", 
-      label: "Manhã",
-      borderColor: "blue" as const
-    }
+    { id: 1, src: "/images/photo1.jpg", alt: "Lago Moraine", label: "Lago Moraine", borderColor: "red" },
+    { id: 2, src: "/images/photo2.jpg", alt: "Paisagem", label: "Paisagem", borderColor: "green" },
+    { id: 3, src: "/images/photo3.jpg", alt: "Manhã", label: "Manhã", borderColor: "blue" }
   ];
 
   // Dados dinâmicos para hobbies
   const hobbies = [
-    { id: 1, name: 'Gaming', icon: '⚡', color: '#FEF3C7' },
-    { id: 2, name: 'Design', icon: '★', color: '#E9D5FF' },
-    { id: 3, name: 'Natureza', icon: '●', color: '#D1FAE5' },
-    { id: 4, name: 'Culinária', icon: '▲', color: '#FEE2E2' }
+    { id: 1, name: 'Gaming', icon: '⚡', color: 'bg-yellow-100' },
+    { id: 2, name: 'Design', icon: '★', color: 'bg-purple-100' },
+    { id: 3, name: 'Natureza', icon: '●', color: 'bg-green-100' },
+    { id: 4, name: 'Culinária', icon: '▲', color: 'bg-red-100' }
   ];
 
   return (
-    <div className="container">
+    <div className="bg-blue-500 min-h-screen p-5 flex flex-col items-center">
       {/* Cabeçalho */}
-      <header className="header">
-        <h1 className="header-title">
+      <header className="text-center mb-10 max-w-4xl w-full">
+        <h1 className="text-white text-3xl mb-2">
           Olá! Eu sou [SEU NOME]
         </h1>
-        <p className="header-subtitle">
+        <p className="text-blue-200 text-lg">
           Desenvolvedor em formação ⚡
         </p>
       </header>
-
+      
       {/* Conteúdo principal */}
-      <main className="main-content">
-        <Card title="Sobre Mim">
-          <p className="card-text">
+      <main className="max-w-4xl w-full mx-auto">
+        {/* Sobre Mim */}
+        <section className="bg-white p-8 mb-8 rounded-lg">
+          <h2 className="text-gray-800 text-2xl mb-4">Sobre Mim</h2>
+          <p className="text-gray-600 text-base leading-relaxed">
             Estou aprendendo a criar sites incríveis! 
             Meu objetivo é combinar design bonito com programação funcional.
             Cada dia é uma nova descoberta no mundo da programação web.
           </p>
-        </Card>
+        </section>
 
         {/* Galeria de fotos */}
-        <Card title="Minhas Fotos">
-          <div className="photos-grid">
+        <section className="bg-white p-8 mb-8 rounded-lg">
+          <h2 className="text-gray-800 text-2xl mb-4">Minhas Fotos</h2>
+          <div className="flex gap-4 flex-wrap">
             {photos.map(photo => (
-              <ImageCard 
-                key={photo.id}
-                src={photo.src} 
-                alt={photo.alt} 
-                label={photo.label}
-                borderColor={photo.borderColor}
-              />
+              <div key={photo.id} className={`w-48 h-36 relative rounded-lg overflow-hidden border-2 border-${photo.borderColor}-500`}>
+                <Image src={photo.src} alt={photo.alt} fill className="object-cover" />
+                <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 text-white p-1 text-center">
+                  ● {photo.label}
+                </div>
+              </div>
             ))}
           </div>
-        </Card>
+        </section>
 
         {/* Seção de hobbies */}
-        <Card title="Meus Hobbies">
-          <div className="hobbies-grid">
+        <section className="bg-white p-8 mb-8 rounded-lg">
+          <h2 className="text-gray-800 text-2xl mb-4">Meus Hobbies</h2>
+          <div className="flex gap-4 flex-wrap">
             {hobbies.map(hobby => (
-              <HobbyCard key={hobby.id} hobby={hobby} />
+              <div key={hobby.id} className={`${hobby.color} text-center p-5 rounded-lg w-36`}>
+                <div className="text-3xl mb-2">{hobby.icon}</div>
+                <h3 className="text-gray-800 font-bold">{hobby.name}</h3>
+              </div>
             ))}
           </div>
-        </Card>
+        </section>
       </main>
 
       {/* Rodapé */}
-      <footer className="footer">
+      <footer className="text-center text-white mt-10 max-w-4xl w-full">
         <p>© 2024 - Feito com ❤️ e muito aprendizado!</p>
-        <div className="footer-icons">
-          <span className="footer-icon footer-icon-blue">⚡</span>
-          <span className="footer-icon footer-icon-purple">★</span>
-          <span className="footer-icon footer-icon-red">●</span>
+        <div className="mt-4">
+          <span className="text-blue-200 mx-2">⚡</span>
+          <span className="text-purple-200 mx-2">★</span>
+          <span className="text-red-200 mx-2">●</span>
         </div>
       </footer>
     </div>
