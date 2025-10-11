@@ -13,9 +13,11 @@ Um site pessoal com:
 
 ## 📖 O que vamos aprender
 - **HTML**: Estrutura de uma página web
-- **CSS**: Estilização e layout
-- **Responsividade**: Site que funciona em qualquer dispositivo
-- **Cores e tipografia**: Design visual
+- **CSS Inline**: Estilização básica e didática
+- **React**: Componentes e JSX
+- **Imagens**: Como adicionar e otimizar fotos
+- **Layout**: Posicionamento e espaçamento
+- **Cores**: Paleta de cores e design visual
 
 ## 🛠️ Preparação do Ambiente
 
@@ -129,87 +131,166 @@ export default function Home() {
 - O `return` mostra o que aparece na tela
 - **Nomenclatura em inglês**: `Home` é o nome do componente
 
-### **Passo 2: Adicionar estrutura HTML**
+### **Passo 2: Adicionar estrutura HTML com CSS inline**
 
-Agora vamos criar a estrutura do nosso site:
+Agora vamos criar a estrutura do nosso site usando CSS inline (mais fácil para iniciantes):
 
 ```tsx
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-400 to-purple-600">
+    <div style={{ backgroundColor: '#3B82F6', minHeight: '100vh', padding: '20px' }}>
       {/* Cabeçalho */}
-      <header className="text-center py-8">
-        <h1 className="text-4xl font-bold text-white mb-2">
+      <header style={{ textAlign: 'center', marginBottom: '40px' }}>
+        <h1 style={{ color: 'white', fontSize: '32px', marginBottom: '10px' }}>
           Olá! Eu sou [SEU NOME]
         </h1>
-        <p className="text-xl text-blue-100">
+        <p style={{ color: '#DBEAFE', fontSize: '18px' }}>
           Desenvolvedor em formação ⚡
         </p>
       </header>
 
       {/* Conteúdo principal */}
-      <main className="container mx-auto px-4">
-        <section className="bg-white rounded-lg shadow-xl p-8 mb-8">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">
+      <main style={{ maxWidth: '800px', margin: '0 auto' }}>
+        <section style={{ backgroundColor: 'white', padding: '30px', marginBottom: '30px', borderRadius: '8px' }}>
+          <h2 style={{ color: '#1F2937', fontSize: '24px', marginBottom: '15px' }}>
             Sobre Mim
           </h2>
-          <p className="text-lg text-gray-600 leading-relaxed">
+          <p style={{ color: '#6B7280', fontSize: '16px', lineHeight: '1.6' }}>
             Estou aprendendo a criar sites incríveis! 
             Meu objetivo é combinar design bonito com programação funcional.
+            Cada dia é uma nova descoberta no mundo da programação web.
           </p>
         </section>
 
         {/* Galeria de fotos */}
-        <section className="bg-white rounded-lg shadow-xl p-8">
-          <h2 className="text-3xl font-bold text-gray-800 mb-6">
+        <section style={{ backgroundColor: 'white', padding: '30px', marginBottom: '30px', borderRadius: '8px' }}>
+          <h2 style={{ color: '#1F2937', fontSize: '24px', marginBottom: '20px' }}>
             Minhas Fotos
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="bg-gradient-to-br from-pink-200 to-pink-300 h-48 rounded-lg flex items-center justify-center hover:scale-105 transition-transform duration-300">
-              <span className="text-pink-600 text-lg font-semibold">📷 Foto 1</span>
+          <div style={{ display: 'flex', gap: '15px', flexWrap: 'wrap' }}>
+            <div style={{ width: '200px', height: '150px', position: 'relative', border: '2px solid #EF4444' }}>
+              <Image 
+                src="/images/photo1.jpg" 
+                alt="Lago Moraine, Banff, Canadá" 
+                width={200}
+                height={150}
+                style={{ objectFit: 'cover' }}
+              />
+              <div style={{ 
+                position: 'absolute', 
+                bottom: '0', 
+                left: '0', 
+                right: '0', 
+                backgroundColor: 'rgba(0,0,0,0.7)', 
+                color: 'white', 
+                padding: '5px', 
+                textAlign: 'center' 
+              }}>
+                ● Lago Moraine
+              </div>
             </div>
-            <div className="bg-gradient-to-br from-blue-200 to-blue-300 h-48 rounded-lg flex items-center justify-center hover:scale-105 transition-transform duration-300">
-              <span className="text-blue-600 text-lg font-semibold">📷 Foto 2</span>
+            <div style={{ width: '200px', height: '150px', position: 'relative', border: '2px solid #10B981' }}>
+              <Image 
+                src="/images/photo2.jpg" 
+                alt="Paisagem natural" 
+                width={200}
+                height={150}
+                style={{ objectFit: 'cover' }}
+              />
+              <div style={{ 
+                position: 'absolute', 
+                bottom: '0', 
+                left: '0', 
+                right: '0', 
+                backgroundColor: 'rgba(0,0,0,0.7)', 
+                color: 'white', 
+                padding: '5px', 
+                textAlign: 'center' 
+              }}>
+                ● Paisagem
+              </div>
             </div>
-            <div className="bg-gradient-to-br from-green-200 to-green-300 h-48 rounded-lg flex items-center justify-center hover:scale-105 transition-transform duration-300">
-              <span className="text-green-600 text-lg font-semibold">📷 Foto 3</span>
+            <div style={{ width: '200px', height: '150px', position: 'relative', border: '2px solid #3B82F6' }}>
+              <Image 
+                src="/images/photo3.jpg" 
+                alt="Manhã ensolarada" 
+                width={200}
+                height={150}
+                style={{ objectFit: 'cover' }}
+              />
+              <div style={{ 
+                position: 'absolute', 
+                bottom: '0', 
+                left: '0', 
+                right: '0', 
+                backgroundColor: 'rgba(0,0,0,0.7)', 
+                color: 'white', 
+                padding: '5px', 
+                textAlign: 'center' 
+              }}>
+                ● Manhã
+              </div>
             </div>
           </div>
         </section>
 
         {/* Seção de hobbies */}
-        <section className="bg-white rounded-lg shadow-xl p-8 mb-8 hover:shadow-2xl transition-shadow duration-300">
-          <h2 className="text-3xl font-bold text-gray-800 mb-6">
+        <section style={{ backgroundColor: 'white', padding: '30px', marginBottom: '30px', borderRadius: '8px' }}>
+          <h2 style={{ color: '#1F2937', fontSize: '24px', marginBottom: '20px' }}>
             Meus Hobbies
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="text-center p-4 bg-gradient-to-br from-yellow-100 to-yellow-200 rounded-lg">
-              <div className="text-3xl mb-2">⚡</div>
-              <h3 className="font-semibold text-gray-800">Gaming</h3>
+          <div style={{ display: 'flex', gap: '15px', flexWrap: 'wrap' }}>
+            <div style={{ 
+              textAlign: 'center', 
+              padding: '20px', 
+              backgroundColor: '#FEF3C7', 
+              borderRadius: '8px',
+              width: '150px'
+            }}>
+              <div style={{ fontSize: '30px', marginBottom: '10px' }}>⚡</div>
+              <h3 style={{ color: '#1F2937', fontWeight: 'bold' }}>Gaming</h3>
             </div>
-            <div className="text-center p-4 bg-gradient-to-br from-purple-100 to-purple-200 rounded-lg">
-              <div className="text-3xl mb-2">★</div>
-              <h3 className="font-semibold text-gray-800">Design</h3>
+            <div style={{ 
+              textAlign: 'center', 
+              padding: '20px', 
+              backgroundColor: '#E9D5FF', 
+              borderRadius: '8px',
+              width: '150px'
+            }}>
+              <div style={{ fontSize: '30px', marginBottom: '10px' }}>★</div>
+              <h3 style={{ color: '#1F2937', fontWeight: 'bold' }}>Design</h3>
             </div>
-            <div className="text-center p-4 bg-gradient-to-br from-green-100 to-green-200 rounded-lg">
-              <div className="text-3xl mb-2">●</div>
-              <h3 className="font-semibold text-gray-800">Natureza</h3>
+            <div style={{ 
+              textAlign: 'center', 
+              padding: '20px', 
+              backgroundColor: '#D1FAE5', 
+              borderRadius: '8px',
+              width: '150px'
+            }}>
+              <div style={{ fontSize: '30px', marginBottom: '10px' }}>●</div>
+              <h3 style={{ color: '#1F2937', fontWeight: 'bold' }}>Natureza</h3>
             </div>
-            <div className="text-center p-4 bg-gradient-to-br from-red-100 to-red-200 rounded-lg">
-              <div className="text-3xl mb-2">▲</div>
-              <h3 className="font-semibold text-gray-800">Culinária</h3>
+            <div style={{ 
+              textAlign: 'center', 
+              padding: '20px', 
+              backgroundColor: '#FEE2E2', 
+              borderRadius: '8px',
+              width: '150px'
+            }}>
+              <div style={{ fontSize: '30px', marginBottom: '10px' }}>▲</div>
+              <h3 style={{ color: '#1F2937', fontWeight: 'bold' }}>Culinária</h3>
             </div>
           </div>
         </section>
       </main>
 
       {/* Rodapé */}
-      <footer className="text-center py-8 text-white">
+      <footer style={{ textAlign: 'center', color: 'white', marginTop: '40px' }}>
         <p>© 2024 - Feito com ❤️ e muito aprendizado!</p>
-        <div className="mt-4 flex justify-center space-x-4">
-          <span className="text-blue-200">⚡</span>
-          <span className="text-purple-200">★</span>
-          <span className="text-pink-200">●</span>
+        <div style={{ marginTop: '15px' }}>
+          <span style={{ margin: '0 10px', color: '#DBEAFE' }}>⚡</span>
+          <span style={{ margin: '0 10px', color: '#E9D5FF' }}>★</span>
+          <span style={{ margin: '0 10px', color: '#FECACA' }}>●</span>
         </div>
       </footer>
     </div>
@@ -219,30 +300,39 @@ export default function Home() {
 
 **🎯 O que aprendemos?**
 - **JSX**: Mistura HTML com JavaScript
-- **className**: Como adicionar estilos CSS
+- **CSS Inline**: Estilos diretos no JSX com `style={{}}`
 - **Estrutura semântica**: header, main, section, footer
 - **Comentários**: `{/* */}` para anotar o código
+- **Cores hexadecimais**: #3B82F6, #DBEAFE, etc.
+- **Layout flexbox**: display: 'flex', flexWrap: 'wrap'
 
 ### **Passo 3: Personalizar com suas informações**
 
 Agora é sua vez! Substitua:
 - `[SEU NOME]` pelo seu nome
 - Adicione informações sobre você
-- Mude as cores se quiser
-- Adicione suas próprias fotos
+- Mude as cores hexadecimais se quiser
+- Adicione suas próprias fotos na pasta `public/images/`
 
-### **Passo 4: Adicionar animações**
+### **Passo 4: Entender o CSS Inline**
 
-Vamos deixar o site mais dinâmico! Adicione estas classes CSS:
+Vamos aprender como funciona o CSS inline:
 
 ```tsx
-// No cabeçalho, adicione:
-<h1 className="text-4xl font-bold text-white mb-2 animate-bounce">
-  Olá! Eu sou [SEU NOME]
-</h1>
+// Estrutura básica:
+<div style={{ propriedade: 'valor' }}>
 
-// Nas seções, adicione:
-<section className="bg-white rounded-lg shadow-xl p-8 mb-8 hover:shadow-2xl transition-shadow duration-300">
+// Múltiplas propriedades:
+<div style={{ 
+  backgroundColor: '#3B82F6', 
+  padding: '20px',
+  color: 'white'
+}}>
+
+// Cores hexadecimais:
+backgroundColor: '#3B82F6'  // Azul
+color: '#DBEAFE'           // Azul claro
+backgroundColor: '#FEF3C7' // Amarelo claro
 ```
 
 **🎯 O que aconteceu?**
