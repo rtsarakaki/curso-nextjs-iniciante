@@ -56,6 +56,10 @@ Consulte o [guia do professor](./INSTRUCOES_PROFESSOR.md) para orientações sob
 - **CSS3** - Estilização avançada
 - **JavaScript ES6+** - Programação moderna
 
+## 🔧 Extensões do VS Code
+
+Consulte o [guia de extensões](./EXTENSOES_VSCODE.md) para instalar as ferramentas necessárias conforme formos precisando durante o curso.
+
 ## 🎯 Objetivos do Curso
 
 ### **Primários**

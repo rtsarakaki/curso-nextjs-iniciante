@@ -40,102 +40,14 @@ Um site pessoal com:
    cd meu-primeiro-site
    ```
 
-### **Passo 3: Instalar Extensões do VS Code**
-
-#### **Como Instalar Extensões:**
+### **Passo 3: Abrir o Projeto no VS Code**
 1. Abra o VS Code
-2. Clique no ícone de extensões na barra lateral (ou pressione `Ctrl+Shift+X`)
-3. Digite o nome da extensão na barra de pesquisa
-4. Clique em "Install" na extensão desejada
-5. Aguarde a instalação
+2. Clique em "File" → "Open Folder"
+3. Selecione a pasta `meu-primeiro-site`
+4. Pronto! Agora você está pronto para programar
 
-#### **Extensões Essenciais e Para Que Servem:**
-
-##### **1. ES7+ React/Redux/React-Native snippets**
-- **Para que serve**: Cria código React automaticamente
-- **Como usar**: Digite `rafce` e pressione Tab = cria componente React
-- **Exemplo**: Digite `useState` e pressione Tab = cria hook useState
-- **Por que é importante**: Acelera muito a programação
-
-##### **2. Tailwind CSS IntelliSense**
-- **Para que serve**: Autocompletar classes CSS do Tailwind
-- **Como usar**: Digite `bg-` e veja todas as opções de cor
-- **Exemplo**: `bg-blue-500` aparece automaticamente
-- **Por que é importante**: Evita erros e acelera o desenvolvimento
-
-##### **3. TypeScript Importer**
-- **Para que serve**: Importa automaticamente tipos e funções
-- **Como usar**: Digite `useState` e ele importa automaticamente
-- **Exemplo**: Não precisa lembrar de importar React
-- **Por que é importante**: Economiza tempo e evita erros
-
-##### **4. Auto Rename Tag**
-- **Para que serve**: Renomeia tags HTML automaticamente
-- **Como usar**: Renomeie uma tag e a outra renomeia junto
-- **Exemplo**: Renomeie `<div>` para `<section>` e `</div>` vira `</section>`
-- **Por que é importante**: Evita erros de tags não fechadas
-
-##### **5. Bracket Pair Colorizer (Opcional)**
-- **Para que serve**: Colore parênteses, chaves e colchetes
-- **Como usar**: Instala e funciona automaticamente
-- **Exemplo**: `{` fica azul, `}` fica azul, `(` fica verde, `)` fica verde
-- **Por que é importante**: Facilita ver onde começam e terminam blocos
-
-##### **6. Prettier - Code formatter (Opcional)**
-- **Para que serve**: Formata o código automaticamente
-- **Como usar**: Salve o arquivo e ele formata sozinho
-- **Exemplo**: Código bagunçado fica organizado
-- **Por que é importante**: Mantém o código limpo e organizado
-
-#### **Como Verificar se as Extensões Estão Funcionando:**
-
-1. **ES7+ React snippets**: Digite `rafce` em um arquivo .tsx e pressione Tab
-2. **Tailwind CSS**: Digite `bg-` e veja as sugestões de cores
-3. **TypeScript Importer**: Digite `useState` e veja se importa automaticamente
-4. **Auto Rename Tag**: Renomeie uma tag HTML e veja se a outra muda junto
-
-#### **Configurações Recomendadas:**
-
-Adicione estas configurações no VS Code (Ctrl+, para abrir configurações):
-
-```json
-{
-  "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  },
-  "emmet.includeLanguages": {
-    "typescript": "html",
-    "typescriptreact": "html"
-  }
-}
-```
-
-#### **Atalhos de Teclado Úteis:**
-
-| Atalho | O que faz | Quando usar |
-|--------|-----------|-------------|
-| `Ctrl + S` | Salvar arquivo | Sempre que terminar de editar |
-| `Ctrl + Z` | Desfazer | Quando cometer um erro |
-| `Ctrl + Y` | Refazer | Para desfazer o desfazer |
-| `Ctrl + C` | Copiar | Para copiar código |
-| `Ctrl + V` | Colar | Para colar código |
-| `Ctrl + X` | Cortar | Para mover código |
-| `Ctrl + F` | Buscar | Para encontrar texto no código |
-| `Ctrl + H` | Substituir | Para trocar uma palavra por outra |
-| `Ctrl + /` | Comentar linha | Para desativar código temporariamente |
-| `Ctrl + Shift + P` | Comando | Para acessar funções do VS Code |
-| `Ctrl + `` | Terminal | Para abrir o terminal |
-| `F12` | Ir para definição | Para ver como uma função funciona |
-| `Ctrl + Space` | Autocompletar | Para ver sugestões de código |
-
-#### **Dicas de Produtividade:**
-
-1. **Use o autocompletar**: Digite as primeiras letras e pressione Tab
-2. **Use snippets**: Digite `rafce` e pressione Tab para criar componente
-3. **Use Ctrl+Space**: Para ver todas as opções disponíveis
-4. **Use F12**: Para navegar pelo código e entender como funciona
-5. **Use Ctrl+Shift+P**: Para acessar qualquer função do VS Code
+#### **💡 Dica Importante:**
+Não se preocupe com extensões agora! Vamos instalar apenas o que precisarmos conforme formos avançando no curso. O VS Code já vem com tudo que precisamos para começar.
 
 ### **Passo 4: Executar o Projeto**
 1. No terminal, execute:
