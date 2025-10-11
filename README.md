@@ -1,23 +1,53 @@
 # 🎮 Curso Next.js para Iniciantes
 
+[![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
+
 ## 🎯 Sobre o Curso
 
 Este curso foi projetado para ensinar Next.js de forma **divertida e visual**, com foco em **design e experiência do usuário**. O objetivo é mostrar que programar pode ser criativo e envolvente, especialmente para quem tem interesse em design.
 
+## 🚀 Demo Online
+
+**Acesse o curso funcionando:** [https://curso-nextjs-iniciante.vercel.app](https://curso-nextjs-iniciante.vercel.app)
+
+## 🎮 Projetos Implementados
+
+### ✅ **Aula 1: Meu Primeiro Site Bonito**
+- Site pessoal responsivo com animações
+- Seção "Sobre Mim" com hover effects
+- Galeria de fotos interativa
+- Seção de hobbies com ícones
+- Design moderno e responsivo
+
+### ✅ **Aula 2: Jogo da Memória Visual**
+- Jogo da memória com 8 emojis
+- Sistema de pontuação e movimentos
+- Animações de virada das cartas
+- Lógica completa do jogo
+- Interface interativa e divertida
+
 ## 🚀 Como Começar
 
-### 1. **Instalar Dependências**
+### **Instalação Rápida**
 ```bash
-npm install
-```
+# Clonar o repositório
+git clone https://github.com/rtsarakaki/curso-nextjs-iniciante.git
 
-### 2. **Executar o Projeto**
-```bash
+# Entrar na pasta
+cd curso-nextjs-iniciante
+
+# Instalar dependências
+npm install
+
+# Executar o projeto
 npm run dev
 ```
 
-### 3. **Abrir no Navegador**
-Acesse [http://localhost:3000](http://localhost:3000)
+### **Acessar no Navegador**
+- **Local**: [http://localhost:3000](http://localhost:3000)
+- **Demo Online**: [https://curso-nextjs-iniciante.vercel.app](https://curso-nextjs-iniciante.vercel.app)
 
 ## 📚 Estrutura do Curso
 
