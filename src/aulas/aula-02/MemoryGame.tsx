@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-// Emojis para as cartas
+// Ícones para as cartas (usando símbolos Unicode que funcionam melhor)
 const emojis = ['🐶', '🐱', '🐭', '🐹', '🐰', '🦊', '🐻', '🐼'];
 
 export default function MemoryGame() {
