@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import React from 'react';
 
 interface ImageCardProps {
   src: string;
@@ -8,18 +9,21 @@ interface ImageCardProps {
 }
 
 export default function ImageCard({ src, alt, label, borderColor }: ImageCardProps) {
-  const borderClass = `photo-card-${borderColor}`;
+  const borderColorClass = {
+    red: 'border-red-500',
+    green: 'border-green-500',
+    blue: 'border-blue-500'
+  }[borderColor];
   
   return (
-    <div className={`photo-card ${borderClass}`}>
+    <div className={`w-48 h-36 relative rounded-lg overflow-hidden border-2 ${borderColorClass}`}>
       <Image 
         src={src} 
         alt={alt} 
-        width={200}
-        height={150}
-        style={{ objectFit: 'cover' }}
+        fill
+        className="object-cover"
       />
-      <div className="photo-overlay">
+      <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 text-white p-1 text-center">
         ● {label}
       </div>
     </div>

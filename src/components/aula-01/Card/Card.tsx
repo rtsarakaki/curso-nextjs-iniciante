@@ -1,3 +1,5 @@
+import React from 'react';
+
 interface CardProps {
   title: string;
   children: React.ReactNode;
@@ -5,8 +7,8 @@ interface CardProps {
 
 export default function Card({ title, children }: CardProps) {
   return (
-    <section className="card">
-      <h2 className="card-title">{title}</h2>
+    <section className="bg-white p-8 mb-8 rounded-lg">
+      <h2 className="text-gray-800 text-2xl mb-4">{title}</h2>
       {children}
     </section>
   );

@@ -1,3 +1,5 @@
+import React from 'react';
+
 interface HobbyCardProps {
   hobby: {
     id: number;
@@ -9,9 +11,9 @@ interface HobbyCardProps {
 
 export default function HobbyCard({ hobby }: HobbyCardProps) {
   return (
-    <div className="hobby-card" style={{ backgroundColor: hobby.color }}>
-      <div className="hobby-icon">{hobby.icon}</div>
-      <h3 className="hobby-name">{hobby.name}</h3>
+    <div className={`${hobby.color} text-center p-5 rounded-lg w-36`}>
+      <div className="text-3xl mb-2">{hobby.icon}</div>
+      <h3 className="text-gray-800 font-bold">{hobby.name}</h3>
     </div>
   );
 }

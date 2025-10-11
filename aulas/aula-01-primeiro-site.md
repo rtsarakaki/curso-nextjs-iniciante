@@ -823,10 +823,12 @@ export default function FirstSite() {
 }
 ```
 
-#### **✅ DEPOIS (Tailwind CSS + Componentes Simplificados):**
+#### **✅ DEPOIS (Tailwind CSS + Componentes com Tailwind):**
 ```tsx
-// Sem CSS customizado, apenas Tailwind
-import Image from 'next/image';
+// Componentes mantidos, mas usando Tailwind CSS
+import Card from '@/components/aula-01/Card/Card';
+import ImageCard from '@/components/aula-01/ImageCard/ImageCard';
+import HobbyCard from '@/components/aula-01/HobbyCard/HobbyCard';
 
 export default function FirstSite() {
   const photos = [
@@ -850,39 +852,34 @@ export default function FirstSite() {
       </header>
       
       <main className="max-w-4xl w-full mx-auto">
-        <section className="bg-white p-8 mb-8 rounded-lg">
-          <h2 className="text-gray-800 text-2xl mb-4">Sobre Mim</h2>
+        <Card title="Sobre Mim">
           <p className="text-gray-600 text-base leading-relaxed">
             Estou aprendendo a criar sites incríveis! 
             Meu objetivo é combinar design bonito com programação funcional.
           </p>
-        </section>
+        </Card>
 
-        <section className="bg-white p-8 mb-8 rounded-lg">
-          <h2 className="text-gray-800 text-2xl mb-4">Minhas Fotos</h2>
+        <Card title="Minhas Fotos">
           <div className="flex gap-4 flex-wrap">
             {photos.map(photo => (
-              <div key={photo.id} className={`w-48 h-36 relative rounded-lg overflow-hidden border-2 border-${photo.borderColor}-500`}>
-                <Image src={photo.src} alt={photo.alt} fill className="object-cover" />
-                <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 text-white p-1 text-center">
-                  ● {photo.label}
-                </div>
-              </div>
+              <ImageCard 
+                key={photo.id}
+                src={photo.src} 
+                alt={photo.alt} 
+                label={photo.label}
+                borderColor={photo.borderColor}
+              />
             ))}
           </div>
-        </section>
+        </Card>
 
-        <section className="bg-white p-8 mb-8 rounded-lg">
-          <h2 className="text-gray-800 text-2xl mb-4">Meus Hobbies</h2>
+        <Card title="Meus Hobbies">
           <div className="flex gap-4 flex-wrap">
             {hobbies.map(hobby => (
-              <div key={hobby.id} className={`${hobby.color} text-center p-5 rounded-lg w-36`}>
-                <div className="text-3xl mb-2">{hobby.icon}</div>
-                <h3 className="text-gray-800 font-bold">{hobby.name}</h3>
-              </div>
+              <HobbyCard key={hobby.id} hobby={hobby} />
             ))}
           </div>
-        </section>
+        </Card>
       </main>
 
       <footer className="text-center text-white mt-10 max-w-4xl w-full">
@@ -905,7 +902,7 @@ export default function FirstSite() {
 4. **🧹 Código mais limpo** - sem CSS customizado para manter
 5. **⚡ Performance otimizada** - apenas classes usadas são incluídas
 6. **🔧 Manutenção simplificada** - mudanças diretas no JSX
-7. **📦 Menos dependências** - não precisa de componentes customizados
+7. **♻️ Componentes reutilizáveis** - mantém estrutura modular
 8. **🎯 Foco no conteúdo** - mais tempo para lógica, menos para CSS
 
 #### **📚 Classes Tailwind Utilizadas:**
