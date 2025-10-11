@@ -2,22 +2,20 @@
 
 /* Container principal */
 .container {
-  background-color: #3B82F6 !important;
-  min-height: 100vh !important;
-  padding: 20px !important;
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  justify-content: flex-start !important;
-  width: 100% !important;
+  background-color: #3B82F6;
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Cabeçalho */
 .header {
-  text-align: center !important;
-  margin-bottom: 40px !important;
-  max-width: 800px !important;
-  width: 100% !important;
+  text-align: center;
+  margin-bottom: 40px;
+  max-width: 800px;
+  width: 100%;
 }
 
 .header-title {
@@ -33,9 +31,9 @@
 
 /* Conteúdo principal */
 .main-content {
-  max-width: 800px !important;
-  width: 100% !important;
-  margin: 0 auto !important;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 /* Cards */
@@ -85,6 +83,12 @@
   border: 2px solid #3B82F6;
 }
 
+.photo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .photo-overlay {
   position: absolute;
   bottom: 0;
@@ -110,6 +114,22 @@
   width: 150px;
 }
 
+.hobby-card-yellow {
+  background-color: #FEF3C7;
+}
+
+.hobby-card-purple {
+  background-color: #E9D5FF;
+}
+
+.hobby-card-green {
+  background-color: #D1FAE5;
+}
+
+.hobby-card-red {
+  background-color: #FEE2E2;
+}
+
 .hobby-icon {
   font-size: 30px;
   margin-bottom: 10px;
@@ -123,11 +143,11 @@
 
 /* Rodapé */
 .footer {
-  text-align: center !important;
-  color: white !important;
-  margin-top: 40px !important;
-  max-width: 800px !important;
-  width: 100% !important;
+  text-align: center;
+  color: white;
+  margin-top: 40px;
+  max-width: 800px;
+  width: 100%;
 }
 
 .footer-icons {
