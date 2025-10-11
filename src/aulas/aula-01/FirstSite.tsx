@@ -30,14 +30,35 @@ export default function FirstSite() {
             Minhas Fotos
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="bg-gradient-to-br from-pink-200 to-pink-300 h-48 rounded-lg flex items-center justify-center hover:scale-105 transition-transform duration-300">
-              <span className="text-pink-600 text-lg font-semibold">● Foto 1</span>
+            <div className="relative h-48 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
+              <img 
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop&crop=face" 
+                alt="Foto pessoal 1" 
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center">
+                <span className="text-white text-lg font-semibold">● Foto 1</span>
+              </div>
             </div>
-            <div className="bg-gradient-to-br from-blue-200 to-blue-300 h-48 rounded-lg flex items-center justify-center hover:scale-105 transition-transform duration-300">
-              <span className="text-blue-600 text-lg font-semibold">● Foto 2</span>
+            <div className="relative h-48 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
+              <img 
+                src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=300&fit=crop&crop=face" 
+                alt="Foto pessoal 2" 
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center">
+                <span className="text-white text-lg font-semibold">● Foto 2</span>
+              </div>
             </div>
-            <div className="bg-gradient-to-br from-green-200 to-green-300 h-48 rounded-lg flex items-center justify-center hover:scale-105 transition-transform duration-300">
-              <span className="text-green-600 text-lg font-semibold">● Foto 3</span>
+            <div className="relative h-48 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
+              <img 
+                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=300&fit=crop&crop=face" 
+                alt="Foto pessoal 3" 
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center">
+                <span className="text-white text-lg font-semibold">● Foto 3</span>
+              </div>
             </div>
           </div>
         </section>
