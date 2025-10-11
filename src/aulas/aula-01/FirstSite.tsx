@@ -1,4 +1,4 @@
-// import Image from 'next/image';
+import Image from 'next/image';
 
 export default function FirstSite() {
   return (
@@ -33,39 +33,36 @@ export default function FirstSite() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="relative h-48 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300 bg-gradient-to-br from-pink-200 to-pink-300 border-2 border-red-500">
-              <img 
+              <Image 
                 src="/images/photo1.jpg" 
                 alt="Lago Moraine, Banff, Canadá" 
-                className="w-full h-full object-cover"
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none';
-                }}
+                width={400}
+                height={300}
+                className="object-cover"
               />
               <div className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center">
                 <span className="text-white text-lg font-semibold">● Lago Moraine</span>
               </div>
             </div>
             <div className="relative h-48 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300 bg-gradient-to-br from-blue-200 to-blue-300 border-2 border-green-500">
-              <img 
+              <Image 
                 src="/images/photo2.jpg" 
                 alt="Paisagem natural" 
-                className="w-full h-full object-cover"
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none';
-                }}
+                width={400}
+                height={300}
+                className="object-cover"
               />
               <div className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center">
                 <span className="text-white text-lg font-semibold">● Paisagem</span>
               </div>
             </div>
             <div className="relative h-48 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300 bg-gradient-to-br from-green-200 to-green-300 border-2 border-blue-500">
-              <img 
+              <Image 
                 src="/images/photo3.jpg" 
                 alt="Manhã ensolarada" 
-                className="w-full h-full object-cover"
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none';
-                }}
+                width={400}
+                height={300}
+                className="object-cover"
               />
               <div className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center">
                 <span className="text-white text-lg font-semibold">● Manhã</span>
