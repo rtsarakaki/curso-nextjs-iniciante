@@ -8,6 +8,30 @@
 - **Evite jargões técnicos** desnecessários
 - **Foque na experiência visual** primeiro
 
+### **🌍 Idioma do Código**
+- **SEMPRE use inglês** para variáveis, métodos e nomes de componentes
+- **NUNCA use português** no código
+- **Mantenha comentários** em português para facilitar o ensino
+- **Use nomes descritivos** em inglês
+
+#### **Exemplos de Nomenclatura:**
+```javascript
+// ✅ CORRETO - Inglês
+const [currentLesson, setCurrentLesson] = useState('aula-01');
+const [gameStarted, setGameStarted] = useState(false);
+const [flippedCards, setFlippedCards] = useState([]);
+
+// ✅ CORRETO - Componentes em inglês
+export default function FirstSite() { }
+export default function MemoryGame() { }
+export default function PhotoGallery() { }
+
+// ❌ INCORRETO - Português no código
+const [aulaAtual, setAulaAtual] = useState('aula-01');
+const [jogoIniciado, setJogoIniciado] = useState(false);
+export default function PrimeiroSite() { }
+```
+
 ### **Metodologia do Curso**
 - **Design-first approach**: Sempre começar com o resultado visual
 - **Gamificação**: Tornar o aprendizado divertido

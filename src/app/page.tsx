@@ -1,18 +1,18 @@
 'use client';
 
 import { useState } from 'react';
-import PrimeiroSite from '@/aulas/aula-01/PrimeiroSite';
+import FirstSite from '@/aulas/aula-01/FirstSite';
 import MemoryGame from '@/aulas/aula-02/MemoryGame';
 
 export default function Home() {
-  const [currentAula, setCurrentAula] = useState('aula-01');
+  const [currentLesson, setCurrentLesson] = useState('aula-01');
 
-  const aulas = [
-    { id: 'aula-01', name: 'Aula 1: Meu Primeiro Site Bonito', component: PrimeiroSite },
+  const lessons = [
+    { id: 'aula-01', name: 'Aula 1: Meu Primeiro Site Bonito', component: FirstSite },
     { id: 'aula-02', name: 'Aula 2: Jogo da Memória Visual', component: MemoryGame },
   ];
 
-  const CurrentComponent = aulas.find(aula => aula.id === currentAula)?.component || PrimeiroSite;
+  const CurrentComponent = lessons.find(lesson => lesson.id === currentLesson)?.component || FirstSite;
 
   return (
     <div className="min-h-screen bg-gray-100">
@@ -23,17 +23,17 @@ export default function Home() {
             🎮 Curso Next.js para Iniciantes
           </h1>
           <div className="flex flex-wrap gap-2">
-            {aulas.map((aula) => (
+            {lessons.map((lesson) => (
               <button
-                key={aula.id}
-                onClick={() => setCurrentAula(aula.id)}
+                key={lesson.id}
+                onClick={() => setCurrentLesson(lesson.id)}
                 className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-                  currentAula === aula.id
+                  currentLesson === lesson.id
                     ? 'bg-blue-600 text-white'
                     : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                 }`}
               >
-                {aula.name}
+                {lesson.name}
               </button>
             ))}
           </div>
