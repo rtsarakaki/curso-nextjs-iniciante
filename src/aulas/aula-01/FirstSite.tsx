@@ -31,13 +31,13 @@ export default function FirstSite() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="bg-gradient-to-br from-pink-200 to-pink-300 h-48 rounded-lg flex items-center justify-center hover:scale-105 transition-transform duration-300">
-              <span className="text-pink-600 text-lg font-semibold">📷 Foto 1</span>
+              <span className="text-pink-600 text-lg font-semibold">● Foto 1</span>
             </div>
             <div className="bg-gradient-to-br from-blue-200 to-blue-300 h-48 rounded-lg flex items-center justify-center hover:scale-105 transition-transform duration-300">
-              <span className="text-blue-600 text-lg font-semibold">📷 Foto 2</span>
+              <span className="text-blue-600 text-lg font-semibold">● Foto 2</span>
             </div>
             <div className="bg-gradient-to-br from-green-200 to-green-300 h-48 rounded-lg flex items-center justify-center hover:scale-105 transition-transform duration-300">
-              <span className="text-green-600 text-lg font-semibold">📷 Foto 3</span>
+              <span className="text-green-600 text-lg font-semibold">● Foto 3</span>
             </div>
           </div>
         </section>
