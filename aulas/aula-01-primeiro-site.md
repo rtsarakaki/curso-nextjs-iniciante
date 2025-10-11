@@ -306,6 +306,198 @@ export default function Home() {
 - **Cores hexadecimais**: #3B82F6, #DBEAFE, etc.
 - **Layout flexbox**: display: 'flex', flexWrap: 'wrap'
 
+## 📚 Explicação Detalhada das Tags e Atributos
+
+### **🏗️ Estrutura HTML Básica**
+
+#### **`<div>` - Container Principal**
+```tsx
+<div style={{ backgroundColor: '#3B82F6', minHeight: '100vh', padding: '20px' }}>
+```
+**Explicação:**
+- **`<div>`**: Tag genérica para criar containers
+- **`backgroundColor: '#3B82F6'`**: Cor de fundo azul (hexadecimal)
+- **`minHeight: '100vh'`**: Altura mínima de 100% da tela (viewport height)
+- **`padding: '20px'`**: Espaçamento interno de 20 pixels
+
+#### **`<header>` - Cabeçalho**
+```tsx
+<header style={{ textAlign: 'center', marginBottom: '40px' }}>
+```
+**Explicação:**
+- **`<header>`**: Tag semântica para cabeçalho da página
+- **`textAlign: 'center'`**: Centraliza o texto horizontalmente
+- **`marginBottom: '40px'`**: Espaçamento inferior de 40 pixels
+
+#### **`<h1>` - Título Principal**
+```tsx
+<h1 style={{ color: 'white', fontSize: '32px', marginBottom: '10px' }}>
+```
+**Explicação:**
+- **`<h1>`**: Tag para título principal (hierarquia de cabeçalhos)
+- **`color: 'white'`**: Cor do texto em branco
+- **`fontSize: '32px'`**: Tamanho da fonte em 32 pixels
+- **`marginBottom: '10px'`**: Espaçamento inferior de 10 pixels
+
+#### **`<p>` - Parágrafo**
+```tsx
+<p style={{ color: '#DBEAFE', fontSize: '18px' }}>
+```
+**Explicação:**
+- **`<p>`**: Tag para parágrafos de texto
+- **`color: '#DBEAFE'`**: Cor azul claro (hexadecimal)
+- **`fontSize: '18px'`**: Tamanho da fonte em 18 pixels
+
+### **📦 Estrutura de Conteúdo**
+
+#### **`<main>` - Conteúdo Principal**
+```tsx
+<main style={{ maxWidth: '800px', margin: '0 auto' }}>
+```
+**Explicação:**
+- **`<main>`**: Tag semântica para conteúdo principal
+- **`maxWidth: '800px'`**: Largura máxima de 800 pixels
+- **`margin: '0 auto'`**: Centraliza horizontalmente (0 em cima/baixo, auto nas laterais)
+
+#### **`<section>` - Seção de Conteúdo**
+```tsx
+<section style={{ backgroundColor: 'white', padding: '30px', marginBottom: '30px', borderRadius: '8px' }}>
+```
+**Explicação:**
+- **`<section>`**: Tag semântica para seções de conteúdo
+- **`backgroundColor: 'white'`**: Fundo branco
+- **`padding: '30px'`**: Espaçamento interno de 30 pixels
+- **`marginBottom: '30px'`**: Espaçamento inferior de 30 pixels
+- **`borderRadius: '8px'`**: Bordas arredondadas de 8 pixels
+
+#### **`<h2>` - Subtítulo**
+```tsx
+<h2 style={{ color: '#1F2937', fontSize: '24px', marginBottom: '15px' }}>
+```
+**Explicação:**
+- **`<h2>`**: Tag para subtítulos (segundo nível de hierarquia)
+- **`color: '#1F2937'`**: Cor cinza escuro (hexadecimal)
+- **`fontSize: '24px'`**: Tamanho da fonte em 24 pixels
+- **`marginBottom: '15px'`**: Espaçamento inferior de 15 pixels
+
+### **🖼️ Galeria de Imagens**
+
+#### **Container de Imagens**
+```tsx
+<div style={{ display: 'flex', gap: '15px', flexWrap: 'wrap' }}>
+```
+**Explicação:**
+- **`display: 'flex'`**: Layout flexbox (elementos em linha)
+- **`gap: '15px'`**: Espaçamento entre elementos de 15 pixels
+- **`flexWrap: 'wrap'`**: Quebra linha quando necessário
+
+#### **Container Individual de Imagem**
+```tsx
+<div style={{ width: '200px', height: '150px', position: 'relative', border: '2px solid #EF4444' }}>
+```
+**Explicação:**
+- **`width: '200px'`**: Largura fixa de 200 pixels
+- **`height: '150px'`**: Altura fixa de 150 pixels
+- **`position: 'relative'`**: Posicionamento relativo (para elementos filhos absolutos)
+- **`border: '2px solid #EF4444'`**: Borda sólida de 2px na cor vermelha
+
+#### **Componente Image do Next.js**
+```tsx
+<Image 
+  src="/images/photo1.jpg" 
+  alt="Lago Moraine, Banff, Canadá" 
+  width={200}
+  height={150}
+  style={{ objectFit: 'cover' }}
+/>
+```
+**Explicação:**
+- **`<Image>`**: Componente otimizado do Next.js para imagens
+- **`src="/images/photo1.jpg"`**: Caminho da imagem (pasta public)
+- **`alt="..."`**: Texto alternativo para acessibilidade
+- **`width={200}`**: Largura da imagem (propriedade do componente)
+- **`height={150}`**: Altura da imagem (propriedade do componente)
+- **`style={{ objectFit: 'cover' }}`**: Ajusta a imagem para cobrir o container
+
+#### **Overlay de Texto**
+```tsx
+<div style={{ 
+  position: 'absolute', 
+  bottom: '0', 
+  left: '0', 
+  right: '0', 
+  backgroundColor: 'rgba(0,0,0,0.7)', 
+  color: 'white', 
+  padding: '5px', 
+  textAlign: 'center' 
+}}>
+```
+**Explicação:**
+- **`position: 'absolute'`**: Posicionamento absoluto (sobrepõe outros elementos)
+- **`bottom: '0'`**: Alinha na parte inferior
+- **`left: '0'`**: Alinha na esquerda
+- **`right: '0'`**: Alinha na direita
+- **`backgroundColor: 'rgba(0,0,0,0.7)'`**: Fundo preto com 70% de transparência
+- **`color: 'white'`**: Texto branco
+- **`padding: '5px'`**: Espaçamento interno de 5 pixels
+- **`textAlign: 'center'`**: Centraliza o texto
+
+### **🎨 Seção de Hobbies**
+
+#### **Container de Hobbies**
+```tsx
+<div style={{ display: 'flex', gap: '15px', flexWrap: 'wrap' }}>
+```
+**Explicação:**
+- **`display: 'flex'`**: Layout flexbox
+- **`gap: '15px'`**: Espaçamento entre elementos
+- **`flexWrap: 'wrap'`**: Quebra linha quando necessário
+
+#### **Card Individual de Hobby**
+```tsx
+<div style={{ 
+  textAlign: 'center', 
+  padding: '20px', 
+  backgroundColor: '#FEF3C7', 
+  borderRadius: '8px',
+  width: '150px'
+}}>
+```
+**Explicação:**
+- **`textAlign: 'center'`**: Centraliza o texto
+- **`padding: '20px'`**: Espaçamento interno de 20 pixels
+- **`backgroundColor: '#FEF3C7'`**: Fundo amarelo claro (hexadecimal)
+- **`borderRadius: '8px'`**: Bordas arredondadas de 8 pixels
+- **`width: '150px'`**: Largura fixa de 150 pixels
+
+### **🦶 Rodapé**
+
+#### **`<footer>` - Rodapé**
+```tsx
+<footer style={{ textAlign: 'center', color: 'white', marginTop: '40px' }}>
+```
+**Explicação:**
+- **`<footer>`**: Tag semântica para rodapé
+- **`textAlign: 'center'`**: Centraliza o texto
+- **`color: 'white'`**: Cor do texto em branco
+- **`marginTop: '40px'`**: Espaçamento superior de 40 pixels
+
+#### **Container de Ícones**
+```tsx
+<div style={{ marginTop: '15px' }}>
+```
+**Explicação:**
+- **`marginTop: '15px'`**: Espaçamento superior de 15 pixels
+
+#### **Ícones Individuais**
+```tsx
+<span style={{ margin: '0 10px', color: '#DBEAFE' }}>⚡</span>
+```
+**Explicação:**
+- **`<span>`**: Tag inline para texto pequeno
+- **`margin: '0 10px'`**: Espaçamento vertical 0, horizontal 10px
+- **`color: '#DBEAFE'`**: Cor azul claro (hexadecimal)
+
 ### **Passo 3: Personalizar com suas informações**
 
 Agora é sua vez! Substitua:
