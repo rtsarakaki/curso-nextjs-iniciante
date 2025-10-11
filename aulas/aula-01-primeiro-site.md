@@ -694,19 +694,20 @@ src/
         └── FirstSite.tsx (200+ linhas)
 ```
 
-#### **✅ DEPOIS (Organizado por funcionalidade):**
+#### **✅ DEPOIS (Organizado por aula e funcionalidade):**
 ```
 src/
 ├── components/
-│   ├── Card/
-│   │   ├── Card.tsx
-│   │   └── Card.module.css
-│   ├── ImageCard/
-│   │   ├── ImageCard.tsx
-│   │   └── ImageCard.module.css
-│   └── HobbyCard/
-│       ├── HobbyCard.tsx
-│       └── HobbyCard.module.css
+│   └── aula-01/
+│       ├── Card/
+│       │   ├── Card.tsx
+│       │   └── Card.module.css
+│       ├── ImageCard/
+│       │   ├── ImageCard.tsx
+│       │   └── ImageCard.module.css
+│       └── HobbyCard/
+│           ├── HobbyCard.tsx
+│           └── HobbyCard.module.css
 ├── styles/
 │   └── globals.css
 ├── app/

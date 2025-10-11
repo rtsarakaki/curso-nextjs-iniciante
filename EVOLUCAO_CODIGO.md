@@ -43,13 +43,14 @@
 
 ### **✅ DEPOIS (CSS Classes + Componentes)**
 
-**Estrutura organizada:**
+**Estrutura organizada por aula:**
 ```
 src/
 ├── components/
-│   ├── Card/Card.tsx (15 linhas)
-│   ├── ImageCard/ImageCard.tsx (25 linhas)
-│   └── HobbyCard/HobbyCard.tsx (15 linhas)
+│   └── aula-01/
+│       ├── Card/Card.tsx (15 linhas)
+│       ├── ImageCard/ImageCard.tsx (25 linhas)
+│       └── HobbyCard/HobbyCard.tsx (15 linhas)
 ├── styles/
 │   └── globals.css (80 linhas)
 └── aulas/aula-01/
@@ -188,12 +189,42 @@ src/
 // ✅ Depois
 src/
 ├── components/
-│   ├── Card/Card.tsx
-│   ├── ImageCard/ImageCard.tsx
-│   └── HobbyCard/HobbyCard.tsx
+│   └── aula-01/
+│       ├── Card/Card.tsx
+│       ├── ImageCard/ImageCard.tsx
+│       └── HobbyCard/HobbyCard.tsx
 ├── styles/globals.css
 └── aulas/aula-01/FirstSite.tsx (80 linhas)
 ```
+
+### **5. Organização por Aula**
+```
+// ❌ Antes (Componentes misturados)
+src/components/
+├── Card/
+├── ImageCard/
+├── HobbyCard/
+├── GameBoard/ (da aula 2)
+└── ScoreBoard/ (da aula 2)
+
+// ✅ Depois (Organizados por aula)
+src/components/
+├── aula-01/
+│   ├── Card/
+│   ├── ImageCard/
+│   └── HobbyCard/
+└── aula-02/
+    ├── GameBoard/
+    └── ScoreBoard/
+```
+
+#### **🎯 VANTAGENS da Organização por Aula:**
+1. **📚 Contexto claro** - fácil identificar componentes de cada aula
+2. **🔍 Navegação intuitiva** - estrutura lógica por contexto de aprendizado
+3. **👥 Trabalho em equipe** - cada desenvolvedor pode trabalhar em uma aula específica
+4. **♻️ Reutilização controlada** - componentes específicos de cada aula
+5. **📈 Escalabilidade** - fácil adicionar componentes de novas aulas
+6. **🧹 Manutenção** - fácil encontrar e atualizar componentes relacionados
 
 ## 🚀 Benefícios Pedagógicos
 

@@ -1,6 +1,6 @@
-import Card from '@/components/Card/Card';
-import ImageCard from '@/components/ImageCard/ImageCard';
-import HobbyCard from '@/components/HobbyCard/HobbyCard';
+import Card from '@/components/aula-01/Card/Card';
+import ImageCard from '@/components/aula-01/ImageCard/ImageCard';
+import HobbyCard from '@/components/aula-01/HobbyCard/HobbyCard';
 
 export default function FirstSite() {
   // Dados dinâmicos para hobbies
