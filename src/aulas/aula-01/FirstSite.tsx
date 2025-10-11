@@ -32,41 +32,41 @@ export default function FirstSite() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="relative h-48 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300 bg-gradient-to-br from-pink-200 to-pink-300">
               <img 
-                src="https://picsum.photos/400/300?random=1" 
-                alt="Foto pessoal 1" 
+                src="https://gorafa.com.br/wp-content/uploads/2024/05/lago-moraine-banff-canada3-820x546-1.jpeg" 
+                alt="Lago Moraine, Banff, Canadá" 
                 className="w-full h-full object-cover"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none';
                 }}
               />
               <div className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center">
-                <span className="text-white text-lg font-semibold">● Foto 1</span>
+                <span className="text-white text-lg font-semibold">● Lago Moraine</span>
               </div>
             </div>
             <div className="relative h-48 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300 bg-gradient-to-br from-blue-200 to-blue-300">
               <img 
-                src="https://picsum.photos/400/300?random=2" 
-                alt="Foto pessoal 2" 
+                src="https://wallpapers.com/images/featured/imagens-de-paisagens-a3hr6gk3xfx36dyg.jpg" 
+                alt="Paisagem natural" 
                 className="w-full h-full object-cover"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none';
                 }}
               />
               <div className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center">
-                <span className="text-white text-lg font-semibold">● Foto 2</span>
+                <span className="text-white text-lg font-semibold">● Paisagem</span>
               </div>
             </div>
             <div className="relative h-48 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300 bg-gradient-to-br from-green-200 to-green-300">
               <img 
-                src="https://picsum.photos/400/300?random=3" 
-                alt="Foto pessoal 3" 
+                src="https://cdn.pixabay.com/photo/2019/08/17/04/18/morning-4411421_1280.jpg" 
+                alt="Manhã ensolarada" 
                 className="w-full h-full object-cover"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none';
                 }}
               />
               <div className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center">
-                <span className="text-white text-lg font-semibold">● Foto 3</span>
+                <span className="text-white text-lg font-semibold">● Manhã</span>
               </div>
             </div>
           </div>
