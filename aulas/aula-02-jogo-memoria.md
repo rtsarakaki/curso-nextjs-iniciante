@@ -2643,7 +2643,105 @@ export default function MemoryGame() {
 
 ### **Passo 15: Usar o componente na página principal**
 
-Agora vamos usar nosso jogo na página principal. Substitua o conteúdo de `src/app/page.tsx`:
+**🎯 O que vamos fazer:**
+Vamos integrar nosso jogo da memória na página principal da aplicação, conectando o componente que criamos com o sistema de roteamento do Next.js.
+
+**🧠 Por que isso é importante?**
+Agora temos um jogo completo e bem organizado! Precisamos conectá-lo à aplicação principal para que os usuários possam acessá-lo. É como colocar um brinquedo na prateleira da loja - ele precisa estar no lugar certo para ser encontrado.
+
+**🎯 O que vamos aprender:**
+- **Integração de Componentes**: Como conectar componentes com a aplicação principal
+- **Roteamento do Next.js**: Como o Next.js gerencia páginas e componentes
+- **Estrutura de Arquivos**: Como organizar componentes em pastas
+- **Import de Componentes**: Como importar componentes de outras pastas
+- **Aplicação Funcional**: Como criar uma aplicação completa
+
+**📚 Conceito Detalhado: Integração de Componentes**
+
+**O que é integração de componentes?**
+É a capacidade de conectar componentes criados com a aplicação principal, permitindo que eles sejam acessados pelos usuários.
+
+**Como funciona?**
+```tsx
+// Importar componente
+import MemoryGame from '@/aulas/aula-02/MemoryGame';
+
+// Usar na página
+export default function Home() {
+  return <MemoryGame />;
+}
+```
+
+**Para que servem?**
+- **Conectividade**: Ligar componentes com a aplicação
+- **Acessibilidade**: Permitir que usuários usem os componentes
+- **Organização**: Manter estrutura clara da aplicação
+- **Funcionalidade**: Criar aplicações completas
+
+**Quando usar?**
+- Quando você quer que usuários acessem seus componentes
+- Quando precisa integrar com sistema de roteamento
+- Quando quer criar aplicações funcionais
+- Quando precisa de organização
+
+**📚 Conceito Detalhado: Roteamento do Next.js**
+
+**O que é roteamento do Next.js?**
+É o sistema que gerencia como as páginas e componentes são acessados na aplicação, como um mapa que mostra onde cada coisa está.
+
+**Como funciona?**
+```tsx
+// src/app/page.tsx - Página principal
+export default function Home() {
+  return <div>Página inicial</div>;
+}
+
+// src/app/about/page.tsx - Página sobre
+export default function About() {
+  return <div>Página sobre</div>;
+}
+```
+
+**Para que servem?**
+- **Navegação**: Permitir movimento entre páginas
+- **Organização**: Estruturar aplicação em páginas
+- **SEO**: Otimizar para motores de busca
+- **Performance**: Carregar apenas o necessário
+
+**Quando usar?**
+- Quando você tem múltiplas páginas
+- Quando quer organizar aplicação
+- Quando precisa de SEO
+- Quando quer performance
+
+**📚 Conceito Detalhado: Estrutura de Arquivos**
+
+**O que é estrutura de arquivos?**
+É a organização de arquivos e pastas em uma aplicação, como organizar documentos em um arquivo.
+
+**Como funciona?**
+```
+src/
+  app/
+    page.tsx          # Página principal
+  aulas/
+    aula-02/
+      MemoryGame.tsx  # Componente do jogo
+  components/
+    aula-02/          # Componentes da aula 2
+```
+
+**Para que servem?**
+- **Organização**: Encontrar arquivos facilmente
+- **Manutenção**: Modificar código facilmente
+- **Colaboração**: Várias pessoas podem trabalhar
+- **Escalabilidade**: Aplicação pode crescer
+
+**Quando usar?**
+- Quando você tem muitos arquivos
+- Quando quer organizar código
+- Quando trabalha em equipe
+- Quando quer facilitar manutenção
 
 ```tsx
 import MemoryGame from '@/aulas/aula-02/MemoryGame';
@@ -2653,12 +2751,171 @@ export default function Home() {
 }
 ```
 
+**🎯 Explicação Detalhada do Código:**
+
+**1. Import do componente:**
+- **`import MemoryGame from '@/aulas/aula-02/MemoryGame'`**: Importa o componente MemoryGame
+- **Por que preciso**: Para usar o jogo na página principal
+- **Como funciona**: Busca o arquivo MemoryGame.tsx na pasta aula-02
+
+**2. Função Home:**
+- **`export default function Home()`**: Função principal da página
+- **Por que preciso**: Next.js usa esta função para renderizar a página
+- **Como funciona**: Retorna o JSX que será exibido
+
+**3. Renderização do componente:**
+- **`<MemoryGame />`**: Usa o componente MemoryGame
+- **Por que preciso**: Para exibir o jogo na página
+- **Como funciona**: React renderiza o componente e seus filhos
+
+**4. Estrutura da aplicação:**
+- **Página principal**: Ponto de entrada da aplicação
+- **Componente do jogo**: Lógica e interface do jogo
+- **Integração**: Conecta tudo para funcionar junto
+
+**💡 Analogia didática:**
+É como colocar um brinquedo na prateleira da loja! O `page.tsx` é a prateleira principal onde os clientes (usuários) vão encontrar o brinquedo (MemoryGame). O import é como pegar o brinquedo do estoque, e o JSX é como colocá-lo na prateleira para que todos possam ver e usar!
+
 ### **Passo 16: Testar o jogo**
 
-1. Salve os arquivos
-2. Vá para o navegador
-3. Clique em "Começar Jogo"
-4. Divirta-se jogando!
+**🎯 O que vamos fazer:**
+Vamos testar nosso jogo da memória para garantir que tudo está funcionando corretamente e que a experiência do usuário está boa.
+
+**🧠 Por que isso é importante?**
+Todo código precisa ser testado! É como experimentar um brinquedo antes de vendê-lo - você precisa ter certeza de que funciona perfeitamente e que as pessoas vão gostar.
+
+**🎯 O que vamos aprender:**
+- **Testes de Funcionalidade**: Como verificar se o jogo funciona corretamente
+- **Testes de Interface**: Como verificar se a interface está boa
+- **Testes de Experiência**: Como verificar se a experiência do usuário está boa
+- **Debugging**: Como identificar e corrigir problemas
+- **Validação**: Como confirmar que tudo está funcionando
+
+**📚 Conceito Detalhado: Testes de Funcionalidade**
+
+**O que são testes de funcionalidade?**
+São verificações para garantir que cada parte do jogo funciona como esperado, como testar se um carro anda, para e vira.
+
+**Como funcionam?**
+```tsx
+// Testar se o jogo inicia
+1. Clicar em "Começar Jogo"
+2. Verificar se as cartas aparecem
+3. Verificar se o contador de movimentos funciona
+```
+
+**Para que servem?**
+- **Confiabilidade**: Garantir que o jogo funciona
+- **Qualidade**: Evitar bugs e problemas
+- **Satisfação**: Usuário tem boa experiência
+- **Profissionalismo**: Código de qualidade
+
+**Quando usar?**
+- Quando você termina de desenvolver
+- Quando faz mudanças no código
+- Quando quer garantir qualidade
+- Quando precisa de confiança
+
+**📚 Conceito Detalhado: Testes de Interface**
+
+**O que são testes de interface?**
+São verificações para garantir que a interface está bonita, organizada e fácil de usar.
+
+**Como funcionam?**
+```tsx
+// Testar se a interface está boa
+1. Verificar se as cores estão certas
+2. Verificar se os textos estão legíveis
+3. Verificar se os botões funcionam
+4. Verificar se o layout está organizado
+```
+
+**Para que servem?**
+- **Usabilidade**: Interface fácil de usar
+- **Aparência**: Visual atraente
+- **Organização**: Layout bem estruturado
+- **Acessibilidade**: Fácil para todos usarem
+
+**Quando usar?**
+- Quando você quer interface profissional
+- Quando precisa de boa experiência
+- Quando quer atrair usuários
+- Quando precisa de organização
+
+**📚 Conceito Detalhado: Testes de Experiência**
+
+**O que são testes de experiência?**
+São verificações para garantir que o usuário tem uma experiência positiva e divertida.
+
+**Como funcionam?**
+```tsx
+// Testar se a experiência está boa
+1. Jogar o jogo completo
+2. Verificar se é divertido
+3. Verificar se é desafiador
+4. Verificar se é recompensador
+```
+
+**Para que servem?**
+- **Satisfação**: Usuário fica feliz
+- **Engajamento**: Usuário quer jogar mais
+- **Recomendação**: Usuário recomenda para outros
+- **Sucesso**: Jogo é bem-sucedido
+
+**Quando usar?**
+- Quando você quer criar algo bom
+- Quando precisa de feedback
+- Quando quer melhorar
+- Quando precisa de validação
+
+**🎯 Passos para Testar:**
+
+**1. Salve os arquivos:**
+- **O que fazer**: Salvar todos os arquivos modificados
+- **Por que preciso**: Para que as mudanças sejam aplicadas
+- **Como fazer**: Ctrl+S ou Cmd+S
+
+**2. Vá para o navegador:**
+- **O que fazer**: Abrir o navegador e acessar a aplicação
+- **Por que preciso**: Para ver o jogo funcionando
+- **Como fazer**: Acessar http://localhost:3000
+
+**3. Clique em "Começar Jogo":**
+- **O que fazer**: Clicar no botão para iniciar o jogo
+- **Por que preciso**: Para testar a funcionalidade de início
+- **O que verificar**: Se as cartas aparecem, se o contador funciona
+
+**4. Divirta-se jogando:**
+- **O que fazer**: Jogar o jogo completo
+- **Por que preciso**: Para testar toda a experiência
+- **O que verificar**: Se é divertido, se funciona bem, se há problemas
+
+**🎯 Checklist de Testes:**
+
+**✅ Funcionalidade:**
+- [ ] Jogo inicia corretamente
+- [ ] Cartas viram quando clicadas
+- [ ] Pares são encontrados corretamente
+- [ ] Contador de movimentos funciona
+- [ ] Mensagem de vitória aparece
+- [ ] Botão de reiniciar funciona
+
+**✅ Interface:**
+- [ ] Cores estão bonitas
+- [ ] Textos estão legíveis
+- [ ] Botões funcionam
+- [ ] Layout está organizado
+- [ ] Responsivo em diferentes tamanhos
+
+**✅ Experiência:**
+- [ ] Jogo é divertido
+- [ ] É desafiador
+- [ ] É recompensador
+- [ ] Interface é intuitiva
+- [ ] Performance é boa
+
+**💡 Analogia didática:**
+É como testar um brinquedo antes de vendê-lo! Você precisa verificar se todas as peças funcionam (funcionalidade), se está bonito e bem feito (interface), e se as crianças vão gostar de brincar (experiência). Só depois de tudo funcionar perfeitamente é que você pode ter confiança de que o produto está pronto!
 
 ---
 
