@@ -1192,7 +1192,11 @@ São "etiquetas" que envolvem o conteúdo para dizer ao navegador o que cada par
 - **Como funciona**: Facilita colaboração e manutenção
 
 **💡 Analogia didática:**
-É como construir a primeira peça de um quebra-cabeça! O **HTML** é como o esqueleto de um boneco - define onde fica a cabeça (`<h1>`), o corpo (`<div>`), e os braços. O componente `Home` é a peça principal que vai no centro, o `export default` é como colocar uma etiqueta "PEÇA PRINCIPAL" nela, o JSX é como ter instruções de montagem em português mas usando peças universais, e a estrutura de arquivos é como ter uma caixa organizada onde cada peça tem seu lugar!
+É como construir a primeira peça de um quebra-cabeça! 
+
+O **HTML** é como o esqueleto de um boneco - define onde fica a cabeça (`<h1>`), o corpo (`<div>`), e os braços. 
+
+O componente `Home` é a peça principal que vai no centro, o `export default` é como colocar uma etiqueta "PEÇA PRINCIPAL" nela, o JSX é como ter instruções de montagem em português mas usando peças universais, e a estrutura de arquivos é como ter uma caixa organizada onde cada peça tem seu lugar!
 
 ### **Passo 2: Criar o container principal**
 
@@ -1362,7 +1366,9 @@ export default function Home() {
 - **Por que preciso**: Para misturar HTML com JavaScript corretamente
 
 **💡 Analogia didática:**
-É como preparar uma tela para pintar! O `<div>` é a tela, o `backgroundColor` é a cor de fundo que você escolhe, o `minHeight: '100vh'` é como garantir que a tela ocupe toda a parede, e o `padding: '20px'` é como deixar uma margem ao redor da pintura para não colar nas bordas da moldura!
+É como preparar uma tela para pintar! 
+
+O `<div>` é a tela, o `backgroundColor` é a cor de fundo que você escolhe, o `minHeight: '100vh'` é como garantir que a tela ocupe toda a parede, e o `padding: '20px'` é como deixar uma margem ao redor da pintura para não colar nas bordas da moldura!
 
 ### **Passo 3: Adicionar o cabeçalho**
 
@@ -1552,7 +1558,9 @@ export default function Home() {
 - **Benefício**: Código mais legível e organizado
 
 **💡 Analogia didática:**
-É como criar a placa de identificação da sua casa! O `<header>` é como a moldura da placa, o `textAlign: 'center'` é como centralizar o texto na placa, o `<h1>` é como o nome principal em letras grandes, o `<p>` é como o subtítulo em letras menores, e o `marginBottom` é como deixar espaço entre a placa e a porta de entrada!
+É como criar a placa de identificação da sua casa! 
+
+O `<header>` é como a moldura da placa, o `textAlign: 'center'` é como centralizar o texto na placa, o `<h1>` é como o nome principal em letras grandes, o `<p>` é como o subtítulo em letras menores, e o `marginBottom` é como deixar espaço entre a placa e a porta de entrada!
 
 ### **Passo 4: Criar a seção "Sobre Mim"**
 
