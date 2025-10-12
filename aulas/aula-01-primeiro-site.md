@@ -1931,15 +1931,102 @@ backgroundColor: '#FEF3C7' // Amarelo claro
 - Digite o código (ex: 26A1 para ⚡)
 - **Vantagem**: Integrado ao editor, funciona em qualquer lugar
 
-**📚 Lista de Símbolos Úteis:**
-- **⚡** (raio): Energia, velocidade, tecnologia
-- **★** (estrela): Destaque, qualidade, favorito
-- **●** (círculo): Lista, ponto, item
-- **▲** (triângulo): Direção, crescimento, seta
-- **📷** (câmera): Fotos, galeria, imagem
-- **❤️** (coração): Amor, paixão, dedicação
-- **🎯** (alvo): Objetivo, foco, meta
-- **🚀** (foguete): Inovação, lançamento, futuro
+**📚 Lista Completa de Símbolos Úteis:**
+
+### **🔋 Energia e Tecnologia:**
+- **⚡** (raio): Energia, velocidade, tecnologia - `Alt + 26A1`
+- **🔋** (bateria): Energia, carregamento - `Alt + 1F50B`
+- **💻** (computador): Tecnologia, programação - `Alt + 1F4BB`
+- **📱** (celular): Mobile, responsivo - `Alt + 1F4F1`
+- **🌐** (globo): Internet, web - `Alt + 1F310`
+
+### **⭐ Destaque e Qualidade:**
+- **★** (estrela): Destaque, qualidade, favorito - `Alt + 2605`
+- **☆** (estrela vazia): Avaliação, ranking - `Alt + 2606`
+- **⭐** (estrela brilhante): Excelente, premium - `Alt + 2B50`
+- **💎** (diamante): Luxo, qualidade - `Alt + 1F48E`
+- **🏆** (troféu): Vitória, conquista - `Alt + 1F3C6`
+
+### **📝 Listas e Organização:**
+- **●** (círculo): Lista, ponto, item - `Alt + 25CF`
+- **○** (círculo vazia): Lista vazia, opção - `Alt + 25CB`
+- **▪** (quadrado pequeno): Lista, item - `Alt + 25AA`
+- **▫** (quadrado vazio): Lista vazia - `Alt + 25AB`
+- **▶** (play): Iniciar, continuar - `Alt + 25B6`
+- **⏸** (pause): Pausar, parar - `Alt + 23F8`
+
+### **🔺 Direção e Navegação:**
+- **▲** (triângulo cima): Crescimento, subir - `Alt + 25B2`
+- **▼** (triângulo baixo): Descida, diminuir - `Alt + 25BC`
+- **◀** (triângulo esquerda): Voltar, anterior - `Alt + 25C0`
+- **▶** (triângulo direita): Avançar, próximo - `Alt + 25B6`
+- **↗** (seta diagonal): Link externo, sair - `Alt + 2197`
+- **↘** (seta diagonal): Link interno, entrar - `Alt + 2198`
+
+### **📷 Mídia e Conteúdo:**
+- **📷** (câmera): Fotos, galeria, imagem - `Alt + 1F4F7`
+- **🎥** (vídeo): Filme, gravação - `Alt + 1F3A5`
+- **🎵** (música): Áudio, som - `Alt + 1F3B5`
+- **📄** (documento): Arquivo, texto - `Alt + 1F4C4`
+- **📁** (pasta): Organização, arquivo - `Alt + 1F4C1`
+
+### **❤️ Emoções e Estados:**
+- **❤️** (coração): Amor, paixão, dedicação - `Alt + 2764`
+- **💚** (coração verde): Sucesso, positivo - `Alt + 1F49A`
+- **💙** (coração azul): Confiança, profissional - `Alt + 1F499`
+- **😊** (sorriso): Feliz, satisfeito - `Alt + 1F60A`
+- **😎** (óculos escuros): Legal, descolado - `Alt + 1F60E`
+- **🤔** (pensando): Reflexão, dúvida - `Alt + 1F914`
+
+### **🎯 Objetivos e Metas:**
+- **🎯** (alvo): Objetivo, foco, meta - `Alt + 1F3AF`
+- **🚀** (foguete): Inovação, lançamento, futuro - `Alt + 1F680`
+- **⚡** (raio): Velocidade, agilidade - `Alt + 26A1`
+- **🔥** (fogo): Popular, tendência - `Alt + 1F525`
+- **💡** (lâmpada): Ideia, criatividade - `Alt + 1F4A1`
+
+### **🛠️ Ferramentas e Desenvolvimento:**
+- **🔧** (chave inglesa): Configuração, ferramentas - `Alt + 1F527`
+- **⚙️** (engrenagem): Configurações, sistema - `Alt + 2699`
+- **🔨** (martelo): Construção, desenvolvimento - `Alt + 1F528`
+- **📐** (régua): Medição, precisão - `Alt + 1F4D0`
+- **🎨** (paleta): Design, criatividade - `Alt + 1F3A8`
+
+### **📊 Status e Progresso:**
+- **✅** (check): Concluído, sucesso - `Alt + 2705`
+- **❌** (X): Erro, cancelado - `Alt + 274C`
+- **⚠️** (aviso): Atenção, cuidado - `Alt + 26A0`
+- **ℹ️** (informação): Dica, ajuda - `Alt + 2139`
+- **❓** (interrogação): Dúvida, pergunta - `Alt + 2753`
+
+### **🌍 Natureza e Ambiente:**
+- **🌱** (muda): Crescimento, início - `Alt + 1F331`
+- **🌿** (folha): Natureza, verde - `Alt + 1F33F`
+- **🌳** (árvore): Estabilidade, crescimento - `Alt + 1F333`
+- **🌊** (onda): Fluidez, movimento - `Alt + 1F30A`
+- **☀️** (sol): Energia, dia - `Alt + 2600`
+- **🌙** (lua): Noite, calma - `Alt + 1F319`
+
+### **🍕 Comida e Lazer:**
+- **☕** (café): Energia, trabalho - `Alt + 2615`
+- **🍕** (pizza): Diversão, lazer - `Alt + 1F355`
+- **🎮** (controle): Games, diversão - `Alt + 1F3AE`
+- **🎲** (dado): Aleatório, sorte - `Alt + 1F3B2`
+- **🎪** (circo): Diversão, entretenimento - `Alt + 1F3AA`
+
+### **💼 Profissional e Negócios:**
+- **💼** (pasta): Trabalho, profissional - `Alt + 1F4BC`
+- **📈** (gráfico subindo): Crescimento, sucesso - `Alt + 1F4C8`
+- **💰** (dinheiro): Financeiro, valor - `Alt + 1F4B0`
+- **🤝** (aperto de mão): Parceria, acordo - `Alt + 1F91D`
+- **📞** (telefone): Contato, comunicação - `Alt + 1F4DE`
+
+### **🎨 Design e Arte:**
+- **🎨** (paleta): Arte, criatividade - `Alt + 1F3A8`
+- **🖌️** (pincel): Pintura, design - `Alt + 1F58C`
+- **📐** (régua): Medição, precisão - `Alt + 1F4D0`
+- **🎭** (máscara): Teatro, performance - `Alt + 1F3AD`
+- **🎪** (circo): Entretenimento, show - `Alt + 1F3AA`
 
 ### **Cores que funcionam bem:**
 - `from-pink-400 to-red-500` (Rosa para vermelho)
