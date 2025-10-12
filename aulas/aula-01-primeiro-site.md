@@ -656,6 +656,7 @@ section div {
     justify-content: center;
     align-items: flex-start;
     min-height: auto;
+    background-color: transparent;
 }
 
 /* Cards da galeria (mais específico) */
@@ -785,6 +786,268 @@ footer p {
 - **Estrutura**: Entendemos a organização da página
 - **Estilos**: Vemos como CSS funciona na prática
 - **Referência**: Usamos como guia para criar em React
+
+### **📝 Etapa 6: Ajustar para Ficar Igual ao Next.js**
+
+**10. Atualizar o HTML para ficar igual ao resultado final do Next.js:**
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Primeiro Site</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div>
+        <header>
+            <h1>Olá! Eu sou [SEU NOME]</h1>
+            <p>Desenvolvedor em formação ⚡</p>
+        </header>
+
+        <main>
+            <section class="card">
+                <h2>Sobre Mim</h2>
+                <p>Estou aprendendo a criar sites incríveis! Meu objetivo é combinar design bonito com programação funcional. Cada dia é uma nova descoberta no mundo da programação web.</p>
+            </section>
+
+            <section class="card">
+                <h2>Minhas Fotos</h2>
+                <div class="gallery">
+                    <div class="image-card red">
+                        <img src="images/photo1.jpg" alt="Lago Moraine">
+                        <div class="overlay">● Lago Moraine</div>
+                    </div>
+                    <div class="image-card green">
+                        <img src="images/photo2.jpg" alt="Paisagem">
+                        <div class="overlay">● Paisagem</div>
+                    </div>
+                    <div class="image-card blue">
+                        <img src="images/photo3.jpg" alt="Manhã">
+                        <div class="overlay">● Manhã</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2>Meus Hobbies</h2>
+                <div class="hobbies">
+                    <div class="hobby-card yellow">
+                        <span>⚡</span>
+                        <h3>Gaming</h3>
+                    </div>
+                    <div class="hobby-card purple">
+                        <span>★</span>
+                        <h3>Design</h3>
+                    </div>
+                    <div class="hobby-card green">
+                        <span>●</span>
+                        <h3>Natureza</h3>
+                    </div>
+                    <div class="hobby-card red">
+                        <span>▲</span>
+                        <h3>Culinária</h3>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2024 - Feito com ❤️ e muito aprendizado!</p>
+            <div class="footer-icons">
+                <span>⚡</span>
+                <span>★</span>
+                <span>●</span>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
+```
+
+**11. Atualizar o CSS para ficar igual ao Next.js:**
+```css
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Container principal */
+div {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #3B82F6;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    color: white;
+}
+
+header h1 {
+    font-size: 32px;
+}
+
+header p {
+    font-size: 18px;
+    color: #DBEAFE;
+}
+
+/* Cards brancos (como no Next.js) */
+.card {
+    background-color: white;
+    padding: 32px;
+    margin-bottom: 32px;
+    border-radius: 8px;
+}
+
+.card h2 {
+    color: #1F2937;
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+.card p {
+    color: #6B7280;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Galeria com bordas coloridas */
+.gallery {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.image-card {
+    width: 192px;
+    height: 144px;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid;
+}
+
+.image-card.red {
+    border-color: #EF4444;
+}
+
+.image-card.green {
+    border-color: #10B981;
+}
+
+.image-card.blue {
+    border-color: #3B82F6;
+}
+
+.image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 4px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Hobbies com cores diferentes */
+.hobbies {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.hobby-card {
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    width: 144px;
+}
+
+.hobby-card.yellow {
+    background-color: #FEF3C7;
+}
+
+.hobby-card.purple {
+    background-color: #E9D5FF;
+}
+
+.hobby-card.green {
+    background-color: #D1FAE5;
+}
+
+.hobby-card.red {
+    background-color: #FEE2E2;
+}
+
+.hobby-card span {
+    font-size: 24px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.hobby-card h3 {
+    color: #1F2937;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    color: white;
+    margin-top: 40px;
+}
+
+.footer-icons {
+    margin-top: 16px;
+}
+
+.footer-icons span {
+    color: #DBEAFE;
+    margin: 0 8px;
+}
+```
+
+**📚 Explicação das Diferenças:**
+
+**🎯 Principais Mudanças:**
+- **Cards brancos**: Cada seção agora tem fundo branco (como no Next.js)
+- **Bordas coloridas**: Imagens com bordas vermelha, verde e azul
+- **Overlay nas imagens**: Texto sobreposto nas imagens
+- **Hobbies coloridos**: Cards com cores diferentes (amarelo, roxo, verde, vermelho)
+- **4 hobbies**: Adicionado "Culinária" para ficar igual ao Next.js
+- **Footer com ícones**: Ícones no rodapé como no Next.js
+
+**🎨 Visual Igual ao Next.js:**
+- **Estrutura**: Cards brancos sobre fundo azul
+- **Imagens**: Bordas coloridas e overlay
+- **Hobbies**: Cores diferentes para cada card
+- **Espaçamento**: Padding e margins iguais ao Tailwind
 
 ## 🛠️ Preparação do Ambiente
 
