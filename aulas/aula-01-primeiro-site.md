@@ -40,7 +40,7 @@ projeto/
   images/             ← Pasta para imagens
 ```
 
-### **🔧 Passo 0: Criar o protótipo HTML**
+### **🔧 Passo 0: Criar o protótipo HTML (Evolutivo)**
 
 **1. Criar a pasta do projeto:**
 ```bash
@@ -48,7 +48,9 @@ mkdir meu-primeiro-site-prototipo
 cd meu-primeiro-site-prototipo
 ```
 
-**2. Criar o arquivo `index.html`:**
+### **📝 Etapa 1: HTML Básico (Sem CSS)**
+
+**2. Criar o arquivo `index.html` básico:**
 ```html
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -56,66 +58,58 @@ cd meu-primeiro-site-prototipo
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Primeiro Site</title>
-    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <!-- Cabeçalho -->
-        <header class="header">
+    <div>
+        <header>
             <h1>Olá! Eu sou [SEU NOME]</h1>
             <p>Desenvolvedor em formação ⚡</p>
         </header>
 
-        <!-- Conteúdo principal -->
-        <main class="main-content">
-            <!-- Seção Sobre Mim -->
-            <section class="about-section">
+        <main>
+            <section>
                 <h2>Sobre Mim</h2>
-                <p>Olá! Sou um desenvolvedor em formação apaixonado por tecnologia e inovação. 
-                Estou aprendendo a criar sites incríveis e quero compartilhar minha jornada com vocês!</p>
+                <p>Olá! Sou um desenvolvedor em formação apaixonado por tecnologia e inovação.</p>
             </section>
 
-            <!-- Galeria de Fotos -->
-            <section class="gallery-section">
+            <section>
                 <h2>Minhas Fotos Favoritas</h2>
-                <div class="photo-gallery">
-                    <div class="photo-card">
+                <div>
+                    <div>
                         <img src="https://picsum.photos/400/300?random=1" alt="Paisagem 1">
                         <p>● Paisagem 1</p>
                     </div>
-                    <div class="photo-card">
+                    <div>
                         <img src="https://picsum.photos/400/300?random=2" alt="Paisagem 2">
                         <p>● Paisagem 2</p>
                     </div>
-                    <div class="photo-card">
+                    <div>
                         <img src="https://picsum.photos/400/300?random=3" alt="Paisagem 3">
                         <p>● Paisagem 3</p>
                     </div>
                 </div>
             </section>
 
-            <!-- Seção Hobbies -->
-            <section class="hobbies-section">
+            <section>
                 <h2>Meus Hobbies</h2>
-                <div class="hobbies-grid">
-                    <div class="hobby-card" style="background-color: #FEF3C7;">
-                        <span class="hobby-icon">📚</span>
+                <div>
+                    <div>
+                        <span>📚</span>
                         <h3>Ler</h3>
                     </div>
-                    <div class="hobby-card" style="background-color: #DBEAFE;">
-                        <span class="hobby-icon">🎮</span>
+                    <div>
+                        <span>🎮</span>
                         <h3>Jogar</h3>
                     </div>
-                    <div class="hobby-card" style="background-color: #D1FAE5;">
-                        <span class="hobby-icon">🏃</span>
+                    <div>
+                        <span>🏃</span>
                         <h3>Correr</h3>
                     </div>
                 </div>
             </section>
         </main>
 
-        <!-- Rodapé -->
-        <footer class="footer">
+        <footer>
             <p>© 2024 [SEU NOME]. Feito com ❤️ e muito ☕</p>
         </footer>
     </div>
@@ -123,23 +117,58 @@ cd meu-primeiro-site-prototipo
 </html>
 ```
 
-**3. Criar o arquivo `styles.css`:**
+**📚 Explicação das Tags HTML:**
+
+**`<!DOCTYPE html>`**: Declara que é um documento HTML5
+**`<html lang="pt-BR">`**: Define o idioma da página
+**`<head>`**: Cabeçalho com metadados (não aparece na página)
+**`<meta charset="UTF-8">`**: Define a codificação de caracteres
+**`<meta name="viewport">`**: Configura para dispositivos móveis
+**`<title>`**: Título que aparece na aba do navegador
+**`<body>`**: Corpo da página (o que o usuário vê)
+**`<div>`**: Container genérico para organização
+**`<header>`**: Cabeçalho semântico da página
+**`<h1>`**: Título principal (mais importante)
+**`<p>`**: Parágrafo de texto
+**`<main>`**: Conteúdo principal da página
+**`<section>`**: Seção temática do conteúdo
+**`<h2>`**: Subtítulo
+**`<img>`**: Imagem (src=origem, alt=descrição)
+**`<span>`**: Texto inline
+**`<h3>`**: Subtítulo de nível 3
+**`<footer>`**: Rodapé da página
+
+**3. Abrir no navegador:**
+- Salve o arquivo
+- Abra o `index.html` no navegador
+- Você verá uma página sem estilo (apenas texto e imagens)
+
+### **📝 Etapa 2: Adicionar CSS Básico**
+
+**4. Criar o arquivo `styles.css` e conectar:**
+```html
+<!-- Adicione esta linha no <head> do index.html -->
+<link rel="stylesheet" href="styles.css">
+```
+
+**5. Adicionar CSS básico (arquivo `styles.css`):**
 ```css
-/* Reset básico */
+/* Reset básico - remove margens padrão */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Estilo do corpo da página */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333;
 }
 
 /* Container principal */
-.container {
+div {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
@@ -148,24 +177,47 @@ body {
 }
 
 /* Cabeçalho */
-.header {
+header {
     text-align: center;
     margin-bottom: 40px;
     color: white;
 }
 
-.header h1 {
+header h1 {
     font-size: 32px;
     margin-bottom: 10px;
 }
 
-.header p {
+header p {
     font-size: 18px;
     color: #DBEAFE;
 }
+```
 
+**📚 Explicação das Propriedades CSS:**
+
+**`* { margin: 0; padding: 0; }`**: Remove espaçamentos padrão de todos os elementos
+**`box-sizing: border-box`**: Inclui padding e border no cálculo da largura
+**`font-family: Arial, sans-serif`**: Define a fonte do texto
+**`line-height: 1.6`**: Espaçamento entre linhas (1.6x o tamanho da fonte)
+**`color: #333`**: Cor do texto (cinza escuro)
+**`max-width: 800px`**: Largura máxima do container
+**`margin: 0 auto`**: Centraliza o container (0 em cima/baixo, auto nas laterais)
+**`padding: 20px`**: Espaçamento interno de 20px
+**`background-color: #3B82F6`**: Cor de fundo azul
+**`min-height: 100vh`**: Altura mínima de 100% da tela
+**`text-align: center`**: Centraliza o texto
+**`margin-bottom: 40px`**: Espaçamento inferior de 40px
+**`color: white`**: Cor do texto branco
+**`font-size: 32px`**: Tamanho da fonte 32 pixels
+**`color: #DBEAFE`**: Cor azul claro
+
+### **📝 Etapa 3: Estilizar o Conteúdo Principal**
+
+**6. Adicionar mais CSS para o conteúdo:**
+```css
 /* Conteúdo principal */
-.main-content {
+main {
     background-color: white;
     padding: 30px;
     border-radius: 8px;
@@ -173,35 +225,53 @@ body {
 }
 
 /* Seções */
-.about-section, .gallery-section, .hobbies-section {
+section {
     margin-bottom: 30px;
 }
 
-.about-section h2, .gallery-section h2, .hobbies-section h2 {
+section h2 {
     color: #1F2937;
     margin-bottom: 15px;
     font-size: 24px;
 }
 
-.about-section p {
+section p {
     color: #6B7280;
     font-size: 16px;
 }
+```
 
+**📚 Explicação das Novas Propriedades:**
+
+**`background-color: white`**: Fundo branco
+**`padding: 30px`**: Espaçamento interno de 30px
+**`border-radius: 8px`**: Cantos arredondados de 8px
+**`margin-bottom: 30px`**: Espaçamento inferior de 30px
+**`color: #1F2937`**: Cor cinza escuro para títulos
+**`font-size: 24px`**: Tamanho da fonte 24px
+**`color: #6B7280`**: Cor cinza médio para texto
+
+### **📝 Etapa 4: Estilizar Galeria e Hobbies**
+
+**7. Adicionar CSS para galeria e hobbies:**
+```css
 /* Galeria de fotos */
-.photo-gallery {
+section div {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.photo-card {
+section div div {
     text-align: center;
     max-width: 200px;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
 }
 
-.photo-card img {
+section div div img {
     width: 100%;
     height: 150px;
     object-fit: cover;
@@ -209,40 +279,53 @@ body {
     margin-bottom: 10px;
 }
 
-.photo-card p {
+section div div p {
     color: #6B7280;
     font-weight: bold;
 }
 
 /* Hobbies */
-.hobbies-grid {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.hobby-card {
+section div div {
     padding: 20px;
     border-radius: 8px;
     text-align: center;
     min-width: 120px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #FEF3C7;
 }
 
-.hobby-icon {
+section div div span {
     font-size: 24px;
     display: block;
     margin-bottom: 10px;
 }
 
-.hobby-card h3 {
+section div div h3 {
     color: #1F2937;
     font-size: 16px;
 }
+```
 
+**📚 Explicação das Propriedades de Layout:**
+
+**`display: flex`**: Cria um layout flexível
+**`gap: 20px`**: Espaçamento entre elementos flex
+**`flex-wrap: wrap`**: Permite quebra de linha
+**`justify-content: center`**: Centraliza elementos
+**`width: 100%`**: Largura completa do container
+**`height: 150px`**: Altura fixa de 150px
+**`object-fit: cover`**: Ajusta imagem mantendo proporção
+**`box-shadow: 0 2px 4px rgba(0,0,0,0.1)`**: Sombra sutil
+**`font-weight: bold`**: Texto em negrito
+**`display: block`**: Elemento em bloco
+**`min-width: 120px`**: Largura mínima de 120px
+
+### **📝 Etapa 5: Finalizar com Rodapé**
+
+**8. Adicionar CSS para o rodapé:**
+```css
 /* Rodapé */
-.footer {
+footer {
     text-align: center;
     color: white;
     padding: 20px;
@@ -250,15 +333,20 @@ body {
     border-radius: 8px;
 }
 
-.footer p {
+footer p {
     color: #DBEAFE;
 }
 ```
 
-**4. Abrir o protótipo:**
-- Salve os dois arquivos
+**📚 Explicação das Propriedades Finais:**
+
+**`background-color: rgba(0,0,0,0.1)`**: Fundo preto com 10% de transparência
+**`color: #DBEAFE`**: Cor azul claro para o texto do rodapé
+
+**9. Resultado final:**
+- Salve todos os arquivos
 - Abra o `index.html` no navegador
-- Você verá exatamente como ficará nosso site final!
+- Você verá o site completo e estilizado!
 
 ### **📚 O que aprendemos com o protótipo:**
 
