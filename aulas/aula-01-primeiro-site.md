@@ -666,7 +666,7 @@ section div div {
 
 section div div img {
     width: 100%;
-    height: 150px;
+    height: 120px;
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 10px;
@@ -679,7 +679,7 @@ section div div p {
 
 /* Hobbies */
 section div div {
-    padding: 20px;
+    padding: 15px;
     border-radius: 8px;
     text-align: center;
     min-width: 120px;
@@ -709,7 +709,7 @@ section div div h3 {
 
 **Imagens:**
 - **`width: 100%`**: Largura completa do container
-- **`height: 150px`**: Altura fixa de 150px
+- **`height: 120px`**: Altura fixa de 120px (reduzida para melhor proporção)
 - **`object-fit: cover`**: Ajusta imagem mantendo proporção
 
 **Efeitos visuais:**
@@ -719,6 +719,7 @@ section div div h3 {
 **Layout dos cards:**
 - **`display: block`**: Elemento em bloco
 - **`min-width: 120px`**: Largura mínima de 120px
+- **`padding: 15px`**: Espaçamento interno reduzido para melhor proporção
 
 ### **📝 Etapa 5: Finalizar com Rodapé**
 
