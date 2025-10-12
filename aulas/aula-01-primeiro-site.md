@@ -921,6 +921,7 @@ body {
     padding: 32px;
     margin-bottom: 32px;
     border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .card h2 {
@@ -1048,7 +1049,8 @@ body {
 **📚 Explicação das Diferenças:**
 
 **🎯 Principais Mudanças:**
-- **Cards brancos**: Cada seção agora tem fundo branco (como no Next.js)
+- **Cards brancos**: Cada seção agora tem fundo branco com cantos arredondados
+- **Sombra sutil**: Box-shadow para dar profundidade aos cards
 - **Bordas coloridas**: Imagens com bordas vermelha, verde e azul
 - **Overlay nas imagens**: Texto sobreposto nas imagens
 - **Hobbies coloridos**: Cards com cores diferentes (amarelo, roxo, verde, vermelho)
@@ -1057,6 +1059,8 @@ body {
 
 **🎨 Visual Igual ao Next.js:**
 - **Estrutura**: Cards brancos sobre fundo azul
+- **Cards brancos**: Cada seção em um card branco com cantos arredondados
+- **Sombra sutil**: Box-shadow para dar profundidade visual
 - **Imagens**: Bordas coloridas e overlay
 - **Hobbies**: Cores diferentes para cada card
 - **Espaçamento**: Padding e margins iguais ao Tailwind
