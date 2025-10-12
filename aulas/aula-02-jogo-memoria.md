@@ -2936,6 +2936,116 @@ Imagine que você tem um carro onde o motor, a direção e o freio estão todos 
 - **Separação de Responsabilidades**: Lógica separada da UI
 - **Reutilização**: Hook pode ser usado em outros jogos
 - **Testabilidade**: Lógica isolada é mais fácil de testar
+- **Princípio SOLID**: Single Responsibility Principle (SRP)
+
+**📚 Conceito Detalhado: Custom Hooks**
+
+**O que são custom hooks?**
+São funções personalizadas que encapsulam lógica de estado e efeitos, permitindo reutilizar lógica entre componentes.
+
+**Como funcionam?**
+```tsx
+// Hook personalizado
+function useMemoryGame() {
+  const [gameStarted, setGameStarted] = useState(false);
+  const [moves, setMoves] = useState(0);
+  
+  const startNewGame = () => {
+    setGameStarted(true);
+    setMoves(0);
+  };
+  
+  return { gameStarted, moves, startNewGame };
+}
+
+// Usar em componente
+function MemoryGame() {
+  const { gameStarted, moves, startNewGame } = useMemoryGame();
+  return <div>...</div>;
+}
+```
+
+**Para que servem?**
+- **Reutilização**: Mesma lógica em vários componentes
+- **Organização**: Lógica separada da interface
+- **Testabilidade**: Testar lógica isoladamente
+- **Manutenção**: Fácil de modificar e corrigir
+
+**Quando usar?**
+- Quando você tem lógica complexa
+- Quando quer reutilizar lógica
+- Quando precisa de organização
+- Quando quer facilitar testes
+
+**📚 Conceito Detalhado: Separação de Responsabilidades**
+
+**O que é separação de responsabilidades?**
+É o princípio de que cada parte do código deve ter apenas uma função específica, como ter uma pessoa para cada tarefa em uma empresa.
+
+**Como funciona?**
+```tsx
+// Hook: Só gerencia lógica
+function useMemoryGame() {
+  // Lógica do jogo
+}
+
+// Componente: Só gerencia interface
+function MemoryGame() {
+  const gameLogic = useMemoryGame();
+  return <div>Interface</div>;
+}
+```
+
+**Para que servem?**
+- **Clareza**: Cada parte tem uma função clara
+- **Manutenção**: Fácil de encontrar e modificar
+- **Testes**: Cada parte pode ser testada isoladamente
+- **Colaboração**: Várias pessoas podem trabalhar
+
+**Quando usar?**
+- Quando você tem código complexo
+- Quando quer facilitar manutenção
+- Quando trabalha em equipe
+- Quando quer código mais limpo
+
+**📚 Conceito Detalhado: Princípio SOLID - SRP**
+
+**O que é o Princípio da Responsabilidade Única (SRP)?**
+É o princípio que diz que cada classe, função ou módulo deve ter apenas uma razão para mudar, como ter uma pessoa para cada tarefa específica.
+
+**Como funciona?**
+```tsx
+// ❌ Ruim: Múltiplas responsabilidades
+function MemoryGame() {
+  // Gerencia estado
+  const [gameStarted, setGameStarted] = useState(false);
+  // Gerencia lógica
+  const handleCardClick = () => { ... };
+  // Gerencia interface
+  return <div>...</div>;
+}
+
+// ✅ Bom: Responsabilidades separadas
+function useMemoryGame() {
+  // Só gerencia lógica
+}
+
+function MemoryGame() {
+  // Só gerencia interface
+}
+```
+
+**Para que servem?**
+- **Manutenção**: Fácil de modificar uma parte sem afetar outras
+- **Testes**: Cada parte pode ser testada isoladamente
+- **Reutilização**: Lógica pode ser reutilizada
+- **Colaboração**: Várias pessoas podem trabalhar
+
+**Quando usar?**
+- Quando você tem código complexo
+- Quando quer facilitar manutenção
+- Quando trabalha em equipe
+- Quando quer código mais limpo
 
 **❌ ANTES (Lógica misturada com UI):**
 ```tsx
@@ -3036,6 +3146,143 @@ Imagine que você está construindo uma casa e não tem plantas. Você pode acab
 - **TypeScript**: Como adicionar tipagem forte ao JavaScript
 - **IntelliSense**: Como o VS Code nos ajuda com sugestões
 - **Prevenção de Erros**: Como evitar bugs antes que aconteçam
+- **Princípio SOLID**: Interface Segregation Principle (ISP)
+
+**📚 Conceito Detalhado: Interfaces TypeScript**
+
+**O que são interfaces TypeScript?**
+São contratos que definem exatamente como um objeto deve ser estruturado, como plantas de uma casa que mostram onde cada coisa deve ficar.
+
+**Como funcionam?**
+```tsx
+// Definir interface
+interface GameCard {
+  id: number;
+  icon: string;
+  isFlipped: boolean;
+  isMatched: boolean;
+}
+
+// Usar interface
+const card: GameCard = {
+  id: 1,
+  icon: "⚡",
+  isFlipped: false,
+  isMatched: false
+};
+```
+
+**Para que servem?**
+- **Contratos**: Definir exatamente o que cada objeto deve ter
+- **IntelliSense**: O VS Code te ajuda com sugestões
+- **Prevenção de erros**: TypeScript avisa antes de quebrar
+- **Documentação**: Os tipos explicam o que cada coisa faz
+
+**Quando usar?**
+- Quando você cria objetos complexos
+- Quando quer evitar erros de digitação
+- Quando precisa de documentação clara
+- Quando quer ajuda do editor
+
+**📚 Conceito Detalhado: TypeScript**
+
+**O que é TypeScript?**
+É JavaScript com tipos, como JavaScript que "sabe" exatamente o que cada variável deve ser.
+
+**Como funciona?**
+```tsx
+// JavaScript normal
+let name = "João";
+name = 123; // Funciona, mas pode causar problemas
+
+// TypeScript
+let name: string = "João";
+name = 123; // ❌ Erro: number não pode ser string
+```
+
+**Para que servem?**
+- **Segurança**: Evitar erros antes de executar
+- **IntelliSense**: Sugestões automáticas do editor
+- **Refatoração**: Mudanças seguras no código
+- **Documentação**: Tipos explicam o que cada coisa faz
+
+**Quando usar?**
+- Quando você quer evitar erros
+- Quando precisa de ajuda do editor
+- Quando quer facilitar refatoração
+- Quando precisa de documentação
+
+**📚 Conceito Detalhado: IntelliSense**
+
+**O que é IntelliSense?**
+É a capacidade do editor de sugerir automaticamente o que você pode fazer, como um assistente que te ajuda a escrever.
+
+**Como funciona?**
+```tsx
+// Quando você digita "card.", o editor sugere:
+card.id
+card.icon
+card.isFlipped
+card.isMatched
+```
+
+**Para que servem?**
+- **Produtividade**: Escrever código mais rápido
+- **Prevenção de erros**: Evitar erros de digitação
+- **Aprendizado**: Descobrir o que cada coisa faz
+- **Documentação**: Ver o que cada propriedade faz
+
+**Quando usar?**
+- Quando você quer escrever código mais rápido
+- Quando quer evitar erros
+- Quando está aprendendo
+- Quando precisa de documentação
+
+**📚 Conceito Detalhado: Princípio SOLID - ISP**
+
+**O que é o Princípio da Segregação de Interface (ISP)?**
+É o princípio que diz que os clientes não devem depender de interfaces que não usam, como ter apenas as ferramentas que você precisa.
+
+**Como funciona?**
+```tsx
+// ❌ Ruim: Interface muito grande
+interface GameInterface {
+  // Métodos do jogo
+  startGame(): void;
+  pauseGame(): void;
+  resetGame(): void;
+  // Métodos de UI
+  showMessage(): void;
+  hideMessage(): void;
+  // Métodos de som
+  playSound(): void;
+  stopSound(): void;
+}
+
+// ✅ Bom: Interfaces específicas
+interface GameLogic {
+  startGame(): void;
+  pauseGame(): void;
+  resetGame(): void;
+}
+
+interface GameUI {
+  showMessage(): void;
+  hideMessage(): void;
+}
+```
+
+**Para que servem?**
+- **Flexibilidade**: Usar apenas o que precisa
+- **Manutenção**: Fácil de modificar e estender
+- **Testes**: Testar apenas o que é relevante
+- **Reutilização**: Interfaces podem ser reutilizadas
+
+**Quando usar?**
+- Quando você tem interfaces muito grandes
+- Quando quer facilitar manutenção
+- Quando precisa de flexibilidade
+- Quando quer facilitar testes
 
 **❌ ANTES (Sem tipos):**
 ```tsx
