@@ -854,11 +854,34 @@ body {
 
 **🎯 Efeito Visual Final:** Site completo com fundo azul, cards brancos, imagens com bordas coloridas, hobbies coloridos e footer centralizado - idêntico ao Next.js!
 
-### **📝 Etapa 8: Redefinir Seletores CSS (Sem Classes)**
+### **📝 Etapa 8: Finalização e Teste**
 
-**🎯 O que vamos fazer:** Substituir classes CSS por seletores de elementos HTML, mantendo o resultado visual idêntico.
+**🎯 Objetivo:** Testar o protótipo HTML final e verificar se está funcionando corretamente.
 
-**1. Atualizar o HTML removendo classes:**
+**📚 O que vamos fazer:**
+- Abrir o arquivo `index.html` no navegador
+- Verificar se todas as imagens estão carregando
+- Testar a responsividade
+- Confirmar que o visual está igual ao Next.js
+
+**🎯 Teste Final:**
+1. **Abra o arquivo `index.html` no navegador**
+2. **Verifique se:**
+   - Fundo azul ocupa toda a tela
+   - Cards brancos estão centralizados
+   - Imagens têm bordas coloridas
+   - Hobbies têm cores diferentes
+   - Footer está centralizado
+
+**🎯 Resultado Esperado:**
+- **Visual idêntico** ao Next.js
+- **Funcionamento perfeito** em qualquer navegador
+- **Base sólida** para entender React/Next.js
+
+**🎯 Próximos Passos:**
+Agora que temos o protótipo HTML funcionando, vamos criar o projeto Next.js e aplicar os mesmos conceitos usando React!
+
+**1. Testar o protótipo HTML:**
 ```html
 <!DOCTYPE html>
 <html lang="pt-BR">
