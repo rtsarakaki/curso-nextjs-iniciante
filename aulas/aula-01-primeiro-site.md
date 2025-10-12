@@ -44,8 +44,8 @@ projeto/
 
 **1. Criar a pasta do projeto:**
 ```bash
-mkdir meu-primeiro-site-prototipo
-cd meu-primeiro-site-prototipo
+mkdir my-first-site-prototype
+cd my-first-site-prototype
 ```
 
 ### **📝 Etapa 1: Estrutura Básica (Sem Conteúdo)**
