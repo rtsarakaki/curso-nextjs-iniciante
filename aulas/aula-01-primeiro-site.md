@@ -1173,6 +1173,100 @@ footer div span {
 
 **🎯 Efeito Visual:** Idêntico ao anterior, mas usando apenas seletores de elementos HTML!
 
+### **📝 Exemplo Prático: Redefinir Container e Header**
+
+**🎯 Transformação Completa:**
+
+**ANTES (Com Classes):**
+```css
+/* Container principal */
+.container {
+    width: 100%;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+    padding: 20px;
+    background-color: #3B82F6;
+}
+
+/* Cabeçalho */
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.header h1 {
+    color: white;
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.header p {
+    font-size: 18px;
+    color: #DBEAFE;
+}
+```
+
+**DEPOIS (Seletores de Elementos):**
+```css
+/* Container principal (div) */
+div {
+    width: 100%;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+    padding: 20px;
+    background-color: #3B82F6;
+}
+
+/* Cabeçalho */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+header h1 {
+    color: white;
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+header p {
+    font-size: 18px;
+    color: #DBEAFE;
+}
+```
+
+**📚 Explicação da Transformação:**
+
+**🎯 Seletores Redefinidos:**
+- `.container` → `div`: Seleciona o elemento div diretamente
+- `.header` → `header`: Seleciona o elemento header diretamente
+- `.header h1` → `header h1`: Seleciona h1 dentro de header
+- `.header p` → `header p`: Seleciona p dentro de header
+
+**🎯 Vantagens:**
+- **HTML mais limpo**: Remove todas as classes
+- **CSS mais direto**: Seletores de elementos HTML
+- **Semântico**: Usa elementos HTML naturais
+- **Resultado idêntico**: Mesmo visual, código mais simples
+
+**🎯 Resultado:** Visual exatamente igual, mas usando apenas seletores de elementos HTML!
+
 **2. Criar o arquivo `index.html` com estrutura básica:**
 ```html
 <!DOCTYPE html>
