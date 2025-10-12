@@ -408,6 +408,58 @@ Se tudo deu certo, você deve ver:
 - ✅ Nenhum erro no console do navegador
 - ✅ O servidor Next.js continuando a rodar
 
+**📚 Conceito Detalhado: HTML**
+
+**O que é HTML?**
+HTML (HyperText Markup Language) é a linguagem que estrutura o conteúdo de uma página web - é como o "esqueleto" de um site, definindo o que é título, parágrafo, imagem, etc.
+
+**Como funciona?**
+```html
+<!-- HTML usa tags para estruturar conteúdo -->
+<div>          <!-- Container genérico -->
+  <h1>Título</h1>    <!-- Título principal -->
+  <p>Parágrafo</p>    <!-- Texto corrido -->
+</div>
+```
+
+**Para que serve?**
+- **Estrutura**: Organizar conteúdo de forma lógica
+- **Semântica**: Dar significado ao conteúdo
+- **Acessibilidade**: Leitores de tela entendem a estrutura
+- **SEO**: Motores de busca compreendem o conteúdo
+
+**Quando usar?**
+- **`<div>`**: Para containers e organização
+- **`<h1>`, `<h2>`, `<h3>`**: Para títulos e subtítulos
+- **`<p>`**: Para parágrafos e texto corrido
+- **`<img>`**: Para imagens
+- **`<a>`**: Para links
+
+**📚 Conceito Detalhado: Tags HTML**
+
+**O que são tags HTML?**
+São "etiquetas" que envolvem o conteúdo para dizer ao navegador o que cada parte representa.
+
+**Como funcionam?**
+```html
+<!-- Tags têm abertura e fechamento -->
+<h1>Meu Título</h1>     <!-- Tag de abertura e fechamento -->
+<div>Conteúdo</div>     <!-- Container com conteúdo -->
+<img src="foto.jpg" />  <!-- Tag que não precisa fechar -->
+```
+
+**Para que servem?**
+- **Organização**: Estruturar conteúdo de forma hierárquica
+- **Significado**: Cada tag tem um propósito específico
+- **Estilização**: CSS pode estilizar cada tag
+- **Interação**: JavaScript pode interagir com cada tag
+
+**Quando usar?**
+- **`<div>`**: Quando você precisa de um container genérico
+- **`<h1>`**: Para o título mais importante da página
+- **`<p>`**: Para parágrafos e texto corrido
+- **`<span>`**: Para texto inline com estilo específico
+
 **🎯 Explicação Detalhada do Código:**
 
 **1. Estrutura do componente:**
@@ -433,7 +485,7 @@ Se tudo deu certo, você deve ver:
 - **Como funciona**: Facilita colaboração e manutenção
 
 **💡 Analogia didática:**
-É como construir a primeira peça de um quebra-cabeça! O componente `Home` é a peça principal que vai no centro, o `export default` é como colocar uma etiqueta "PEÇA PRINCIPAL" nela, o JSX é como ter instruções de montagem em português mas usando peças universais, e a estrutura de arquivos é como ter uma caixa organizada onde cada peça tem seu lugar!
+É como construir a primeira peça de um quebra-cabeça! O **HTML** é como o esqueleto de um boneco - define onde fica a cabeça (`<h1>`), o corpo (`<div>`), e os braços. O componente `Home` é a peça principal que vai no centro, o `export default` é como colocar uma etiqueta "PEÇA PRINCIPAL" nela, o JSX é como ter instruções de montagem em português mas usando peças universais, e a estrutura de arquivos é como ter uma caixa organizada onde cada peça tem seu lugar!
 
 ### **Passo 2: Criar o container principal**
 
