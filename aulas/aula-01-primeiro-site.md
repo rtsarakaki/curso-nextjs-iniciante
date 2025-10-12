@@ -883,11 +883,17 @@ body {
 
 /* Container principal */
 .container {
-    max-width: 800px;
-    margin: 0 auto;
+    width: 100%;
+    margin: 0;
     padding: 20px;
     background-color: #3B82F6;
     min-height: 100vh;
+}
+
+/* Conteúdo centralizado */
+.main-content {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 /* Header */
@@ -895,6 +901,9 @@ body {
     text-align: center;
     margin-bottom: 40px;
     color: white;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .header h1 {
@@ -1021,6 +1030,9 @@ body {
     text-align: center;
     color: white;
     margin-top: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .footer-icons {
@@ -1048,6 +1060,8 @@ body {
 - **Imagens**: Bordas coloridas e overlay
 - **Hobbies**: Cores diferentes para cada card
 - **Espaçamento**: Padding e margins iguais ao Tailwind
+- **Fundo azul**: Ocupa toda a tela (width: 100%)
+- **Conteúdo centralizado**: Header, main e footer com max-width: 800px
 
 ## 🛠️ Preparação do Ambiente
 
