@@ -145,7 +145,7 @@ body {
 **2. Adicionar CSS do container e header:**
 ```css
 /* Container principal */
-.container {
+div {
     width: 100%;
     margin: 0;
     min-height: 100vh;
@@ -158,7 +158,7 @@ body {
 }
 
 /* Cabeçalho */
-.header {
+header {
     text-align: center;
     margin-bottom: 40px;
     max-width: 800px;
@@ -167,24 +167,25 @@ body {
     width: 100%;
 }
 
-.header h1 {
+header h1 {
     color: white;
     font-size: 32px;
     margin-bottom: 8px;
 }
 
-.header p {
+header p {
     font-size: 18px;
     color: #DBEAFE;
 }
 ```
 
 **📚 Explicação das Tags HTML:**
-- `<header class="header">`: Cabeçalho da página
+- `<header>`: Cabeçalho da página (sem classe)
 - `<h1>`: Título principal (maior)
 - `<p>`: Parágrafo de texto
 
 **📚 Explicação do CSS Container:**
+- `div {}`: Seleciona o elemento div diretamente (sem classe)
 - `width: 100%`: Ocupa toda a largura da tela
 - `min-height: 100vh`: Altura mínima de 100% da viewport
 - `display: flex`: Ativa flexbox para centralização
