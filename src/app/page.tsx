@@ -5,7 +5,7 @@ import FirstSite from '@/aulas/aula-01/FirstSite';
 import MemoryGame from '@/aulas/aula-02/MemoryGame';
 
 export default function Home() {
-  const [currentLesson, setCurrentLesson] = useState('aula-01');
+  const [currentLesson, setCurrentLesson] = useState('aula-02');
 
   const lessons = [
     { id: 'aula-01', name: 'Aula 1: Meu Primeiro Site Bonito', component: FirstSite },
