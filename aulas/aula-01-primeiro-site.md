@@ -800,13 +800,13 @@ footer p {
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div>
-        <header>
+    <div class="container">
+        <header class="header">
             <h1>Olá! Eu sou [SEU NOME]</h1>
             <p>Desenvolvedor em formação ⚡</p>
         </header>
 
-        <main>
+        <main class="main-content">
             <section class="card">
                 <h2>Sobre Mim</h2>
                 <p>Estou aprendendo a criar sites incríveis! Meu objetivo é combinar design bonito com programação funcional. Cada dia é uma nova descoberta no mundo da programação web.</p>
@@ -853,7 +853,7 @@ footer p {
             </section>
         </main>
 
-        <footer>
+        <footer class="footer">
             <p>© 2024 - Feito com ❤️ e muito aprendizado!</p>
             <div class="footer-icons">
                 <span>⚡</span>
@@ -882,7 +882,7 @@ body {
 }
 
 /* Container principal */
-div {
+.container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
@@ -891,17 +891,17 @@ div {
 }
 
 /* Header */
-header {
+.header {
     text-align: center;
     margin-bottom: 40px;
     color: white;
 }
 
-header h1 {
+.header h1 {
     font-size: 32px;
 }
 
-header p {
+.header p {
     font-size: 18px;
     color: #DBEAFE;
 }
@@ -1017,7 +1017,7 @@ header p {
 }
 
 /* Footer */
-footer {
+.footer {
     text-align: center;
     color: white;
     margin-top: 40px;
