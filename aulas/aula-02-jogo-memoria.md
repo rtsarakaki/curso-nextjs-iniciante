@@ -3345,6 +3345,134 @@ Imagine que você tem um restaurante e os preços estão espalhados em todos os 
 - **Magic Numbers**: Por que evitar números "soltos" no código
 - **Configuração**: Como organizar configurações do projeto
 - **Manutenibilidade**: Como facilitar mudanças futuras
+- **Princípio SOLID**: Single Responsibility Principle (SRP)
+
+**📚 Conceito Detalhado: Constantes**
+
+**O que são constantes?**
+São valores que não mudam durante a execução do programa, como configurações fixas de um jogo.
+
+**Como funcionam?**
+```tsx
+// Constante simples
+const MAX_PLAYERS = 4;
+
+// Constante complexa
+const GAME_CONFIG = {
+  GRID_COLS: 4,
+  FLIP_DELAY: 1000,
+  MIN_MOVES: 8
+} as const;
+```
+
+**Para que servem?**
+- **Centralização**: Todos os valores em um lugar
+- **Legibilidade**: Nomes descritivos em vez de números
+- **Manutenção**: Mudar em um lugar, muda em todos
+- **Reutilização**: Mesmas constantes em vários lugares
+
+**Quando usar?**
+- Quando você tem valores que se repetem
+- Quando quer facilitar manutenção
+- Quando precisa de clareza
+- Quando quer organizar configurações
+
+**📚 Conceito Detalhado: Magic Numbers**
+
+**O que são magic numbers?**
+São números que aparecem no código sem explicação, como `1000` ou `4`, que não sabemos o que significam.
+
+**Como funcionam?**
+```tsx
+// ❌ Ruim: Magic numbers
+setTimeout(() => setFlippedCards([]), 1000);
+<div className="grid grid-cols-4 gap-4">
+
+// ✅ Bom: Constantes com nomes
+setTimeout(() => setFlippedCards([]), FLIP_DELAY);
+<div className={`grid grid-cols-${GRID_COLS} gap-4`}>
+```
+
+**Para que servem?**
+- **Clareza**: Saber o que cada número significa
+- **Manutenção**: Fácil de mudar valores
+- **Documentação**: Nomes explicam o propósito
+- **Debugging**: Fácil de encontrar e corrigir
+
+**Quando usar?**
+- Quando você tem números no código
+- Quando quer facilitar manutenção
+- Quando precisa de clareza
+- Quando quer documentar valores
+
+**📚 Conceito Detalhado: Configuração**
+
+**O que é configuração?**
+É a organização de valores e parâmetros que controlam como o programa funciona.
+
+**Como funciona?**
+```tsx
+// Arquivo de configuração
+export const GAME_CONFIG = {
+  GRID_COLS: 4,
+  FLIP_DELAY: 1000,
+  MIN_MOVES: 8
+} as const;
+
+// Usar configuração
+import { GAME_CONFIG } from './gameConfig';
+setTimeout(() => setFlippedCards([]), GAME_CONFIG.FLIP_DELAY);
+```
+
+**Para que servem?**
+- **Organização**: Valores organizados em um lugar
+- **Flexibilidade**: Fácil de mudar configurações
+- **Reutilização**: Mesmas configurações em vários lugares
+- **Manutenção**: Fácil de encontrar e modificar
+
+**Quando usar?**
+- Quando você tem muitas configurações
+- Quando quer facilitar manutenção
+- Quando precisa de organização
+- Quando quer flexibilidade
+
+**📚 Conceito Detalhado: Princípio SOLID - SRP**
+
+**O que é o Princípio da Responsabilidade Única (SRP)?**
+É o princípio que diz que cada arquivo deve ter apenas uma responsabilidade específica, como ter uma pessoa para cada tarefa.
+
+**Como funciona?**
+```tsx
+// ❌ Ruim: Múltiplas responsabilidades
+function GameComponent() {
+  // Gerencia estado
+  const [gameStarted, setGameStarted] = useState(false);
+  // Gerencia configurações
+  const GRID_COLS = 4;
+  const FLIP_DELAY = 1000;
+  // Gerencia interface
+  return <div>...</div>;
+}
+
+// ✅ Bom: Responsabilidades separadas
+// gameConfig.ts - Só configurações
+export const GAME_CONFIG = { ... };
+
+// GameComponent.tsx - Só interface
+function GameComponent() { ... }
+```
+
+**Para que servem?**
+- **Manutenção**: Fácil de modificar uma parte sem afetar outras
+- **Testes**: Cada parte pode ser testada isoladamente
+- **Reutilização**: Configurações podem ser reutilizadas
+- **Colaboração**: Várias pessoas podem trabalhar
+
+**Quando usar?**
+- Quando você tem código complexo
+- Quando quer facilitar manutenção
+- Quando trabalha em equipe
+- Quando quer código mais limpo
 
 **❌ ANTES (Magic numbers espalhados):**
 ```tsx
@@ -3405,6 +3533,137 @@ Imagine que você tem um bloco de LEGO que pode virar um carro, um avião ou um 
 - **Performance**: Como usar React.memo para otimizar
 - **Acessibilidade**: Como tornar componentes acessíveis para todos
 - **Props e Interfaces**: Como definir contratos claros
+- **Princípio SOLID**: Single Responsibility Principle (SRP) e Open/Closed Principle (OCP)
+
+**📚 Conceito Detalhado: Performance com React.memo**
+
+**O que é React.memo?**
+É uma função que otimiza componentes, evitando re-renderizações desnecessárias quando as props não mudaram.
+
+**Como funciona?**
+```tsx
+// Componente normal - re-renderiza sempre
+function Card({ icon, isFlipped, onClick }) {
+  return <div onClick={onClick}>...</div>;
+}
+
+// Componente otimizado - só re-renderiza quando props mudam
+const Card = memo(function Card({ icon, isFlipped, onClick }) {
+  return <div onClick={onClick}>...</div>;
+});
+```
+
+**Para que servem?**
+- **Performance**: Evitar re-renderizações desnecessárias
+- **Eficiência**: Usar menos recursos do computador
+- **Velocidade**: Aplicação mais rápida
+- **Escalabilidade**: Funciona bem com muitos componentes
+
+**Quando usar?**
+- Quando você tem componentes que re-renderizam muito
+- Quando quer melhorar performance
+- Quando tem muitos componentes na tela
+- Quando quer otimizar aplicação
+
+**📚 Conceito Detalhado: Acessibilidade**
+
+**O que é acessibilidade?**
+É a capacidade de tornar aplicações usáveis por pessoas com deficiências, como cegos, surdos ou pessoas com dificuldades motoras.
+
+**Como funciona?**
+```tsx
+// Componente acessível
+<div
+  role="button"
+  tabIndex={0}
+  aria-label={`Carta ${card.name}`}
+  onKeyDown={(e) => e.key === 'Enter' && onClick()}
+>
+  {isFlipped ? <IconComponent /> : <FaQuestion />}
+</div>
+```
+
+**Para que servem?**
+- **Inclusão**: Todos podem usar a aplicação
+- **Lei**: Muitos países exigem acessibilidade
+- **Mercado**: Mais pessoas podem usar
+- **Ética**: É o certo a fazer
+
+**Quando usar?**
+- Quando você quer incluir todos
+- Quando precisa cumprir leis
+- Quando quer expandir mercado
+- Quando quer fazer o certo
+
+**📚 Conceito Detalhado: Componentes Reutilizáveis**
+
+**O que são componentes reutilizáveis?**
+São componentes que podem ser usados em diferentes contextos, como peças de LEGO que se encaixam em vários brinquedos.
+
+**Como funcionam?**
+```tsx
+// Componente reutilizável
+function Card({ icon, isFlipped, onClick }) {
+  return <div onClick={onClick}>...</div>;
+}
+
+// Pode ser usado em diferentes jogos
+<Card icon="⚡" isFlipped={true} onClick={flipCard} />
+<Card icon="❤️" isFlipped={false} onClick={selectCard} />
+```
+
+**Para que servem?**
+- **Reutilização**: Mesmo código em vários lugares
+- **Consistência**: Mesmo comportamento em todo lugar
+- **Manutenção**: Mudar em um lugar, muda em todos
+- **Eficiência**: Não repetir código
+
+**Quando usar?**
+- Quando você tem código que se repete
+- Quando quer consistência
+- Quando precisa de manutenção fácil
+- Quando quer eficiência
+
+**📚 Conceito Detalhado: Princípio SOLID - SRP e OCP**
+
+**O que é o Princípio da Responsabilidade Única (SRP)?**
+É o princípio que diz que cada componente deve ter apenas uma responsabilidade específica.
+
+**O que é o Princípio Aberto/Fechado (OCP)?**
+É o princípio que diz que componentes devem estar abertos para extensão, mas fechados para modificação.
+
+**Como funcionam?**
+```tsx
+// ❌ Ruim: Múltiplas responsabilidades
+function Card({ icon, isFlipped, onClick, onHover, onFocus }) {
+  // Gerencia visual
+  // Gerencia interação
+  // Gerencia acessibilidade
+  // Gerencia performance
+}
+
+// ✅ Bom: Responsabilidade única
+function Card({ icon, isFlipped, onClick }) {
+  // Só gerencia apresentação
+  return <div onClick={onClick}>...</div>;
+}
+
+// ✅ Bom: Aberto para extensão
+const AccessibleCard = memo(Card);
+const AnimatedCard = withAnimation(Card);
+```
+
+**Para que servem?**
+- **Manutenção**: Fácil de modificar uma parte sem afetar outras
+- **Testes**: Cada parte pode ser testada isoladamente
+- **Reutilização**: Componentes podem ser reutilizados
+- **Extensibilidade**: Fácil de adicionar novas funcionalidades
+
+**Quando usar?**
+- Quando você tem código complexo
+- Quando quer facilitar manutenção
+- Quando trabalha em equipe
+- Quando quer código mais limpo
 
 **❌ ANTES (Componente genérico e lento):**
 ```tsx
