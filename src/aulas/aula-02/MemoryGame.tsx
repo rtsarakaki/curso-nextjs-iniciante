@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 
-// Ícones para as cartas (usando símbolos Unicode que funcionam melhor)
-const emojis = ['🐶', '🐱', '🐭', '🐹', '🐰', '🦊', '🐻', '🐼'];
+// Ícones para as cartas (usando ícones simples)
+const icons = ['⚡', '★', '●', '▲', '◆', '■', '♦', '▼'];
 
 export default function MemoryGame() {
   // Estado do jogo
@@ -15,8 +15,8 @@ export default function MemoryGame() {
 
   // Iniciar novo jogo
   const startNewGame = () => {
-    // Duplicar emojis e embaralhar
-    const gameCards = [...emojis, ...emojis].sort(() => Math.random() - 0.5);
+    // Duplicar ícones e embaralhar
+    const gameCards = [...icons, ...icons].sort(() => Math.random() - 0.5);
     setCards(gameCards);
     setFlippedCards([]);
     setMatchedCards([]);
@@ -63,7 +63,7 @@ export default function MemoryGame() {
             🧠 Jogo da Memória
           </h1>
           <p className="text-xl text-blue-100 mb-6">
-            Encontre os pares de emojis!
+            Encontre os pares de ícones!
           </p>
           
           {/* Controles */}
@@ -86,7 +86,7 @@ export default function MemoryGame() {
         {/* Grid do jogo */}
         {gameStarted && (
           <div className="grid grid-cols-4 gap-4 max-w-2xl mx-auto">
-            {cards.map((emoji, index) => {
+            {cards.map((icon, index) => {
               const isFlipped = flippedCards.includes(index);
               const isMatched = matchedCards.includes(index);
               
@@ -105,7 +105,7 @@ export default function MemoryGame() {
                     hover:scale-110
                   `}
                 >
-                  {isFlipped || isMatched ? emoji : '❓'}
+                  {isFlipped || isMatched ? icon : '❓'}
                 </div>
               );
             })}
@@ -141,7 +141,7 @@ export default function MemoryGame() {
             <ul className="text-lg text-gray-600 space-y-2">
               <li>• Clique em "Começar Jogo" para iniciar</li>
               <li>• Clique nas cartas para virá-las</li>
-              <li>• Encontre os pares de emojis iguais</li>
+              <li>• Encontre os pares de ícones iguais</li>
               <li>• Complete o jogo com o menor número de movimentos!</li>
             </ul>
           </div>
