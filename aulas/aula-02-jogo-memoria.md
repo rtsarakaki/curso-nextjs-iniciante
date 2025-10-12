@@ -965,10 +965,17 @@ Agora que temos o jogo funcionando, vamos aplicar **princípios SOLID** e **boas
 
 ### **Passo 17: Extrair Custom Hook (useMemoryGame) - Aplicando SOLID**
 
-**🎯 Objetivo:** Separar a lógica do jogo da interface, seguindo o **Single Responsibility Principle**.
+**🎯 O que vamos fazer:**
+Vamos separar a lógica do jogo da interface, criando um hook personalizado que gerencia todo o estado e as ações do jogo.
 
 **🧠 Por que isso é importante?**
 Imagine que você tem um carro onde o motor, a direção e o freio estão todos misturados em uma única peça. Se quebrar o motor, você teria que trocar tudo! É a mesma coisa no código.
+
+**🎯 O que vamos aprender:**
+- **Custom Hooks**: Como criar hooks personalizados
+- **Separação de Responsabilidades**: Lógica separada da UI
+- **Reutilização**: Hook pode ser usado em outros jogos
+- **Testabilidade**: Lógica isolada é mais fácil de testar
 
 **❌ ANTES (Lógica misturada com UI):**
 ```tsx
@@ -1058,10 +1065,17 @@ export function useMemoryGame() {
 
 ### **Passo 18: Criar Tipos TypeScript - Aplicando SOLID**
 
-**🎯 Objetivo:** Adicionar tipagem forte para melhor IntelliSense e menos erros.
+**🎯 O que vamos fazer:**
+Vamos criar interfaces TypeScript para definir exatamente como cada "peça" do nosso jogo deve ser, como se fossem plantas de uma casa.
 
 **🧠 Por que isso é importante?**
 Imagine que você está construindo uma casa e não tem plantas. Você pode acabar colocando a porta no lugar da janela! Os tipos TypeScript são como as plantas da sua casa - eles te mostram exatamente o que cada "peça" deve ser.
+
+**🎯 O que vamos aprender:**
+- **Interfaces**: Como definir contratos para nossos dados
+- **TypeScript**: Como adicionar tipagem forte ao JavaScript
+- **IntelliSense**: Como o VS Code nos ajuda com sugestões
+- **Prevenção de Erros**: Como evitar bugs antes que aconteçam
 
 **❌ ANTES (Sem tipos):**
 ```tsx
@@ -1113,10 +1127,17 @@ export interface GameActions {
 
 ### **Passo 19: Extrair Constantes - Aplicando SOLID**
 
-**🎯 Objetivo:** Centralizar configurações e evitar "magic numbers".
+**🎯 O que vamos fazer:**
+Vamos centralizar todas as configurações do jogo em um arquivo separado, evitando "números mágicos" espalhados pelo código.
 
 **🧠 Por que isso é importante?**
 Imagine que você tem um restaurante e os preços estão espalhados em todos os lugares: no cardápio, na cozinha, no caixa. Se quiser mudar o preço do hambúrguer, você tem que procurar em 10 lugares! É a mesma coisa com números no código.
+
+**🎯 O que vamos aprender:**
+- **Constantes**: Como centralizar valores importantes
+- **Magic Numbers**: Por que evitar números "soltos" no código
+- **Configuração**: Como organizar configurações do projeto
+- **Manutenibilidade**: Como facilitar mudanças futuras
 
 **❌ ANTES (Magic numbers espalhados):**
 ```tsx
@@ -1166,10 +1187,17 @@ export const GAME_MESSAGES = {
 
 ### **Passo 20: Componente Card Otimizado - Aplicando SOLID**
 
-**🎯 Objetivo:** Aplicar **Single Responsibility** e **Open/Closed Principle**.
+**🎯 O que vamos fazer:**
+Vamos criar um componente Card otimizado que pode ser usado em qualquer jogo de memória, com performance e acessibilidade.
 
 **🧠 Por que isso é importante?**
 Imagine que você tem um bloco de LEGO que pode virar um carro, um avião ou um barco, dependendo de como você monta. O componente Card é assim - ele pode ser usado em qualquer jogo de memória, mas sempre mantém sua função básica.
+
+**🎯 O que vamos aprender:**
+- **Componentes Reutilizáveis**: Como criar componentes que funcionam em vários contextos
+- **Performance**: Como usar React.memo para otimizar
+- **Acessibilidade**: Como tornar componentes acessíveis para todos
+- **Props e Interfaces**: Como definir contratos claros
 
 **❌ ANTES (Componente genérico e lento):**
 ```tsx
@@ -1254,10 +1282,17 @@ export default Card;
 
 ### **Passo 21: Componente GameBoard Otimizado - Aplicando SOLID**
 
-**🎯 Objetivo:** Aplicar **Single Responsibility** e **Dependency Inversion Principle**.
+**🎯 O que vamos fazer:**
+Vamos criar um componente GameBoard que organiza as cartas em um grid, sem precisar saber como cada carta funciona.
 
 **🧠 Por que isso é importante?**
 Imagine que você tem um tabuleiro de xadrez. O tabuleiro não precisa saber como cada peça funciona - ele só precisa saber onde colocar cada peça. O GameBoard é assim - ele não precisa saber como cada carta funciona, só precisa organizar elas.
+
+**🎯 O que vamos aprender:**
+- **Composição de Componentes**: Como juntar componentes menores
+- **Separação de Responsabilidades**: Cada componente tem sua função
+- **Props e Callbacks**: Como componentes se comunicam
+- **Grid Layout**: Como organizar elementos em grade
 
 **❌ ANTES (Lógica misturada):**
 ```tsx
@@ -1338,10 +1373,17 @@ export default GameBoard;
 
 ### **Passo 22: Componente Principal Refatorado - Aplicando SOLID**
 
-**🎯 Objetivo:** Aplicar **Single Responsibility** e **Dependency Inversion Principle** no componente principal.
+**🎯 O que vamos fazer:**
+Vamos refatorar o componente principal para ser um "coordenador" que junta todos os outros componentes, sem fazer o trabalho pesado.
 
 **🧠 Por que isso é importante?**
 Imagine que você é um maestro de orquestra. Você não precisa saber tocar cada instrumento - você só precisa coordenar os músicos para que toquem juntos. O componente principal é assim - ele não precisa saber como cada parte funciona, só precisa coordenar tudo.
+
+**🎯 O que vamos aprender:**
+- **Composição**: Como juntar componentes para formar um maior
+- **Coordenação**: Como um componente pode gerenciar outros
+- **Hooks Customizados**: Como usar nossa lógica separada
+- **Renderização Condicional**: Como mostrar componentes baseado no estado
 
 **❌ ANTES (Componente fazendo tudo):**
 ```tsx
@@ -1448,10 +1490,17 @@ export default function MemoryGame() {
 
 ### **Passo 23: Adicionar Performance e Acessibilidade - Aplicando SOLID**
 
-**🎯 Objetivo:** Aplicar **Performance** e **Acessibilidade** seguindo boas práticas.
+**🎯 O que vamos fazer:**
+Vamos otimizar nossos componentes para serem mais rápidos e acessíveis para todos os usuários.
 
 **🧠 Por que isso é importante?**
 Imagine que você está construindo uma casa. Não basta que ela seja bonita - ela precisa ser segura para todos, incluindo pessoas com deficiência, e eficiente no uso de energia. O código é assim - não basta funcionar, precisa ser acessível e performático.
+
+**🎯 O que vamos aprender:**
+- **Performance**: Como usar React.memo para otimizar componentes
+- **Acessibilidade**: Como tornar apps usáveis para pessoas com deficiência
+- **ARIA**: Como adicionar informações para leitores de tela
+- **Navegação por Teclado**: Como permitir uso sem mouse
 
 **❌ ANTES (Sem otimizações):**
 ```tsx
@@ -1553,10 +1602,17 @@ export default Header;
 
 ### **Passo 24: Testar a Refatoração - Aplicando SOLID**
 
-**🎯 Objetivo:** Validar que a refatoração funcionou corretamente e melhorou o código.
+**🎯 O que vamos fazer:**
+Vamos testar sistematicamente se nossa refatoração funcionou e se realmente melhorou o código.
 
 **🧠 Por que isso é importante?**
 Imagine que você reformou sua casa. Você não pode simplesmente assumir que tudo está funcionando - precisa testar cada cômodo, cada tomada, cada torneira. No código é igual - depois de refatorar, precisamos testar se tudo ainda funciona e se melhorou.
+
+**🎯 O que vamos aprender:**
+- **Testes de Performance**: Como verificar se o app está rápido
+- **Testes de Acessibilidade**: Como verificar se todos podem usar
+- **Testes de Funcionalidade**: Como verificar se tudo ainda funciona
+- **Testes de Código**: Como verificar se o código está melhor
 
 **❌ ANTES (Sem testes):**
 ```tsx
