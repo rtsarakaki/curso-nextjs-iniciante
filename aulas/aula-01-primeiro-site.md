@@ -654,6 +654,8 @@ section div {
     gap: 20px;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: flex-start;
+    min-height: auto;
 }
 
 /* Cards da galeria (mais específico) */
@@ -663,6 +665,9 @@ section:nth-of-type(2) div div {
     background-color: transparent;
     padding: 0;
     margin: 0;
+    height: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Imagens da galeria (mais específico) */
@@ -708,17 +713,24 @@ section:nth-of-type(3) div div h3 {
 - **`gap: 20px`**: Espaçamento entre elementos flex
 - **`flex-wrap: wrap`**: Permite quebra de linha
 - **`justify-content: center`**: Centraliza elementos
+- **`align-items: flex-start`**: Alinha elementos no topo
+- **`min-height: auto`**: Remove altura mínima desnecessária
 
 **Seletores Específicos:**
 - **`section:nth-of-type(2)`**: Apenas a segunda seção (galeria)
 - **`section:nth-of-type(3)`**: Apenas a terceira seção (hobbies)
 - **Por que usar**: Evita conflitos entre galeria e hobbies
 
+**Cards da Galeria:**
+- **`height: auto`**: Altura automática (sem sobra)
+- **`display: flex`**: Layout flexível para o card
+- **`flex-direction: column`**: Organiza imagem e texto verticalmente
+- **`background-color: transparent`**: Fundo transparente (sem azul)
+
 **Imagens da Galeria:**
 - **`width: 100%`**: Largura completa do container
 - **`height: 120px`**: Altura fixa de 120px (reduzida para melhor proporção)
 - **`object-fit: cover`**: Ajusta imagem mantendo proporção
-- **`background-color: transparent`**: Fundo transparente (sem azul)
 
 **Cards dos Hobbies:**
 - **`padding: 15px`**: Espaçamento interno reduzido para melhor proporção
