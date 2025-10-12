@@ -4,20 +4,281 @@
 Criar seu primeiro site bonito e responsivo, aprendendo os fundamentos de HTML e CSS de forma visual e divertida.
 
 ## ⚡ O que vamos criar
-Um site pessoal com:
+**Primeiro**: Um protótipo em HTML/CSS puro para entender os fundamentos
+**Depois**: O mesmo site em React/Next.js com componentes modernos
+
+**Estrutura do site:**
 - Cabeçalho com seu nome
 - Seção sobre você
 - Galeria de fotos
+- Seção de hobbies
 - Rodapé estilizado
 - Cores e animações bonitas
 
 ## 📖 O que vamos aprender
-- **HTML**: Estrutura de uma página web
-- **CSS Inline**: Estilização básica e didática
+- **HTML Puro**: Estrutura semântica e tags básicas
+- **CSS Puro**: Seletores, propriedades e layout
+- **Protótipo**: Como criar um site funcional em HTML/CSS
 - **React**: Componentes e JSX
+- **CSS Inline**: Estilização básica e didática
 - **Imagens**: Como adicionar e otimizar fotos
 - **Layout**: Posicionamento e espaçamento
 - **Cores**: Paleta de cores e design visual
+
+## 📚 Fundamentos: HTML e CSS Puros
+
+Antes de começar com Next.js, vamos entender os fundamentos criando um protótipo em HTML puro. Isso vai nos ajudar a entender como funciona a estrutura e estilização de uma página web.
+
+### **🎯 O que vamos criar primeiro:**
+Um arquivo HTML simples que será nosso protótipo, mostrando exatamente como ficará nosso site final.
+
+### **📁 Estrutura do Protótipo:**
+```
+projeto/
+  index.html          ← Nosso protótipo HTML
+  styles.css          ← Estilos CSS separados
+  images/             ← Pasta para imagens
+```
+
+### **🔧 Passo 0: Criar o protótipo HTML**
+
+**1. Criar a pasta do projeto:**
+```bash
+mkdir meu-primeiro-site-prototipo
+cd meu-primeiro-site-prototipo
+```
+
+**2. Criar o arquivo `index.html`:**
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Primeiro Site</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Cabeçalho -->
+        <header class="header">
+            <h1>Olá! Eu sou [SEU NOME]</h1>
+            <p>Desenvolvedor em formação ⚡</p>
+        </header>
+
+        <!-- Conteúdo principal -->
+        <main class="main-content">
+            <!-- Seção Sobre Mim -->
+            <section class="about-section">
+                <h2>Sobre Mim</h2>
+                <p>Olá! Sou um desenvolvedor em formação apaixonado por tecnologia e inovação. 
+                Estou aprendendo a criar sites incríveis e quero compartilhar minha jornada com vocês!</p>
+            </section>
+
+            <!-- Galeria de Fotos -->
+            <section class="gallery-section">
+                <h2>Minhas Fotos Favoritas</h2>
+                <div class="photo-gallery">
+                    <div class="photo-card">
+                        <img src="https://picsum.photos/400/300?random=1" alt="Paisagem 1">
+                        <p>● Paisagem 1</p>
+                    </div>
+                    <div class="photo-card">
+                        <img src="https://picsum.photos/400/300?random=2" alt="Paisagem 2">
+                        <p>● Paisagem 2</p>
+                    </div>
+                    <div class="photo-card">
+                        <img src="https://picsum.photos/400/300?random=3" alt="Paisagem 3">
+                        <p>● Paisagem 3</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção Hobbies -->
+            <section class="hobbies-section">
+                <h2>Meus Hobbies</h2>
+                <div class="hobbies-grid">
+                    <div class="hobby-card" style="background-color: #FEF3C7;">
+                        <span class="hobby-icon">📚</span>
+                        <h3>Ler</h3>
+                    </div>
+                    <div class="hobby-card" style="background-color: #DBEAFE;">
+                        <span class="hobby-icon">🎮</span>
+                        <h3>Jogar</h3>
+                    </div>
+                    <div class="hobby-card" style="background-color: #D1FAE5;">
+                        <span class="hobby-icon">🏃</span>
+                        <h3>Correr</h3>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Rodapé -->
+        <footer class="footer">
+            <p>© 2024 [SEU NOME]. Feito com ❤️ e muito ☕</p>
+        </footer>
+    </div>
+</body>
+</html>
+```
+
+**3. Criar o arquivo `styles.css`:**
+```css
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Container principal */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #3B82F6;
+    min-height: 100vh;
+}
+
+/* Cabeçalho */
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+    color: white;
+}
+
+.header h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 18px;
+    color: #DBEAFE;
+}
+
+/* Conteúdo principal */
+.main-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+/* Seções */
+.about-section, .gallery-section, .hobbies-section {
+    margin-bottom: 30px;
+}
+
+.about-section h2, .gallery-section h2, .hobbies-section h2 {
+    color: #1F2937;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.about-section p {
+    color: #6B7280;
+    font-size: 16px;
+}
+
+/* Galeria de fotos */
+.photo-gallery {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.photo-card {
+    text-align: center;
+    max-width: 200px;
+}
+
+.photo-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.photo-card p {
+    color: #6B7280;
+    font-weight: bold;
+}
+
+/* Hobbies */
+.hobbies-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.hobby-card {
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    min-width: 120px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.hobby-icon {
+    font-size: 24px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.hobby-card h3 {
+    color: #1F2937;
+    font-size: 16px;
+}
+
+/* Rodapé */
+.footer {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+.footer p {
+    color: #DBEAFE;
+}
+```
+
+**4. Abrir o protótipo:**
+- Salve os dois arquivos
+- Abra o `index.html` no navegador
+- Você verá exatamente como ficará nosso site final!
+
+### **📚 O que aprendemos com o protótipo:**
+
+**HTML:**
+- **Estrutura semântica**: `<header>`, `<main>`, `<section>`, `<footer>`
+- **Organização**: Como dividir uma página em seções lógicas
+- **Tags básicas**: `<h1>`, `<h2>`, `<p>`, `<div>`, `<img>`
+- **Atributos**: `class`, `src`, `alt`, `style`
+
+**CSS:**
+- **Seletores**: Como escolher elementos para estilizar
+- **Propriedades**: `color`, `background-color`, `padding`, `margin`
+- **Layout**: `display: flex`, `justify-content`, `align-items`
+- **Responsividade**: `flex-wrap`, `max-width`
+
+**🎯 Por que criar o protótipo primeiro?**
+- **Visualização**: Vemos o resultado final antes de programar
+- **Estrutura**: Entendemos a organização da página
+- **Estilos**: Vemos como CSS funciona na prática
+- **Referência**: Usamos como guia para criar em React
 
 ## 🛠️ Preparação do Ambiente
 
@@ -114,10 +375,10 @@ Antes de continuar, certifique-se de que:
 ### **Passo 1: Limpar o arquivo inicial**
 
 **🎯 O que vamos fazer:**
-Vamos começar do zero criando nossa primeira página React, entendendo os conceitos fundamentais de componentes, exportação e JSX.
+Agora vamos recriar nosso protótipo HTML em React! Já vimos como funciona em HTML puro, agora vamos transformar isso em componentes React modernos.
 
 **🧠 Por que isso é importante?**
-Todo site precisa de uma página principal! É como a porta de entrada da sua casa - é a primeira coisa que as pessoas veem. Vamos criar uma página simples mas funcional para entender como o React funciona.
+Agora que entendemos HTML e CSS puros, vamos ver como React torna isso mais poderoso e organizado. É como pegar nosso protótipo e transformá-lo em uma aplicação moderna e reutilizável!
 
 **📁 Localização do Arquivo:**
 O arquivo que vamos modificar está em:
