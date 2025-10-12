@@ -1336,8 +1336,25 @@ export default GameBoard;
 **💡 Analogia didática:**
 É como um organizador de gavetas. Ele não precisa saber o que tem dentro de cada gaveta, só precisa saber onde colocar cada uma. Se você trocar o conteúdo de uma gaveta, o organizador continua funcionando!
 
-### **Passo 22: Componente Principal Refatorado**
+### **Passo 22: Componente Principal Refatorado - Aplicando SOLID**
 
+**🎯 Objetivo:** Aplicar **Single Responsibility** e **Dependency Inversion Principle** no componente principal.
+
+**🧠 Por que isso é importante?**
+Imagine que você é um maestro de orquestra. Você não precisa saber tocar cada instrumento - você só precisa coordenar os músicos para que toquem juntos. O componente principal é assim - ele não precisa saber como cada parte funciona, só precisa coordenar tudo.
+
+**❌ ANTES (Componente fazendo tudo):**
+```tsx
+// PROBLEMA: Um componente gigante fazendo tudo
+function MemoryGame() {
+  // 200+ linhas de código
+  // Lógica do jogo misturada com UI
+  // Difícil de entender e manter
+  // Impossível de testar isoladamente
+}
+```
+
+**✅ DEPOIS (Componente coordenador):**
 ```tsx
 // src/aulas/aula-02/MemoryGame.tsx
 'use client';
@@ -1393,8 +1410,61 @@ export default function MemoryGame() {
 }
 ```
 
-### **Passo 23: Adicionar Performance e Acessibilidade**
+**🏗️ Princípios SOLID Aplicados:**
 
+**1. Single Responsibility Principle (SRP)**
+- **Responsabilidade**: Coordenar os componentes do jogo
+- **Não faz**: Lógica de negócio, renderização de cartas, validações
+
+**2. Dependency Inversion Principle (DIP)**
+- **Depende de abstrações**: Usa hooks e componentes
+- **Não depende de implementações**: Não sabe como cada componente funciona
+
+**🎯 O que estamos aprendendo:**
+
+**1. Composição de Componentes**
+- **O que é**: Juntar componentes menores para formar um maior
+- **Por que é importante**: Código mais organizado e reutilizável
+- **Como funciona**: Cada componente tem uma função específica
+
+**2. Separação de Responsabilidades**
+- **O que é**: Cada parte do código tem uma função específica
+- **Por que é importante**: Facilita manutenção e testes
+- **Como funciona**: Hook gerencia lógica, componentes gerenciam UI
+
+**3. Props e State Management**
+- **O que é**: Passar dados entre componentes
+- **Por que é importante**: Componentes podem se comunicar
+- **Como funciona**: Props vão "para baixo", callbacks vão "para cima"
+
+**🎯 Benefícios práticos:**
+1. **Legibilidade**: Código fácil de entender
+2. **Manutenibilidade**: Fácil de modificar
+3. **Testabilidade**: Cada parte pode ser testada
+4. **Reutilização**: Componentes podem ser reutilizados
+
+**💡 Analogia didática:**
+É como um diretor de filme. Ele não precisa saber atuar, filmar ou editar - ele só precisa coordenar a equipe para fazer um filme incrível!
+
+### **Passo 23: Adicionar Performance e Acessibilidade - Aplicando SOLID**
+
+**🎯 Objetivo:** Aplicar **Performance** e **Acessibilidade** seguindo boas práticas.
+
+**🧠 Por que isso é importante?**
+Imagine que você está construindo uma casa. Não basta que ela seja bonita - ela precisa ser segura para todos, incluindo pessoas com deficiência, e eficiente no uso de energia. O código é assim - não basta funcionar, precisa ser acessível e performático.
+
+**❌ ANTES (Sem otimizações):**
+```tsx
+// PROBLEMA: Re-renderiza sempre, mesmo quando não precisa
+// PROBLEMA: Não é acessível para pessoas com deficiência
+// PROBLEMA: Não funciona bem em dispositivos lentos
+function Header({ gameStarted, moves, onStartGame }) {
+  // Re-renderiza sempre, mesmo se nada mudou
+  return <header>...</header>;
+}
+```
+
+**✅ DEPOIS (Otimizado e acessível):**
 ```tsx
 // src/components/aula-02/Header/Header.tsx
 import { memo } from 'react';
@@ -1445,12 +1515,127 @@ Header.displayName = 'Header';
 export default Header;
 ```
 
-### **Passo 24: Testar a Refatoração**
+**🏗️ Princípios SOLID Aplicados:**
 
-1. **Performance**: Use React DevTools para verificar re-renders
-2. **Acessibilidade**: Teste com leitor de tela
-3. **Funcionalidade**: Verifique se o jogo ainda funciona
-4. **Código**: Verifique se está mais limpo e organizado
+**1. Single Responsibility Principle (SRP)**
+- **Responsabilidade**: Renderizar o cabeçalho do jogo
+- **Não faz**: Lógica de negócio, gerenciamento de estado
+
+**2. Open/Closed Principle (OCP)**
+- **Aberto para extensão**: Pode receber novos props
+- **Fechado para modificação**: Não precisa ser alterado para novas funcionalidades
+
+**🎯 O que estamos aprendendo:**
+
+**1. Performance com React.memo**
+- **O que é**: Evita re-renders desnecessários
+- **Por que é importante**: Aplicação mais rápida
+- **Como funciona**: Só re-renderiza quando props mudam
+
+**2. Acessibilidade (A11y)**
+- **O que é**: Tornar o app usável para todos
+- **Por que é importante**: Inclusão e melhor experiência
+- **Como funciona**: ARIA labels, roles, navegação por teclado
+
+**3. Atributos ARIA**
+- **`aria-label`**: Descreve o botão para leitores de tela
+- **`role="status"`**: Indica que é informação dinâmica
+- **`aria-live="polite"`**: Anuncia mudanças sem interromper
+
+**🎯 Benefícios práticos:**
+1. **Performance**: App mais rápido e responsivo
+2. **Acessibilidade**: Usável por pessoas com deficiência
+3. **UX**: Melhor experiência para todos
+4. **SEO**: Melhor posicionamento nos buscadores
+
+**💡 Analogia didática:**
+É como ter uma casa com rampa de acesso (acessibilidade) e painéis solares (performance). A casa fica mais inclusiva e eficiente!
+
+### **Passo 24: Testar a Refatoração - Aplicando SOLID**
+
+**🎯 Objetivo:** Validar que a refatoração funcionou corretamente e melhorou o código.
+
+**🧠 Por que isso é importante?**
+Imagine que você reformou sua casa. Você não pode simplesmente assumir que tudo está funcionando - precisa testar cada cômodo, cada tomada, cada torneira. No código é igual - depois de refatorar, precisamos testar se tudo ainda funciona e se melhorou.
+
+**❌ ANTES (Sem testes):**
+```tsx
+// PROBLEMA: Não sabemos se a refatoração quebrou algo
+// PROBLEMA: Não sabemos se melhorou a performance
+// PROBLEMA: Não sabemos se está acessível
+// PROBLEMA: Código pode estar pior que antes
+```
+
+**✅ DEPOIS (Com testes sistemáticos):**
+```tsx
+// 1. Teste de Performance
+// 2. Teste de Acessibilidade  
+// 3. Teste de Funcionalidade
+// 4. Teste de Código
+```
+
+**🏗️ Princípios SOLID Aplicados:**
+
+**1. Single Responsibility Principle (SRP)**
+- **Responsabilidade**: Validar que cada parte funciona isoladamente
+- **Não faz**: Testar tudo de uma vez
+
+**2. Open/Closed Principle (OCP)**
+- **Aberto para extensão**: Pode adicionar novos testes
+- **Fechado para modificação**: Testes existentes não precisam mudar
+
+**🎯 O que estamos aprendendo:**
+
+**1. Testes de Performance**
+- **O que é**: Verificar se o app está rápido
+- **Por que é importante**: Usuários não gostam de apps lentos
+- **Como funciona**: React DevTools mostra re-renders
+
+**2. Testes de Acessibilidade**
+- **O que é**: Verificar se pessoas com deficiência conseguem usar
+- **Por que é importante**: Inclusão e melhor experiência
+- **Como funciona**: Leitores de tela, navegação por teclado
+
+**3. Testes de Funcionalidade**
+- **O que é**: Verificar se o jogo ainda funciona
+- **Por que é importante**: Refatoração não pode quebrar funcionalidades
+- **Como funciona**: Testar cada funcionalidade manualmente
+
+**4. Testes de Código**
+- **O que é**: Verificar se o código está melhor
+- **Por que é importante**: Código limpo é mais fácil de manter
+- **Como funciona**: Revisar estrutura, legibilidade, organização
+
+**🎯 Como testar cada aspecto:**
+
+**1. Performance:**
+- Abra React DevTools
+- Veja quantos re-renders acontecem
+- Compare com a versão anterior
+
+**2. Acessibilidade:**
+- Use leitor de tela (NVDA, JAWS, VoiceOver)
+- Navegue apenas com teclado (Tab, Enter, Space)
+- Verifique contraste de cores
+
+**3. Funcionalidade:**
+- Inicie o jogo
+- Jogue algumas partidas
+- Teste todos os botões e interações
+
+**4. Código:**
+- Verifique se está organizado
+- Confirme se é legível
+- Valide se segue os princípios SOLID
+
+**🎯 Benefícios práticos:**
+1. **Confiança**: Sabemos que funciona
+2. **Qualidade**: Código melhor e mais limpo
+3. **Manutenibilidade**: Fácil de modificar
+4. **Performance**: App mais rápido
+
+**💡 Analogia didática:**
+É como fazer um check-up completo no carro depois de uma revisão. Você testa motor, freios, direção, luzes - tudo para ter certeza de que está funcionando perfeitamente!
 
 ## 🎯 **Resumo das Vantagens da Refatoração**
 
