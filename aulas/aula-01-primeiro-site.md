@@ -488,15 +488,21 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333;
+    margin: 0;
+    padding: 0;
 }
 
 /* Container principal */
 div {
-    max-width: 800px;
-    margin: 0 auto;
+    width: 100%;
+    margin: 0;
     padding: 20px;
     background-color: #3B82F6;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
 }
 
 /* Cabeçalho */
@@ -888,6 +894,10 @@ body {
     padding: 20px;
     background-color: #3B82F6;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
 }
 
 /* Conteúdo centralizado */
