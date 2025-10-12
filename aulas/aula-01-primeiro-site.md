@@ -334,15 +334,15 @@ my-first-site-prototype/
                 <h2>Meus Hobbies</h2>
                 <div>
                     <div>
-                        <span>📚</span>
+                        <span>📖</span>
                         <h3>Ler</h3>
                     </div>
                     <div>
-                        <span>🎮</span>
-                        <h3>Jogar</h3>
+                        <span>⚡</span>
+                        <h3>Gaming</h3>
                     </div>
                     <div>
-                        <span>🏃</span>
+                        <span>▲</span>
                         <h3>Correr</h3>
                     </div>
                 </div>
@@ -363,13 +363,12 @@ my-first-site-prototype/
 **`<h3>`**: Subtítulo de nível 3 (nome do hobby)
 
 **📚 Símbolos Unicode dos Hobbies:**
+- **`📖`**: Livro (Ler) - `Alt + 1F4D6` (Windows) / `Option + 1F4D6` (Mac)
 - **`⚡`**: Raio (Gaming) - `Alt + 26A1` (Windows) / `Option + 26A1` (Mac)
-- **`★`**: Estrela (Design) - `Alt + 2605` (Windows) / `Option + 2605` (Mac)
-- **`●`**: Círculo (Natureza) - `Alt + 25CF` (Windows) / `Option + 25CF` (Mac)
-- **`▲`**: Triângulo (Culinária) - `Alt + 25B2` (Windows) / `Option + 25B2` (Mac)
+- **`▲`**: Triângulo (Correr) - `Alt + 25B2` (Windows) / `Option + 25B2` (Mac)
 
 **💡 Como adicionar os símbolos:**
-- **Mais fácil**: Copie e cole diretamente: ⚡ ★ ● ▲
+- **Mais fácil**: Copie e cole diretamente: 📖 ⚡ ▲
 - **VS Code**: `Ctrl+Shift+P` → "Insert Unicode" → digite o código
 - **Sites**: Unicode.org, CopyPasteCharacter.com
 
@@ -424,15 +423,15 @@ my-first-site-prototype/
                 <h2>Meus Hobbies</h2>
                 <div>
                     <div>
-                        <span>📚</span>
+                        <span>📖</span>
                         <h3>Ler</h3>
                     </div>
                     <div>
-                        <span>🎮</span>
-                        <h3>Jogar</h3>
+                        <span>⚡</span>
+                        <h3>Gaming</h3>
                     </div>
                     <div>
-                        <span>🏃</span>
+                        <span>▲</span>
                         <h3>Correr</h3>
                     </div>
                 </div>
@@ -440,7 +439,7 @@ my-first-site-prototype/
         </main>
 
         <footer>
-            <p>© 2024 [SEU NOME]. Feito com ❤️ e muito ☕</p>
+            <p>© 2024 [SEU NOME]. Feito com ❤️ e muito aprendizado!</p>
         </footer>
     </div>
 </body>
@@ -1911,9 +1910,10 @@ backgroundColor: '#FEF3C7' // Amarelo claro
 4. **Adicione ícones** - Use ícones Unicode simples (⚡, ★, ●, ▲)
 
 ### **💡 Dica sobre Ícones:**
-- **Use ícones Unicode simples** - ⚡, ★, ●, ▲, 📷
+- **Use ícones Unicode simples** - ⚡, ★, ●, ▲, 📖
 - **Evite emojis complexos** - Podem não funcionar em todos os sistemas
 - **Mantenha consistência** - Use o mesmo estilo de ícones
+- **Linux**: Use símbolos básicos (⚡, ★, ●, ▲) para melhor compatibilidade
 
 ### **🔤 Como Adicionar Símbolos Unicode:**
 
