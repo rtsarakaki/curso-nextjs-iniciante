@@ -25,22 +25,25 @@ Criar seu primeiro site bonito e responsivo, aprendendo os fundamentos de HTML e
 - **Layout**: Posicionamento e espaçamento
 - **Cores**: Paleta de cores e design visual
 
-## 📚 Fundamentos: HTML e CSS Puros
+## 📚 Fundamentos: HTML e CSS Puros (Evolutivo)
 
-Antes de começar com Next.js, vamos entender os fundamentos criando um protótipo em HTML puro. Isso vai nos ajudar a entender como funciona a estrutura e estilização de uma página web.
+Antes de começar com Next.js, vamos entender os fundamentos criando um protótipo em HTML puro. Vamos construir passo a passo, vendo o efeito de cada bloco de estilização na página.
 
-### **🎯 O que vamos criar primeiro:**
-Um arquivo HTML simples que será nosso protótipo, mostrando exatamente como ficará nosso site final.
+### **🎯 O que vamos criar:**
+Um arquivo HTML completo que será nosso protótipo, mostrando exatamente como ficará nosso site final.
 
 ### **📁 Estrutura do Protótipo:**
 ```
-projeto/
+my-first-site-prototype/
   index.html          ← Nosso protótipo HTML
   styles.css          ← Estilos CSS separados
   images/             ← Pasta para imagens
+    photo1.jpg        ← Lago Moraine
+    photo2.jpg        ← Paisagem Natural  
+    photo3.jpg        ← Manhã Serena
 ```
 
-### **🔧 Passo 0: Criar o protótipo HTML (Evolutivo)**
+### **🔧 Passo 0: Preparar o Ambiente**
 
 **1. Criar a pasta do projeto:**
 ```bash
@@ -56,18 +59,793 @@ mkdir images
 **3. Baixar as imagens para a pasta:**
 - Copie as imagens `photo1.jpg`, `photo2.jpg`, `photo3.jpg` da pasta `public/images/` do projeto Next.js
 - Cole na pasta `images/` do protótipo HTML
-- **Estrutura final:**
-```
-my-first-site-prototype/
-  index.html          ← Nosso protótipo HTML
-  styles.css          ← Estilos CSS separados
-  images/             ← Pasta para imagens
-    photo1.jpg        ← Lago Moraine
-    photo2.jpg        ← Paisagem Natural  
-    photo3.jpg        ← Manhã Serena
+
+### **📝 Etapa 1: Estrutura Básica + Reset CSS**
+
+**1. Criar o arquivo `index.html` com estrutura básica:**
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Primeiro Site Bonito</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Conteúdo será adicionado aqui -->
+    </div>
+</body>
+</html>
 ```
 
-### **📝 Etapa 1: Estrutura Básica (Sem Conteúdo)**
+**2. Criar o arquivo `styles.css` com reset básico:**
+```css
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo do corpo */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #1F2937;
+    margin: 0;
+    padding: 0;
+}
+```
+
+**📚 Explicação das Tags HTML:**
+- `<!DOCTYPE html>`: Declara que é HTML5
+- `<html lang="pt-BR">`: Elemento raiz, idioma português brasileiro
+- `<head>`: Metadados da página
+- `<meta charset="UTF-8">`: Codificação de caracteres
+- `<meta name="viewport"...>`: Configuração para dispositivos móveis
+- `<title>`: Título da aba do navegador
+- `<link rel="stylesheet" href="styles.css">`: Conecta arquivo CSS
+- `<body>`: Conteúdo visível da página
+- `<div class="container">`: Container principal com classe CSS
+
+**📚 Explicação do CSS Reset:**
+- `* { margin: 0; padding: 0; }`: Remove espaçamentos padrão de todos os elementos
+- `box-sizing: border-box`: Inclui padding e border no cálculo da largura
+- `font-family`: Define fonte moderna do sistema
+- `line-height: 1.6`: Espaçamento entre linhas para melhor legibilidade
+- `color: #1F2937`: Cor do texto (cinza escuro)
+
+**🎯 Efeito Visual:** Página em branco com fundo branco, sem margens/padding padrão
+
+### **📝 Etapa 2: Container Principal + Fundo Azul**
+
+**1. Atualizar o HTML com header:**
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Primeiro Site Bonito</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Olá! Eu sou [SEU NOME]</h1>
+            <p>Desenvolvedor em formação ⚡</p>
+        </header>
+    </div>
+</body>
+</html>
+```
+
+**2. Adicionar CSS do container e header:**
+```css
+/* Container principal */
+.container {
+    width: 100%;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+    padding: 20px;
+    background-color: #3B82F6;
+}
+
+/* Cabeçalho */
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.header h1 {
+    color: white;
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.header p {
+    font-size: 18px;
+    color: #DBEAFE;
+}
+```
+
+**📚 Explicação das Tags HTML:**
+- `<header class="header">`: Cabeçalho da página
+- `<h1>`: Título principal (maior)
+- `<p>`: Parágrafo de texto
+
+**📚 Explicação do CSS Container:**
+- `width: 100%`: Ocupa toda a largura da tela
+- `min-height: 100vh`: Altura mínima de 100% da viewport
+- `display: flex`: Ativa flexbox para centralização
+- `flex-direction: column`: Organiza elementos verticalmente
+- `align-items: center`: Centraliza horizontalmente
+- `background-color: #3B82F6`: Fundo azul (blue-500 do Tailwind)
+- `padding: 20px`: Espaçamento interno
+
+**🎯 Efeito Visual:** Página com fundo azul, título branco centralizado
+
+### **📝 Etapa 3: Adicionar Main + Cards Brancos**
+
+**1. Atualizar o HTML com main e cards:**
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Primeiro Site Bonito</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Olá! Eu sou [SEU NOME]</h1>
+            <p>Desenvolvedor em formação ⚡</p>
+        </header>
+
+        <main class="main-content">
+            <section class="card">
+                <h2>Sobre Mim</h2>
+                <p>Estou aprendendo a criar sites incríveis! Meu objetivo é combinar design bonito com programação funcional. Cada dia é uma nova descoberta no mundo da programação web.</p>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
+```
+
+**2. Adicionar CSS dos cards:**
+```css
+/* Conteúdo principal */
+.main-content {
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 20px;
+}
+
+/* Cards brancos (como no Next.js) */
+.card {
+    background-color: white;
+    padding: 32px;
+    margin-bottom: 32px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+    color: #1F2937;
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+.card p {
+    color: #6B7280;
+    font-size: 16px;
+    line-height: 1.6;
+}
+```
+
+**📚 Explicação das Tags HTML:**
+- `<main class="main-content">`: Conteúdo principal da página
+- `<section class="card">`: Seção em formato de card
+- `<h2>`: Subtítulo (menor que h1)
+- `<p>`: Parágrafo de texto
+
+**📚 Explicação do CSS Cards:**
+- `background-color: white`: Fundo branco do card
+- `padding: 32px`: Espaçamento interno (igual ao p-8 do Tailwind)
+- `margin-bottom: 32px`: Espaçamento inferior (igual ao mb-8 do Tailwind)
+- `border-radius: 8px`: Cantos arredondados (igual ao rounded-lg do Tailwind)
+- `box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1)`: Sombra sutil para profundidade
+
+**🎯 Efeito Visual:** Card branco com sombra sobre fundo azul
+
+### **📝 Etapa 4: Adicionar Galeria de Fotos**
+
+**1. Atualizar o HTML com galeria:**
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Primeiro Site Bonito</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Olá! Eu sou [SEU NOME]</h1>
+            <p>Desenvolvedor em formação ⚡</p>
+        </header>
+
+        <main class="main-content">
+            <section class="card">
+                <h2>Sobre Mim</h2>
+                <p>Estou aprendendo a criar sites incríveis! Meu objetivo é combinar design bonito com programação funcional. Cada dia é uma nova descoberta no mundo da programação web.</p>
+            </section>
+
+            <section class="card">
+                <h2>Minhas Fotos</h2>
+                <div class="gallery">
+                    <div class="image-card border-red">
+                        <img src="images/photo1.jpg" alt="Lago Moraine">
+                        <div class="overlay">● Lago Moraine</div>
+                    </div>
+                    <div class="image-card border-green">
+                        <img src="images/photo2.jpg" alt="Paisagem">
+                        <div class="overlay">● Paisagem</div>
+                    </div>
+                    <div class="image-card border-blue">
+                        <img src="images/photo3.jpg" alt="Manhã">
+                        <div class="overlay">● Manhã</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
+```
+
+**2. Adicionar CSS da galeria:**
+```css
+/* Galeria de fotos */
+.gallery {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.image-card {
+    width: 192px;
+    height: 144px;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid;
+}
+
+.image-card.border-red {
+    border-color: #EF4444; /* red-500 */
+}
+
+.image-card.border-green {
+    border-color: #10B981; /* green-500 */
+}
+
+.image-card.border-blue {
+    border-color: #3B82F6; /* blue-500 */
+}
+
+.image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 4px;
+    text-align: center;
+    font-size: 14px;
+}
+```
+
+**📚 Explicação das Tags HTML:**
+- `<div class="gallery">`: Container da galeria
+- `<div class="image-card">`: Card individual da imagem
+- `<img src="images/photo1.jpg" alt="Lago Moraine">`: Imagem com caminho e descrição
+- `<div class="overlay">`: Texto sobreposto na imagem
+
+**📚 Explicação do CSS Galeria:**
+- `display: flex`: Layout flexível
+- `gap: 16px`: Espaçamento entre imagens
+- `flex-wrap: wrap`: Quebra linha quando necessário
+- `width: 192px; height: 144px`: Dimensões fixas (igual ao w-48 h-36 do Tailwind)
+- `position: relative`: Para posicionar o overlay
+- `border: 2px solid`: Borda de 2px
+- `border-color: #EF4444`: Cor da borda (red-500 do Tailwind)
+- `object-fit: cover`: Imagem preenche o espaço mantendo proporção
+- `position: absolute`: Overlay posicionado sobre a imagem
+- `background-color: rgba(0, 0, 0, 0.7)`: Fundo semi-transparente
+
+**🎯 Efeito Visual:** 3 imagens com bordas coloridas e texto sobreposto
+
+### **📝 Etapa 5: Adicionar Hobbies**
+
+**1. Atualizar o HTML com hobbies:**
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Primeiro Site Bonito</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Olá! Eu sou [SEU NOME]</h1>
+            <p>Desenvolvedor em formação ⚡</p>
+        </header>
+
+        <main class="main-content">
+            <section class="card">
+                <h2>Sobre Mim</h2>
+                <p>Estou aprendendo a criar sites incríveis! Meu objetivo é combinar design bonito com programação funcional. Cada dia é uma nova descoberta no mundo da programação web.</p>
+            </section>
+
+            <section class="card">
+                <h2>Minhas Fotos</h2>
+                <div class="gallery">
+                    <div class="image-card border-red">
+                        <img src="images/photo1.jpg" alt="Lago Moraine">
+                        <div class="overlay">● Lago Moraine</div>
+                    </div>
+                    <div class="image-card border-green">
+                        <img src="images/photo2.jpg" alt="Paisagem">
+                        <div class="overlay">● Paisagem</div>
+                    </div>
+                    <div class="image-card border-blue">
+                        <img src="images/photo3.jpg" alt="Manhã">
+                        <div class="overlay">● Manhã</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2>Meus Hobbies</h2>
+                <div class="hobbies">
+                    <div class="hobby-card hobby-yellow">
+                        <div class="hobby-icon">⚡</div>
+                        <h3>Gaming</h3>
+                    </div>
+                    <div class="hobby-card hobby-purple">
+                        <div class="hobby-icon">★</div>
+                        <h3>Design</h3>
+                    </div>
+                    <div class="hobby-card hobby-green">
+                        <div class="hobby-icon">●</div>
+                        <h3>Natureza</h3>
+                    </div>
+                    <div class="hobby-card hobby-red">
+                        <div class="hobby-icon">▲</div>
+                        <h3>Culinária</h3>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
+```
+
+**2. Adicionar CSS dos hobbies:**
+```css
+/* Hobbies */
+.hobbies {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.hobby-card {
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    width: 144px;
+}
+
+.hobby-yellow {
+    background-color: #FEF3C7; /* yellow-100 */
+}
+
+.hobby-purple {
+    background-color: #E9D5FF; /* purple-100 */
+}
+
+.hobby-green {
+    background-color: #D1FAE5; /* green-100 */
+}
+
+.hobby-red {
+    background-color: #FEE2E2; /* red-100 */
+}
+
+.hobby-icon {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.hobby-card h3 {
+    color: #1F2937;
+    font-weight: bold;
+    font-size: 16px;
+}
+```
+
+**📚 Explicação das Tags HTML:**
+- `<div class="hobbies">`: Container dos hobbies
+- `<div class="hobby-card">`: Card individual do hobby
+- `<div class="hobby-icon">`: Ícone do hobby
+- `<h3>`: Nome do hobby
+
+**📚 Explicação do CSS Hobbies:**
+- `display: flex`: Layout flexível
+- `gap: 16px`: Espaçamento entre cards
+- `text-align: center`: Centraliza texto
+- `padding: 20px`: Espaçamento interno
+- `width: 144px`: Largura fixa (igual ao w-36 do Tailwind)
+- `background-color: #FEF3C7`: Fundo amarelo claro (yellow-100 do Tailwind)
+- `font-size: 32px`: Tamanho do ícone
+- `font-weight: bold`: Texto em negrito
+
+**🎯 Efeito Visual:** 4 cards coloridos com ícones e nomes dos hobbies
+
+### **📝 Etapa 6: Adicionar Footer**
+
+**1. Atualizar o HTML com footer:**
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Primeiro Site Bonito</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Olá! Eu sou [SEU NOME]</h1>
+            <p>Desenvolvedor em formação ⚡</p>
+        </header>
+
+        <main class="main-content">
+            <section class="card">
+                <h2>Sobre Mim</h2>
+                <p>Estou aprendendo a criar sites incríveis! Meu objetivo é combinar design bonito com programação funcional. Cada dia é uma nova descoberta no mundo da programação web.</p>
+            </section>
+
+            <section class="card">
+                <h2>Minhas Fotos</h2>
+                <div class="gallery">
+                    <div class="image-card border-red">
+                        <img src="images/photo1.jpg" alt="Lago Moraine">
+                        <div class="overlay">● Lago Moraine</div>
+                    </div>
+                    <div class="image-card border-green">
+                        <img src="images/photo2.jpg" alt="Paisagem">
+                        <div class="overlay">● Paisagem</div>
+                    </div>
+                    <div class="image-card border-blue">
+                        <img src="images/photo3.jpg" alt="Manhã">
+                        <div class="overlay">● Manhã</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2>Meus Hobbies</h2>
+                <div class="hobbies">
+                    <div class="hobby-card hobby-yellow">
+                        <div class="hobby-icon">⚡</div>
+                        <h3>Gaming</h3>
+                    </div>
+                    <div class="hobby-card hobby-purple">
+                        <div class="hobby-icon">★</div>
+                        <h3>Design</h3>
+                    </div>
+                    <div class="hobby-card hobby-green">
+                        <div class="hobby-icon">●</div>
+                        <h3>Natureza</h3>
+                    </div>
+                    <div class="hobby-card hobby-red">
+                        <div class="hobby-icon">▲</div>
+                        <h3>Culinária</h3>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>© 2024 - Feito com ❤️ e muito aprendizado!</p>
+            <div class="footer-icons">
+                <span>⚡</span>
+                <span>★</span>
+                <span>●</span>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
+```
+
+**2. Adicionar CSS do footer:**
+```css
+/* Rodapé */
+.footer {
+    text-align: center;
+    color: white;
+    margin-top: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.footer p {
+    margin-bottom: 16px;
+}
+
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.footer-icons span {
+    color: #DBEAFE;
+    font-size: 18px;
+}
+```
+
+**📚 Explicação das Tags HTML:**
+- `<footer class="footer">`: Rodapé da página
+- `<p>`: Texto do copyright
+- `<div class="footer-icons">`: Container dos ícones
+- `<span>`: Ícones individuais
+
+**📚 Explicação do CSS Footer:**
+- `text-align: center`: Centraliza texto
+- `color: white`: Cor branca do texto
+- `margin-top: 40px`: Espaçamento superior
+- `max-width: 800px`: Largura máxima
+- `margin-left: auto; margin-right: auto`: Centraliza horizontalmente
+- `display: flex`: Layout flexível para ícones
+- `justify-content: center`: Centraliza ícones
+- `gap: 8px`: Espaçamento entre ícones
+- `color: #DBEAFE`: Cor azul claro dos ícones
+
+**🎯 Efeito Visual:** Footer centralizado com copyright e ícones
+
+### **📝 Etapa 7: CSS Final Completo**
+
+**CSS completo final:**
+```css
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo do corpo */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #1F2937;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container principal */
+.container {
+    width: 100%;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+    padding: 20px;
+    background-color: #3B82F6;
+}
+
+/* Cabeçalho */
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.header h1 {
+    color: white;
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.header p {
+    font-size: 18px;
+    color: #DBEAFE;
+}
+
+/* Cards brancos (como no Next.js) */
+.card {
+    background-color: white;
+    padding: 32px;
+    margin-bottom: 32px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+    color: #1F2937;
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+.card p {
+    color: #6B7280;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Conteúdo principal */
+.main-content {
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 20px;
+}
+
+/* Galeria de fotos */
+.gallery {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.image-card {
+    width: 192px;
+    height: 144px;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid;
+}
+
+.image-card.border-red {
+    border-color: #EF4444; /* red-500 */
+}
+
+.image-card.border-green {
+    border-color: #10B981; /* green-500 */
+}
+
+.image-card.border-blue {
+    border-color: #3B82F6; /* blue-500 */
+}
+
+.image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 4px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Hobbies */
+.hobbies {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.hobby-card {
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    width: 144px;
+}
+
+.hobby-yellow {
+    background-color: #FEF3C7; /* yellow-100 */
+}
+
+.hobby-purple {
+    background-color: #E9D5FF; /* purple-100 */
+}
+
+.hobby-green {
+    background-color: #D1FAE5; /* green-100 */
+}
+
+.hobby-red {
+    background-color: #FEE2E2; /* red-100 */
+}
+
+.hobby-icon {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.hobby-card h3 {
+    color: #1F2937;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Rodapé */
+.footer {
+    text-align: center;
+    color: white;
+    margin-top: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.footer p {
+    margin-bottom: 16px;
+}
+
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.footer-icons span {
+    color: #DBEAFE;
+    font-size: 18px;
+}
+```
+
+**🎯 Efeito Visual Final:** Site completo com fundo azul, cards brancos, imagens com bordas coloridas, hobbies coloridos e footer centralizado - idêntico ao Next.js!
 
 **2. Criar o arquivo `index.html` com estrutura básica:**
 ```html
