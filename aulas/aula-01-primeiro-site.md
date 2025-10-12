@@ -474,6 +474,59 @@ header p {
 }
 ```
 
+**📚 Explicação dos Seletores CSS:**
+
+**O que são seletores de elementos?**
+Estamos usando CSS para redefinir diretamente os elementos HTML, não classes. Isso significa que estamos dizendo "todos os elementos `<div>` devem ter essas propriedades", "todos os elementos `<header>` devem ter essas propriedades", etc.
+
+**Como funcionam os seletores:**
+```css
+/* Seletores de elementos (sem ponto) */
+div { }           /* Todos os elementos <div> */
+header { }        /* Todos os elementos <header> */
+h1 { }            /* Todos os elementos <h1> */
+p { }             /* Todos os elementos <p> */
+
+/* Seletores de classes (com ponto) - NÃO estamos usando */
+.container { }    /* Elementos com class="container" */
+.header { }       /* Elementos com class="header" */
+```
+
+**Por que usar seletores de elementos?**
+- **Simplicidade**: Não precisamos adicionar classes no HTML
+- **Aprendizado**: Entendemos como CSS funciona diretamente
+- **Menos código**: HTML fica mais limpo
+- **Fundamentos**: Base para entender CSS avançado
+
+**📚 Seletores que estamos usando no nosso código:**
+
+**Seletores básicos:**
+- **`*`**: Todos os elementos (reset)
+- **`body`**: Elemento `<body>`
+- **`div`**: Elemento `<div>`
+- **`header`**: Elemento `<header>`
+- **`main`**: Elemento `<main>`
+- **`section`**: Elemento `<section>`
+- **`footer`**: Elemento `<footer>`
+
+**Seletores aninhados (mais específicos):**
+- **`header h1`**: Elementos `<h1>` dentro de `<header>`
+- **`header p`**: Elementos `<p>` dentro de `<header>`
+- **`section h2`**: Elementos `<h2>` dentro de `<section>`
+- **`section p`**: Elementos `<p>` dentro de `<section>`
+
+**Como funciona:**
+```css
+/* Aplica a todos os elementos <div> */
+div { background-color: blue; }
+
+/* Aplica apenas aos <h1> que estão dentro de <header> */
+header h1 { color: white; }
+
+/* Aplica apenas aos <p> que estão dentro de <header> */
+header p { color: lightblue; }
+```
+
 **📚 Explicação das Propriedades CSS:**
 
 **Reset básico:**
