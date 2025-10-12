@@ -48,6 +48,25 @@ mkdir my-first-site-prototype
 cd my-first-site-prototype
 ```
 
+**2. Criar a pasta para imagens:**
+```bash
+mkdir images
+```
+
+**3. Baixar as imagens para a pasta:**
+- Copie as imagens `photo1.jpg`, `photo2.jpg`, `photo3.jpg` da pasta `public/images/` do projeto Next.js
+- Cole na pasta `images/` do protótipo HTML
+- **Estrutura final:**
+```
+my-first-site-prototype/
+  index.html          ← Nosso protótipo HTML
+  styles.css          ← Estilos CSS separados
+  images/             ← Pasta para imagens
+    photo1.jpg        ← Lago Moraine
+    photo2.jpg        ← Paisagem Natural  
+    photo3.jpg        ← Manhã Serena
+```
+
 ### **📝 Etapa 1: Estrutura Básica (Sem Conteúdo)**
 
 **2. Criar o arquivo `index.html` com estrutura básica:**
@@ -227,16 +246,16 @@ cd my-first-site-prototype
                 <h2>Minhas Fotos Favoritas</h2>
                 <div>
                     <div>
-                        <img src="https://picsum.photos/400/300?random=1" alt="Paisagem 1">
-                        <p>● Paisagem 1</p>
+                        <img src="images/photo1.jpg" alt="Lago Moraine - Canadá">
+                        <p>● Lago Moraine</p>
                     </div>
                     <div>
-                        <img src="https://picsum.photos/400/300?random=2" alt="Paisagem 2">
-                        <p>● Paisagem 2</p>
+                        <img src="images/photo2.jpg" alt="Paisagem Natural">
+                        <p>● Paisagem</p>
                     </div>
                     <div>
-                        <img src="https://picsum.photos/400/300?random=3" alt="Paisagem 3">
-                        <p>● Paisagem 3</p>
+                        <img src="images/photo3.jpg" alt="Manhã Serena">
+                        <p>● Manhã</p>
                     </div>
                 </div>
             </section>
@@ -297,16 +316,16 @@ cd my-first-site-prototype
                 <h2>Minhas Fotos Favoritas</h2>
                 <div>
                     <div>
-                        <img src="https://picsum.photos/400/300?random=1" alt="Paisagem 1">
-                        <p>● Paisagem 1</p>
+                        <img src="images/photo1.jpg" alt="Lago Moraine - Canadá">
+                        <p>● Lago Moraine</p>
                     </div>
                     <div>
-                        <img src="https://picsum.photos/400/300?random=2" alt="Paisagem 2">
-                        <p>● Paisagem 2</p>
+                        <img src="images/photo2.jpg" alt="Paisagem Natural">
+                        <p>● Paisagem</p>
                     </div>
                     <div>
-                        <img src="https://picsum.photos/400/300?random=3" alt="Paisagem 3">
-                        <p>● Paisagem 3</p>
+                        <img src="images/photo3.jpg" alt="Manhã Serena">
+                        <p>● Manhã</p>
                     </div>
                 </div>
             </section>
@@ -387,16 +406,16 @@ cd my-first-site-prototype
                 <h2>Minhas Fotos Favoritas</h2>
                 <div>
                     <div>
-                        <img src="https://picsum.photos/400/300?random=1" alt="Paisagem 1">
-                        <p>● Paisagem 1</p>
+                        <img src="images/photo1.jpg" alt="Lago Moraine - Canadá">
+                        <p>● Lago Moraine</p>
                     </div>
                     <div>
-                        <img src="https://picsum.photos/400/300?random=2" alt="Paisagem 2">
-                        <p>● Paisagem 2</p>
+                        <img src="images/photo2.jpg" alt="Paisagem Natural">
+                        <p>● Paisagem</p>
                     </div>
                     <div>
-                        <img src="https://picsum.photos/400/300?random=3" alt="Paisagem 3">
-                        <p>● Paisagem 3</p>
+                        <img src="images/photo3.jpg" alt="Manhã Serena">
+                        <p>● Manhã</p>
                     </div>
                 </div>
             </section>
