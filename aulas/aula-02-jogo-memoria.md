@@ -18,6 +18,8 @@ Um jogo da memória com:
 - **Lógica de programação**: Como o jogo funciona
 - **CSS Grid**: Layout em grade
 - **Animações**: Transições suaves
+- **react-icons**: Biblioteca de ícones profissionais
+- **Componentes de ícones**: Como usar ícones SVG
 
 ## 🛠️ Preparação
 
@@ -27,18 +29,28 @@ Um jogo da memória com:
 
 ## 📝 Passo a Passo
 
-### **Passo 1: Criar estrutura básica com gradiente**
+### **Passo 1: Instalar react-icons e criar estrutura básica**
 
-Primeiro, vamos criar um novo arquivo para o jogo. Crie `src/aulas/aula-02/MemoryGame.tsx`:
+**Primeiro, instale a biblioteca de ícones:**
+```bash
+npm install react-icons
+```
+
+Agora vamos criar um novo arquivo para o jogo. Crie `src/aulas/aula-02/MemoryGame.tsx`:
 
 ```tsx
+'use client';
+
+import { FaBrain } from 'react-icons/fa';
+
 export default function MemoryGame() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-400 to-blue-500 p-4">
       <div className="max-w-4xl mx-auto">
         <header className="text-center py-8">
-          <h1 className="text-4xl font-bold text-white mb-4">
-            🧠 Jogo da Memória
+          <h1 className="text-4xl font-bold text-white mb-4 flex items-center justify-center gap-3">
+            <FaBrain className="text-yellow-400" />
+            Jogo da Memória
           </h1>
           <p className="text-xl text-blue-100 mb-6">
             Encontre os pares de ícones!
@@ -65,7 +77,8 @@ export default function MemoryGame() {
       <div className="max-w-4xl mx-auto">
         <header className="text-center py-8">
           <h1 className="text-4xl font-bold text-white mb-4">
-            🧠 Jogo da Memória
+            <FaBrain className="text-yellow-400" />
+            Jogo da Memória
           </h1>
           <p className="text-xl text-blue-100 mb-6">
             Encontre os pares de ícones!
@@ -105,7 +118,8 @@ export default function MemoryGame() {
       <div className="max-w-4xl mx-auto">
         <header className="text-center py-8">
           <h1 className="text-4xl font-bold text-white mb-4">
-            🧠 Jogo da Memória
+            <FaBrain className="text-yellow-400" />
+            Jogo da Memória
           </h1>
           <p className="text-xl text-blue-100 mb-6">
             Encontre os pares de ícones!
@@ -136,9 +150,19 @@ export default function MemoryGame() {
 'use client';
 
 import { useState } from 'react';
+import { FaHeart, FaStar, FaSun, FaMoon, FaFire, FaSnowflake, FaLeaf, FaGem, FaBrain, FaQuestion, FaTrophy } from 'react-icons/fa';
 
-// Ícones para as cartas (usando ícones simples)
-const icons = ['⚡', '★', '●', '▲', '◆', '■', '▲', '●'];
+// Ícones para as cartas (usando react-icons)
+const icons = [
+  { icon: FaHeart, name: 'Coração' },
+  { icon: FaStar, name: 'Estrela' },
+  { icon: FaSun, name: 'Sol' },
+  { icon: FaMoon, name: 'Lua' },
+  { icon: FaFire, name: 'Fogo' },
+  { icon: FaSnowflake, name: 'Neve' },
+  { icon: FaLeaf, name: 'Folha' },
+  { icon: FaGem, name: 'Gema' }
+];
 
 export default function MemoryGame() {
   const [gameStarted, setGameStarted] = useState(false);
@@ -153,7 +177,8 @@ export default function MemoryGame() {
       <div className="max-w-4xl mx-auto">
         <header className="text-center py-8">
           <h1 className="text-4xl font-bold text-white mb-4">
-            🧠 Jogo da Memória
+            <FaBrain className="text-yellow-400" />
+            Jogo da Memória
           </h1>
           <p className="text-xl text-blue-100 mb-6">
             Encontre os pares de ícones!
@@ -174,7 +199,7 @@ export default function MemoryGame() {
                 key={index}
                 className="aspect-square rounded-lg cursor-pointer transition-all duration-300 transform bg-blue-600 hover:bg-blue-700 shadow-md hover:shadow-lg flex items-center justify-center text-4xl text-white"
               >
-                ❓
+                <FaQuestion className="text-white" />
               </div>
             ))}
           </div>
@@ -222,7 +247,8 @@ export default function MemoryGame() {
       <div className="max-w-4xl mx-auto">
         <header className="text-center py-8">
           <h1 className="text-4xl font-bold text-white mb-4">
-            🧠 Jogo da Memória
+            <FaBrain className="text-yellow-400" />
+            Jogo da Memória
           </h1>
           <p className="text-xl text-blue-100 mb-6">
             Encontre os pares de ícones!
@@ -238,7 +264,7 @@ export default function MemoryGame() {
 
         {gameStarted && (
           <div className="grid grid-cols-4 gap-4 max-w-2xl mx-auto">
-            {cards.map((icon, index) => {
+            {cards.map((card, index) => {
               const isFlipped = flippedCards.includes(index);
               
               return (
@@ -320,7 +346,8 @@ export default function MemoryGame() {
       <div className="max-w-4xl mx-auto">
         <header className="text-center py-8">
           <h1 className="text-4xl font-bold text-white mb-4">
-            🧠 Jogo da Memória
+            <FaBrain className="text-yellow-400" />
+            Jogo da Memória
           </h1>
           <p className="text-xl text-blue-100 mb-6">
             Encontre os pares de ícones!
@@ -344,9 +371,10 @@ export default function MemoryGame() {
 
         {gameStarted && (
           <div className="grid grid-cols-4 gap-4 max-w-2xl mx-auto">
-            {cards.map((icon, index) => {
+            {cards.map((card, index) => {
               const isFlipped = flippedCards.includes(index);
               const isMatched = matchedCards.includes(index);
+              const IconComponent = card.icon;
               
               return (
                 <div
@@ -362,7 +390,11 @@ export default function MemoryGame() {
                     flex items-center justify-center text-4xl
                   `}
                 >
-                  {isFlipped || isMatched ? icon : '❓'}
+                  {isFlipped || isMatched ? (
+                    <IconComponent className="text-blue-600" />
+                  ) : (
+                    <FaQuestion className="text-white" />
+                  )}
                 </div>
               );
             })}
@@ -430,7 +462,8 @@ export default function MemoryGame() {
       <div className="max-w-4xl mx-auto">
         <header className="text-center py-8">
           <h1 className="text-4xl font-bold text-white mb-4">
-            🧠 Jogo da Memória
+            <FaBrain className="text-yellow-400" />
+            Jogo da Memória
           </h1>
           <p className="text-xl text-blue-100 mb-6">
             Encontre os pares de ícones!
@@ -454,9 +487,10 @@ export default function MemoryGame() {
 
         {gameStarted && (
           <div className="grid grid-cols-4 gap-4 max-w-2xl mx-auto">
-            {cards.map((icon, index) => {
+            {cards.map((card, index) => {
               const isFlipped = flippedCards.includes(index);
               const isMatched = matchedCards.includes(index);
+              const IconComponent = card.icon;
               
               return (
                 <div
@@ -472,7 +506,11 @@ export default function MemoryGame() {
                     flex items-center justify-center text-4xl
                   `}
                 >
-                  {isFlipped || isMatched ? icon : '❓'}
+                  {isFlipped || isMatched ? (
+                    <IconComponent className="text-blue-600" />
+                  ) : (
+                    <FaQuestion className="text-white" />
+                  )}
                 </div>
               );
             })}
@@ -483,7 +521,8 @@ export default function MemoryGame() {
           <div className="text-center mt-8">
             <div className="bg-white rounded-lg p-8 shadow-xl">
               <h2 className="text-3xl font-bold text-green-600 mb-4">
-                🎉 Parabéns! Você ganhou!
+                <FaTrophy className="text-yellow-500" />
+                Parabéns! Você ganhou!
               </h2>
               <p className="text-lg text-gray-600 mb-4">
                 Você completou o jogo em {moves} movimentos!
@@ -559,7 +598,8 @@ export default function MemoryGame() {
       <div className="max-w-4xl mx-auto">
         <header className="text-center py-8">
           <h1 className="text-4xl font-bold text-white mb-4">
-            🧠 Jogo da Memória
+            <FaBrain className="text-yellow-400" />
+            Jogo da Memória
           </h1>
           <p className="text-xl text-blue-100 mb-6">
             Encontre os pares de ícones!
@@ -583,9 +623,10 @@ export default function MemoryGame() {
 
         {gameStarted && (
           <div className="grid grid-cols-4 gap-4 max-w-2xl mx-auto">
-            {cards.map((icon, index) => {
+            {cards.map((card, index) => {
               const isFlipped = flippedCards.includes(index);
               const isMatched = matchedCards.includes(index);
+              const IconComponent = card.icon;
               
               return (
                 <div
@@ -601,7 +642,11 @@ export default function MemoryGame() {
                     flex items-center justify-center text-4xl
                   `}
                 >
-                  {isFlipped || isMatched ? icon : '❓'}
+                  {isFlipped || isMatched ? (
+                    <IconComponent className="text-blue-600" />
+                  ) : (
+                    <FaQuestion className="text-white" />
+                  )}
                 </div>
               );
             })}
@@ -612,7 +657,8 @@ export default function MemoryGame() {
           <div className="text-center mt-8">
             <div className="bg-white rounded-lg p-8 shadow-xl">
               <h2 className="text-3xl font-bold text-green-600 mb-4">
-                🎉 Parabéns! Você ganhou!
+                <FaTrophy className="text-yellow-500" />
+                Parabéns! Você ganhou!
               </h2>
               <p className="text-lg text-gray-600 mb-4">
                 Você completou o jogo em {moves} movimentos!
