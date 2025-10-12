@@ -656,7 +656,8 @@ section div {
     justify-content: center;
 }
 
-section div div {
+/* Cards da galeria (mais específico) */
+section:nth-of-type(2) div div {
     text-align: center;
     max-width: 200px;
     background-color: transparent;
@@ -664,7 +665,8 @@ section div div {
     margin: 0;
 }
 
-section div div img {
+/* Imagens da galeria (mais específico) */
+section:nth-of-type(2) div div img {
     width: 100%;
     height: 120px;
     object-fit: cover;
@@ -672,13 +674,13 @@ section div div img {
     margin-bottom: 10px;
 }
 
-section div div p {
+section:nth-of-type(2) div div p {
     color: #6B7280;
     font-weight: bold;
 }
 
-/* Hobbies */
-section div div {
+/* Hobbies (mais específico) */
+section:nth-of-type(3) div div {
     padding: 15px;
     border-radius: 8px;
     text-align: center;
@@ -687,13 +689,13 @@ section div div {
     background-color: #FEF3C7;
 }
 
-section div div span {
+section:nth-of-type(3) div div span {
     font-size: 24px;
     display: block;
     margin-bottom: 10px;
 }
 
-section div div h3 {
+section:nth-of-type(3) div div h3 {
     color: #1F2937;
     font-size: 16px;
 }
@@ -707,19 +709,21 @@ section div div h3 {
 - **`flex-wrap: wrap`**: Permite quebra de linha
 - **`justify-content: center`**: Centraliza elementos
 
-**Imagens:**
+**Seletores Específicos:**
+- **`section:nth-of-type(2)`**: Apenas a segunda seção (galeria)
+- **`section:nth-of-type(3)`**: Apenas a terceira seção (hobbies)
+- **Por que usar**: Evita conflitos entre galeria e hobbies
+
+**Imagens da Galeria:**
 - **`width: 100%`**: Largura completa do container
 - **`height: 120px`**: Altura fixa de 120px (reduzida para melhor proporção)
 - **`object-fit: cover`**: Ajusta imagem mantendo proporção
+- **`background-color: transparent`**: Fundo transparente (sem azul)
 
-**Efeitos visuais:**
-- **`box-shadow: 0 2px 4px rgba(0,0,0,0.1)`**: Sombra sutil
-- **`font-weight: bold`**: Texto em negrito
-
-**Layout dos cards:**
-- **`display: block`**: Elemento em bloco
-- **`min-width: 120px`**: Largura mínima de 120px
+**Cards dos Hobbies:**
 - **`padding: 15px`**: Espaçamento interno reduzido para melhor proporção
+- **`background-color: #FEF3C7`**: Fundo amarelo claro
+- **`min-width: 120px`**: Largura mínima de 120px
 
 ### **📝 Etapa 5: Finalizar com Rodapé**
 
