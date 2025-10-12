@@ -1,13 +1,23 @@
 'use client';
 
 import { useState } from 'react';
+import { FaHeart, FaStar, FaSun, FaMoon, FaFire, FaSnowflake, FaLeaf, FaGem } from 'react-icons/fa';
 
-// Ícones para as cartas (usando ícones simples)
-const icons = ['⚡', '★', '●', '▲', '◆', '■', '♦', '▼'];
+// Ícones para as cartas (usando react-icons)
+const icons = [
+  { icon: FaHeart, name: 'Coração' },
+  { icon: FaStar, name: 'Estrela' },
+  { icon: FaSun, name: 'Sol' },
+  { icon: FaMoon, name: 'Lua' },
+  { icon: FaFire, name: 'Fogo' },
+  { icon: FaSnowflake, name: 'Neve' },
+  { icon: FaLeaf, name: 'Folha' },
+  { icon: FaGem, name: 'Gema' }
+];
 
 export default function MemoryGame() {
   // Estado do jogo
-  const [cards, setCards] = useState<string[]>([]);
+  const [cards, setCards] = useState<typeof icons>([]);
   const [flippedCards, setFlippedCards] = useState<number[]>([]);
   const [matchedCards, setMatchedCards] = useState<number[]>([]);
   const [moves, setMoves] = useState(0);
@@ -38,7 +48,7 @@ export default function MemoryGame() {
     if (newFlippedCards.length === 2) {
       setMoves(moves + 1);
       
-      if (cards[newFlippedCards[0]] === cards[newFlippedCards[1]]) {
+      if (cards[newFlippedCards[0]].name === cards[newFlippedCards[1]].name) {
         // Cartas iguais - adicionar às encontradas
         setMatchedCards([...matchedCards, ...newFlippedCards]);
         setFlippedCards([]);
@@ -86,9 +96,10 @@ export default function MemoryGame() {
         {/* Grid do jogo */}
         {gameStarted && (
           <div className="grid grid-cols-4 gap-4 max-w-2xl mx-auto">
-            {cards.map((icon, index) => {
+            {cards.map((card, index) => {
               const isFlipped = flippedCards.includes(index);
               const isMatched = matchedCards.includes(index);
+              const IconComponent = card.icon;
               
               return (
                 <div
@@ -105,7 +116,11 @@ export default function MemoryGame() {
                     hover:scale-110
                   `}
                 >
-                  {isFlipped || isMatched ? icon : '❓'}
+                  {isFlipped || isMatched ? (
+                    <IconComponent className="text-blue-600" />
+                  ) : (
+                    <span className="text-white">❓</span>
+                  )}
                 </div>
               );
             })}
@@ -139,7 +154,7 @@ export default function MemoryGame() {
               Como Jogar:
             </h3>
             <ul className="text-lg text-gray-600 space-y-2">
-              <li>• Clique em "Começar Jogo" para iniciar</li>
+              <li>• Clique em &quot;Começar Jogo&quot; para iniciar</li>
               <li>• Clique nas cartas para virá-las</li>
               <li>• Encontre os pares de ícones iguais</li>
               <li>• Complete o jogo com o menor número de movimentos!</li>
