@@ -144,8 +144,8 @@ body {
 
 **2. Adicionar CSS do container e header:**
 ```css
-/* Container principal */
-div {
+/* Container principal - apenas a div raiz */
+body > div {
     width: 100%;
     margin: 0;
     min-height: 100vh;
@@ -185,7 +185,7 @@ header p {
 - `<p>`: Parágrafo de texto
 
 **📚 Explicação do CSS Container:**
-- `div {}`: Seleciona o elemento div diretamente (sem classe)
+- `body > div {}`: Seleciona apenas a div filha direta do body (container principal)
 - `width: 100%`: Ocupa toda a largura da tela
 - `min-height: 100vh`: Altura mínima de 100% da viewport
 - `display: flex`: Ativa flexbox para centralização
@@ -195,6 +195,12 @@ header p {
 - `padding: 20px`: Espaçamento interno
 
 **🎯 Efeito Visual:** Página com fundo azul, título branco centralizado
+
+**📚 Por que `body > div` em vez de `div`?**
+- **`div {}`**: Afetaria TODAS as divs da página (galeria, hobbies, etc.)
+- **`body > div {}`**: Afeta apenas a div filha direta do body (container principal)
+- **Seletor específico**: Evita conflitos com outras divs
+- **Melhor prática**: Usar seletores mais específicos para evitar efeitos colaterais
 
 ### **📝 Etapa 3: Adicionar Main + Cards Brancos**
 
