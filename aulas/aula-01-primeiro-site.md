@@ -476,21 +476,33 @@ header p {
 
 **📚 Explicação das Propriedades CSS:**
 
-**`* { margin: 0; padding: 0; }`**: Remove espaçamentos padrão de todos os elementos
-**`box-sizing: border-box`**: Inclui padding e border no cálculo da largura
-**`font-family: Arial, sans-serif`**: Define a fonte do texto
-**`line-height: 1.6`**: Espaçamento entre linhas (1.6x o tamanho da fonte)
-**`color: #333`**: Cor do texto (cinza escuro)
-**`max-width: 800px`**: Largura máxima do container
-**`margin: 0 auto`**: Centraliza o container (0 em cima/baixo, auto nas laterais)
-**`padding: 20px`**: Espaçamento interno de 20px
-**`background-color: #3B82F6`**: Cor de fundo azul
-**`min-height: 100vh`**: Altura mínima de 100% da tela
-**`text-align: center`**: Centraliza o texto
-**`margin-bottom: 40px`**: Espaçamento inferior de 40px
-**`color: white`**: Cor do texto branco
-**`font-size: 32px`**: Tamanho da fonte 32 pixels
-**`color: #DBEAFE`**: Cor azul claro
+**Reset básico:**
+- **`* { margin: 0; padding: 0; }`**: Remove espaçamentos padrão de todos os elementos
+- **`box-sizing: border-box`**: Inclui padding e border no cálculo da largura
+
+**Estilo do corpo:**
+- **`font-family: Arial, sans-serif`**: Define a fonte do texto
+- **`line-height: 1.6`**: Espaçamento entre linhas (1.6x o tamanho da fonte)
+- **`color: #333`**: Cor do texto (cinza escuro)
+
+**Container principal:**
+- **`max-width: 800px`**: Largura máxima do container
+- **`margin: 0 auto`**: Centraliza o container (0 em cima/baixo, auto nas laterais)
+- **`padding: 20px`**: Espaçamento interno de 20px
+- **`background-color: #3B82F6`**: Cor de fundo azul
+- **`min-height: 100vh`**: Altura mínima de 100% da tela
+
+**Cabeçalho:**
+- **`text-align: center`**: Centraliza o texto
+- **`margin-bottom: 40px`**: Espaçamento inferior de 40px
+- **`color: white`**: Cor do texto branco
+
+**Título principal:**
+- **`font-size: 32px`**: Tamanho da fonte 32 pixels
+
+**Subtítulo:**
+- **`font-size: 18px`**: Tamanho da fonte 18 pixels
+- **`color: #DBEAFE`**: Cor azul claro
 
 ### **📝 Etapa 3: Estilizar o Conteúdo Principal**
 
@@ -523,13 +535,18 @@ section p {
 
 **📚 Explicação das Novas Propriedades:**
 
-**`background-color: white`**: Fundo branco
-**`padding: 30px`**: Espaçamento interno de 30px
-**`border-radius: 8px`**: Cantos arredondados de 8px
-**`margin-bottom: 30px`**: Espaçamento inferior de 30px
-**`color: #1F2937`**: Cor cinza escuro para títulos
-**`font-size: 24px`**: Tamanho da fonte 24px
-**`color: #6B7280`**: Cor cinza médio para texto
+**Conteúdo principal:**
+- **`background-color: white`**: Fundo branco
+- **`padding: 30px`**: Espaçamento interno de 30px
+- **`border-radius: 8px`**: Cantos arredondados de 8px
+- **`margin-bottom: 30px`**: Espaçamento inferior de 30px
+
+**Títulos das seções:**
+- **`color: #1F2937`**: Cor cinza escuro para títulos
+- **`font-size: 24px`**: Tamanho da fonte 24px
+
+**Texto das seções:**
+- **`color: #6B7280`**: Cor cinza médio para texto
 
 ### **📝 Etapa 4: Estilizar Galeria e Hobbies**
 
@@ -588,17 +605,24 @@ section div div h3 {
 
 **📚 Explicação das Propriedades de Layout:**
 
-**`display: flex`**: Cria um layout flexível
-**`gap: 20px`**: Espaçamento entre elementos flex
-**`flex-wrap: wrap`**: Permite quebra de linha
-**`justify-content: center`**: Centraliza elementos
-**`width: 100%`**: Largura completa do container
-**`height: 150px`**: Altura fixa de 150px
-**`object-fit: cover`**: Ajusta imagem mantendo proporção
-**`box-shadow: 0 2px 4px rgba(0,0,0,0.1)`**: Sombra sutil
-**`font-weight: bold`**: Texto em negrito
-**`display: block`**: Elemento em bloco
-**`min-width: 120px`**: Largura mínima de 120px
+**Flexbox (layout flexível):**
+- **`display: flex`**: Cria um layout flexível
+- **`gap: 20px`**: Espaçamento entre elementos flex
+- **`flex-wrap: wrap`**: Permite quebra de linha
+- **`justify-content: center`**: Centraliza elementos
+
+**Imagens:**
+- **`width: 100%`**: Largura completa do container
+- **`height: 150px`**: Altura fixa de 150px
+- **`object-fit: cover`**: Ajusta imagem mantendo proporção
+
+**Efeitos visuais:**
+- **`box-shadow: 0 2px 4px rgba(0,0,0,0.1)`**: Sombra sutil
+- **`font-weight: bold`**: Texto em negrito
+
+**Layout dos cards:**
+- **`display: block`**: Elemento em bloco
+- **`min-width: 120px`**: Largura mínima de 120px
 
 ### **📝 Etapa 5: Finalizar com Rodapé**
 
@@ -620,8 +644,9 @@ footer p {
 
 **📚 Explicação das Propriedades Finais:**
 
-**`background-color: rgba(0,0,0,0.1)`**: Fundo preto com 10% de transparência
-**`color: #DBEAFE`**: Cor azul claro para o texto do rodapé
+**Rodapé:**
+- **`background-color: rgba(0,0,0,0.1)`**: Fundo preto com 10% de transparência
+- **`color: #DBEAFE`**: Cor azul claro para o texto do rodapé
 
 **9. Resultado final:**
 - Salve todos os arquivos
