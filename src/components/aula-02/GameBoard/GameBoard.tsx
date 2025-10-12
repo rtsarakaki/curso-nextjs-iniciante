@@ -1,8 +1,13 @@
-import { memo } from 'react';
 import Card from '../Card/Card';
-import { GameBoardProps } from '@/types/gameTypes';
 
-const GameBoard = memo(({ cards, flippedCards, matchedCards, onCardClick }: GameBoardProps) => {
+interface GameBoardProps {
+  cards: Array<{ icon: React.ComponentType<{ className?: string }>; name: string }>;
+  flippedCards: number[];
+  matchedCards: number[];
+  onCardClick: (index: number) => void;
+}
+
+export default function GameBoard({ cards, flippedCards, matchedCards, onCardClick }: GameBoardProps) {
   return (
     <div className="grid grid-cols-4 gap-4 max-w-2xl mx-auto">
       {cards.map((card, index) => {
@@ -11,8 +16,8 @@ const GameBoard = memo(({ cards, flippedCards, matchedCards, onCardClick }: Game
         
         return (
           <Card
-            key={`${card.name}-${index}`}
-            card={card}
+            key={index}
+            icon={card.icon}
             isFlipped={isFlipped}
             isMatched={isMatched}
             onClick={() => onCardClick(index)}
@@ -21,8 +26,4 @@ const GameBoard = memo(({ cards, flippedCards, matchedCards, onCardClick }: Game
       })}
     </div>
   );
-});
-
-GameBoard.displayName = 'GameBoard';
-
-export default GameBoard;
+}

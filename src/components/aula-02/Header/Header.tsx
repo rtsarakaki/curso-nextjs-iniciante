@@ -1,8 +1,12 @@
-import { memo } from 'react';
 import { FaBrain } from 'react-icons/fa';
-import { HeaderProps } from '@/types/gameTypes';
 
-const Header = memo(({ gameStarted, moves, onStartGame }: HeaderProps) => {
+interface HeaderProps {
+  gameStarted: boolean;
+  moves: number;
+  onStartGame: () => void;
+}
+
+export default function Header({ gameStarted, moves, onStartGame }: HeaderProps) {
   return (
     <header className="text-center py-8">
       <h1 className="text-4xl font-bold text-white mb-4 flex items-center justify-center gap-3">
@@ -16,26 +20,17 @@ const Header = memo(({ gameStarted, moves, onStartGame }: HeaderProps) => {
       <div className="flex justify-center gap-4 mb-8">
         <button 
           onClick={onStartGame}
-          className="bg-white text-blue-600 px-6 py-3 rounded-lg font-bold hover:bg-blue-50 transition-colors shadow-lg hover:shadow-xl"
-          aria-label={gameStarted ? 'Iniciar novo jogo' : 'Começar jogo'}
+          className="bg-white text-blue-600 px-6 py-3 rounded-lg font-bold hover:bg-blue-50 transition-colors"
         >
           {gameStarted ? 'Novo Jogo' : 'Começar Jogo'}
         </button>
         
         {gameStarted && (
-          <div 
-            className="bg-white text-blue-600 px-6 py-3 rounded-lg font-bold shadow-lg"
-            role="status"
-            aria-live="polite"
-          >
+          <div className="bg-white text-blue-600 px-6 py-3 rounded-lg font-bold">
             Movimentos: {moves}
           </div>
         )}
       </div>
     </header>
   );
-});
-
-Header.displayName = 'Header';
-
-export default Header;
+}

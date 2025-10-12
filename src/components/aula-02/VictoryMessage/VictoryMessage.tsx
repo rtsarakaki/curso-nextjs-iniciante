@@ -1,8 +1,11 @@
-import { memo } from 'react';
 import { FaTrophy } from 'react-icons/fa';
-import { VictoryMessageProps } from '@/types/gameTypes';
 
-const VictoryMessage = memo(({ moves, onPlayAgain }: VictoryMessageProps) => {
+interface VictoryMessageProps {
+  moves: number;
+  onPlayAgain: () => void;
+}
+
+export default function VictoryMessage({ moves, onPlayAgain }: VictoryMessageProps) {
   return (
     <div className="text-center mt-8">
       <div className="bg-white rounded-lg p-8 shadow-xl">
@@ -22,8 +25,4 @@ const VictoryMessage = memo(({ moves, onPlayAgain }: VictoryMessageProps) => {
       </div>
     </div>
   );
-});
-
-VictoryMessage.displayName = 'VictoryMessage';
-
-export default VictoryMessage;
+}
