@@ -847,6 +847,332 @@ body {
 
 **🎯 Efeito Visual Final:** Site completo com fundo azul, cards brancos, imagens com bordas coloridas, hobbies coloridos e footer centralizado - idêntico ao Next.js!
 
+### **📝 Etapa 8: Redefinir Seletores CSS (Sem Classes)**
+
+**🎯 O que vamos fazer:** Substituir classes CSS por seletores de elementos HTML, mantendo o resultado visual idêntico.
+
+**1. Atualizar o HTML removendo classes:**
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Primeiro Site Bonito</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div>
+        <header>
+            <h1>Olá! Eu sou [SEU NOME]</h1>
+            <p>Desenvolvedor em formação ⚡</p>
+        </header>
+
+        <main>
+            <section>
+                <h2>Sobre Mim</h2>
+                <p>Estou aprendendo a criar sites incríveis! Meu objetivo é combinar design bonito com programação funcional. Cada dia é uma nova descoberta no mundo da programação web.</p>
+            </section>
+
+            <section>
+                <h2>Minhas Fotos</h2>
+                <div>
+                    <div>
+                        <img src="images/photo1.jpg" alt="Lago Moraine">
+                        <div>● Lago Moraine</div>
+                    </div>
+                    <div>
+                        <img src="images/photo2.jpg" alt="Paisagem">
+                        <div>● Paisagem</div>
+                    </div>
+                    <div>
+                        <img src="images/photo3.jpg" alt="Manhã">
+                        <div>● Manhã</div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Meus Hobbies</h2>
+                <div>
+                    <div>
+                        <div>⚡</div>
+                        <h3>Gaming</h3>
+                    </div>
+                    <div>
+                        <div>★</div>
+                        <h3>Design</h3>
+                    </div>
+                    <div>
+                        <div>●</div>
+                        <h3>Natureza</h3>
+                    </div>
+                    <div>
+                        <div>▲</div>
+                        <h3>Culinária</h3>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2024 - Feito com ❤️ e muito aprendizado!</p>
+            <div>
+                <span>⚡</span>
+                <span>★</span>
+                <span>●</span>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
+```
+
+**2. Redefinir CSS usando seletores de elementos:**
+```css
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo do corpo */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #1F2937;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container principal (div) */
+div {
+    width: 100%;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+    padding: 20px;
+    background-color: #3B82F6;
+}
+
+/* Cabeçalho */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+header h1 {
+    color: white;
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+header p {
+    font-size: 18px;
+    color: #DBEAFE;
+}
+
+/* Conteúdo principal */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 20px;
+}
+
+/* Cards brancos (section) */
+section {
+    background-color: white;
+    padding: 32px;
+    margin-bottom: 32px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    color: #1F2937;
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+section p {
+    color: #6B7280;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Galeria de fotos - primeira seção (sobre mim) */
+section:nth-of-type(2) div {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+section:nth-of-type(2) div div {
+    width: 192px;
+    height: 144px;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid;
+}
+
+/* Bordas coloridas para imagens */
+section:nth-of-type(2) div div:nth-child(1) {
+    border-color: #EF4444; /* red-500 */
+}
+
+section:nth-of-type(2) div div:nth-child(2) {
+    border-color: #10B981; /* green-500 */
+}
+
+section:nth-of-type(2) div div:nth-child(3) {
+    border-color: #3B82F6; /* blue-500 */
+}
+
+section:nth-of-type(2) div div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+section:nth-of-type(2) div div div {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 4px;
+    text-align: center;
+    font-size: 14px;
+    width: auto;
+    height: auto;
+    border: none;
+    border-radius: 0;
+    overflow: visible;
+}
+
+/* Hobbies - terceira seção */
+section:nth-of-type(3) div {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+section:nth-of-type(3) div div {
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    width: 144px;
+    background-color: #FEF3C7; /* yellow-100 */
+}
+
+section:nth-of-type(3) div div:nth-child(2) {
+    background-color: #E9D5FF; /* purple-100 */
+}
+
+section:nth-of-type(3) div div:nth-child(3) {
+    background-color: #D1FAE5; /* green-100 */
+}
+
+section:nth-of-type(3) div div:nth-child(4) {
+    background-color: #FEE2E2; /* red-100 */
+}
+
+section:nth-of-type(3) div div div {
+    font-size: 32px;
+    margin-bottom: 8px;
+    position: static;
+    background: none;
+    color: inherit;
+    padding: 0;
+    text-align: center;
+    width: auto;
+    height: auto;
+    border: none;
+    border-radius: 0;
+    overflow: visible;
+}
+
+section:nth-of-type(3) div div h3 {
+    color: #1F2937;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    color: white;
+    margin-top: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+footer p {
+    margin-bottom: 16px;
+}
+
+footer div {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    background: none;
+    padding: 0;
+    margin: 0;
+    width: auto;
+    max-width: none;
+    min-height: auto;
+    align-items: center;
+    flex-direction: row;
+}
+
+footer div span {
+    color: #DBEAFE;
+    font-size: 18px;
+}
+```
+
+**📚 Explicação dos Seletores Redefinidos:**
+
+**🎯 Seletores de Elementos:**
+- `div {}`: Redefine o container principal
+- `header {}`: Redefine o cabeçalho
+- `main {}`: Redefine o conteúdo principal
+- `section {}`: Redefine as seções (cards)
+- `footer {}`: Redefine o rodapé
+
+**🎯 Seletores Aninhados:**
+- `header h1 {}`: Título dentro do header
+- `header p {}`: Parágrafo dentro do header
+- `section h2 {}`: Subtítulos das seções
+- `section p {}`: Parágrafos das seções
+
+**🎯 Seletores Específicos:**
+- `section:nth-of-type(2)`: Segunda seção (galeria)
+- `section:nth-of-type(3)`: Terceira seção (hobbies)
+- `section:nth-of-type(2) div div:nth-child(1)`: Primeira imagem
+- `section:nth-of-type(3) div div:nth-child(2)`: Segundo hobby
+
+**🎯 Vantagens dos Seletores de Elementos:**
+- **Sem classes**: HTML mais limpo
+- **Semântico**: Usa elementos HTML naturais
+- **Específico**: Seletores direcionados
+- **Hierárquico**: Estrutura clara de seleção
+
+**🎯 Efeito Visual:** Idêntico ao anterior, mas usando apenas seletores de elementos HTML!
+
 **2. Criar o arquivo `index.html` com estrutura básica:**
 ```html
 <!DOCTYPE html>
