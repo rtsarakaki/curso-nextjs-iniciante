@@ -1172,6 +1172,40 @@ footer div span {
 - `section:nth-of-type(2) div div:nth-child(1)`: Primeira imagem
 - `section:nth-of-type(3) div div:nth-child(2)`: Segundo hobby
 
+**📚 Explicação Detalhada do Seletor `section:nth-of-type(2) div div:nth-child(1)`:**
+- **`section:nth-of-type(2)`**: Seleciona a segunda seção da página (galeria de fotos)
+- **`div`**: Dentro dessa seção, seleciona a div da galeria
+- **`div`**: Dentro da galeria, seleciona as divs das imagens
+- **`:nth-child(1)`**: Seleciona apenas a primeira div (primeira imagem)
+- **Resultado**: Aplica estilo apenas na primeira imagem da galeria
+
+**🎯 Estrutura HTML Correspondente:**
+```html
+<section>                    ← section:nth-of-type(2) (segunda seção)
+    <h2>Minhas Fotos</h2>
+    <div>                    ← div (galeria)
+        <div>                ← div:nth-child(1) (primeira imagem)
+            <img src="photo1.jpg">
+            <div>Lago Moraine</div>
+        </div>
+        <div>                ← div:nth-child(2) (segunda imagem)
+            <img src="photo2.jpg">
+            <div>Paisagem</div>
+        </div>
+        <div>                ← div:nth-child(3) (terceira imagem)
+            <img src="photo3.jpg">
+            <div>Manhã</div>
+        </div>
+    </div>
+</section>
+```
+
+**🎯 Por que Usar Seletores Específicos?**
+- **Precisão**: Aplica estilo apenas onde necessário
+- **Controle**: Evita afetar outras divs da página
+- **Manutenção**: Fácil de entender e modificar
+- **Flexibilidade**: Permite estilos diferentes para cada elemento
+
 **🎯 Vantagens dos Seletores de Elementos:**
 - **Sem classes**: HTML mais limpo
 - **Semântico**: Usa elementos HTML naturais
