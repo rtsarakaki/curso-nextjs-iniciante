@@ -48,9 +48,295 @@ mkdir meu-primeiro-site-prototipo
 cd meu-primeiro-site-prototipo
 ```
 
-### **📝 Etapa 1: HTML Básico (Sem CSS)**
+### **📝 Etapa 1: Estrutura Básica (Sem Conteúdo)**
 
-**2. Criar o arquivo `index.html` básico:**
+**2. Criar o arquivo `index.html` com estrutura básica:**
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Primeiro Site</title>
+</head>
+<body>
+    <div>
+        <!-- Aqui vamos adicionar o conteúdo -->
+    </div>
+</body>
+</html>
+```
+
+**📚 Explicação da Estrutura Básica:**
+
+**`<!DOCTYPE html>`**: Declara que é um documento HTML5
+**`<html lang="pt-BR">`**: Define o idioma da página (português brasileiro)
+**`<head>`**: Cabeçalho com informações sobre a página (não aparece na tela)
+**`<meta charset="UTF-8">`**: Define a codificação de caracteres (suporta acentos)
+**`<meta name="viewport">`**: Configura para funcionar bem em celulares
+**`<title>`**: Título que aparece na aba do navegador
+**`<body>`**: Corpo da página (o que o usuário vê)
+**`<div>`**: Container genérico para organizar conteúdo
+
+**3. Testar a estrutura básica:**
+- Salve o arquivo
+- Abra o `index.html` no navegador
+- Você verá uma página em branco (isso é normal!)
+
+### **📝 Etapa 2: Adicionar o Cabeçalho (Header)**
+
+**4. Adicionar o cabeçalho dentro do `<div>`:**
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Primeiro Site</title>
+</head>
+<body>
+    <div>
+        <header>
+            <h1>Olá! Eu sou [SEU NOME]</h1>
+            <p>Desenvolvedor em formação ⚡</p>
+        </header>
+    </div>
+</body>
+</html>
+```
+
+**📚 Explicação do Cabeçalho:**
+
+**`<header>`**: Tag semântica para cabeçalho da página
+**`<h1>`**: Título principal (mais importante da página)
+**`<p>`**: Parágrafo de texto (subtítulo)
+
+**5. Testar o cabeçalho:**
+- Salve o arquivo
+- Atualize o navegador
+- Você verá o título e subtítulo na tela
+
+### **📝 Etapa 3: Adicionar o Conteúdo Principal (Main)**
+
+**6. Adicionar o conteúdo principal:**
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Primeiro Site</title>
+</head>
+<body>
+    <div>
+        <header>
+            <h1>Olá! Eu sou [SEU NOME]</h1>
+            <p>Desenvolvedor em formação ⚡</p>
+        </header>
+
+        <main>
+            <!-- Aqui vamos adicionar as seções -->
+        </main>
+    </div>
+</body>
+</html>
+```
+
+**📚 Explicação do Main:**
+
+**`<main>`**: Tag semântica para conteúdo principal da página
+**Por que usar**: Indica que aqui está o conteúdo mais importante
+
+**7. Testar o main:**
+- Salve o arquivo
+- Atualize o navegador
+- Ainda não há diferença visual (isso é normal!)
+
+### **📝 Etapa 4: Adicionar Seção "Sobre Mim"**
+
+**8. Adicionar a primeira seção dentro do `<main>`:**
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Primeiro Site</title>
+</head>
+<body>
+    <div>
+        <header>
+            <h1>Olá! Eu sou [SEU NOME]</h1>
+            <p>Desenvolvedor em formação ⚡</p>
+        </header>
+
+        <main>
+            <section>
+                <h2>Sobre Mim</h2>
+                <p>Olá! Sou um desenvolvedor em formação apaixonado por tecnologia e inovação.</p>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
+```
+
+**📚 Explicação da Seção:**
+
+**`<section>`**: Tag semântica para seção temática
+**`<h2>`**: Subtítulo (menos importante que h1)
+**`<p>`**: Parágrafo com texto sobre você
+
+**9. Testar a seção:**
+- Salve o arquivo
+- Atualize o navegador
+- Você verá o título "Sobre Mim" e o parágrafo
+
+### **📝 Etapa 5: Adicionar Galeria de Fotos**
+
+**10. Adicionar a seção de galeria:**
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Primeiro Site</title>
+</head>
+<body>
+    <div>
+        <header>
+            <h1>Olá! Eu sou [SEU NOME]</h1>
+            <p>Desenvolvedor em formação ⚡</p>
+        </header>
+
+        <main>
+            <section>
+                <h2>Sobre Mim</h2>
+                <p>Olá! Sou um desenvolvedor em formação apaixonado por tecnologia e inovação.</p>
+            </section>
+
+            <section>
+                <h2>Minhas Fotos Favoritas</h2>
+                <div>
+                    <div>
+                        <img src="https://picsum.photos/400/300?random=1" alt="Paisagem 1">
+                        <p>● Paisagem 1</p>
+                    </div>
+                    <div>
+                        <img src="https://picsum.photos/400/300?random=2" alt="Paisagem 2">
+                        <p>● Paisagem 2</p>
+                    </div>
+                    <div>
+                        <img src="https://picsum.photos/400/300?random=3" alt="Paisagem 3">
+                        <p>● Paisagem 3</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
+```
+
+**📚 Explicação da Galeria:**
+
+**`<section>`**: Nova seção para galeria
+**`<h2>`**: Título da seção
+**`<div>`**: Container para organizar as fotos
+**`<div>`**: Container para cada foto
+**`<img>`**: Tag para imagem
+- **`src`**: Caminho da imagem (URL)
+- **`alt`**: Descrição da imagem (importante para acessibilidade)
+**`<p>`**: Legenda da foto
+
+**11. Testar a galeria:**
+- Salve o arquivo
+- Atualize o navegador
+- Você verá 3 imagens com legendas
+
+### **📝 Etapa 6: Adicionar Seção de Hobbies**
+
+**12. Adicionar a seção de hobbies:**
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Primeiro Site</title>
+</head>
+<body>
+    <div>
+        <header>
+            <h1>Olá! Eu sou [SEU NOME]</h1>
+            <p>Desenvolvedor em formação ⚡</p>
+        </header>
+
+        <main>
+            <section>
+                <h2>Sobre Mim</h2>
+                <p>Olá! Sou um desenvolvedor em formação apaixonado por tecnologia e inovação.</p>
+            </section>
+
+            <section>
+                <h2>Minhas Fotos Favoritas</h2>
+                <div>
+                    <div>
+                        <img src="https://picsum.photos/400/300?random=1" alt="Paisagem 1">
+                        <p>● Paisagem 1</p>
+                    </div>
+                    <div>
+                        <img src="https://picsum.photos/400/300?random=2" alt="Paisagem 2">
+                        <p>● Paisagem 2</p>
+                    </div>
+                    <div>
+                        <img src="https://picsum.photos/400/300?random=3" alt="Paisagem 3">
+                        <p>● Paisagem 3</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Meus Hobbies</h2>
+                <div>
+                    <div>
+                        <span>📚</span>
+                        <h3>Ler</h3>
+                    </div>
+                    <div>
+                        <span>🎮</span>
+                        <h3>Jogar</h3>
+                    </div>
+                    <div>
+                        <span>🏃</span>
+                        <h3>Correr</h3>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
+```
+
+**📚 Explicação dos Hobbies:**
+
+**`<section>`**: Nova seção para hobbies
+**`<h2>`**: Título da seção
+**`<div>`**: Container para organizar os hobbies
+**`<div>`**: Container para cada hobby
+**`<span>`**: Tag para texto inline (ícone)
+**`<h3>`**: Subtítulo de nível 3 (nome do hobby)
+
+**13. Testar os hobbies:**
+- Salve o arquivo
+- Atualize o navegador
+- Você verá 3 cards com ícones e nomes
+
+### **📝 Etapa 7: Adicionar o Rodapé (Footer)**
+
+**14. Adicionar o rodapé:**
 ```html
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -117,31 +403,25 @@ cd meu-primeiro-site-prototipo
 </html>
 ```
 
-**📚 Explicação das Tags HTML:**
+**📚 Explicação do Rodapé:**
 
-**`<!DOCTYPE html>`**: Declara que é um documento HTML5
-**`<html lang="pt-BR">`**: Define o idioma da página
-**`<head>`**: Cabeçalho com metadados (não aparece na página)
-**`<meta charset="UTF-8">`**: Define a codificação de caracteres
-**`<meta name="viewport">`**: Configura para dispositivos móveis
-**`<title>`**: Título que aparece na aba do navegador
-**`<body>`**: Corpo da página (o que o usuário vê)
-**`<div>`**: Container genérico para organização
-**`<header>`**: Cabeçalho semântico da página
-**`<h1>`**: Título principal (mais importante)
-**`<p>`**: Parágrafo de texto
-**`<main>`**: Conteúdo principal da página
-**`<section>`**: Seção temática do conteúdo
-**`<h2>`**: Subtítulo
-**`<img>`**: Imagem (src=origem, alt=descrição)
-**`<span>`**: Texto inline
-**`<h3>`**: Subtítulo de nível 3
-**`<footer>`**: Rodapé da página
+**`<footer>`**: Tag semântica para rodapé da página
+**`<p>`**: Parágrafo com informações do rodapé
+**`©`**: Símbolo de copyright
+**`❤️` e `☕`**: Emojis para deixar mais divertido
 
-**3. Abrir no navegador:**
+**15. Testar o rodapé:**
 - Salve o arquivo
-- Abra o `index.html` no navegador
-- Você verá uma página sem estilo (apenas texto e imagens)
+- Atualize o navegador
+- Você verá o rodapé com as informações
+
+**🎯 Resultado da Estrutura HTML:**
+Agora você tem uma página HTML completa com:
+- ✅ Estrutura semântica (header, main, sections, footer)
+- ✅ Conteúdo organizado em seções
+- ✅ Imagens funcionais
+- ✅ Hierarquia de títulos (h1, h2, h3)
+- ✅ Texto e elementos visuais
 
 ### **📝 Etapa 2: Adicionar CSS Básico**
 
