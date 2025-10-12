@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { FaHeart, FaStar, FaSun, FaMoon, FaFire, FaSnowflake, FaLeaf, FaGem } from 'react-icons/fa';
+import { FaHeart, FaStar, FaSun, FaMoon, FaFire, FaSnowflake, FaLeaf, FaGem, FaBrain, FaQuestion, FaTrophy } from 'react-icons/fa';
 
 // Ícones para as cartas (usando react-icons)
 const icons = [
@@ -69,8 +69,9 @@ export default function MemoryGame() {
       <div className="max-w-4xl mx-auto">
         {/* Cabeçalho do jogo */}
         <header className="text-center py-8">
-          <h1 className="text-4xl font-bold text-white mb-4">
-            🧠 Jogo da Memória
+          <h1 className="text-4xl font-bold text-white mb-4 flex items-center justify-center gap-3">
+            <FaBrain className="text-yellow-400" />
+            Jogo da Memória
           </h1>
           <p className="text-xl text-blue-100 mb-6">
             Encontre os pares de ícones!
@@ -119,7 +120,7 @@ export default function MemoryGame() {
                   {isFlipped || isMatched ? (
                     <IconComponent className="text-blue-600" />
                   ) : (
-                    <span className="text-white">❓</span>
+                    <FaQuestion className="text-white" />
                   )}
                 </div>
               );
@@ -131,8 +132,9 @@ export default function MemoryGame() {
         {isGameComplete && (
           <div className="text-center mt-8">
             <div className="bg-white rounded-lg p-8 shadow-xl">
-              <h2 className="text-3xl font-bold text-green-600 mb-4">
-                🎉 Parabéns! Você ganhou!
+              <h2 className="text-3xl font-bold text-green-600 mb-4 flex items-center justify-center gap-3">
+                <FaTrophy className="text-yellow-500" />
+                Parabéns! Você ganhou!
               </h2>
               <p className="text-lg text-gray-600 mb-4">
                 Você completou o jogo em {moves} movimentos!
