@@ -187,9 +187,12 @@ Substituir os console.log repetidos por um loop for que repete a operação.
 ```javascript
 // Função para imprimir uma linha da tabuada
 function printMultiplicationLine(number, multiplier, result) {
-    const colors = ["\x1b[36m", "\x1b[32m", "\x1b[33m", "\x1b[34m", "\x1b[35m", "\x1b[31m"];
-    const color = colors[(multiplier - 1) % colors.length];
-    console.log(color + number + " x " + multiplier + " = " + result + "\x1b[0m");
+    const numberColor = "\x1b[36m";      // Ciano para o número
+    const multiplierColor = "\x1b[32m";  // Verde para o multiplicador
+    const resultColor = "\x1b[33m";      // Amarelo para o resultado
+    const resetColor = "\x1b[0m";        // Reset para voltar ao normal
+    
+    console.log(numberColor + number + resetColor + " x " + multiplierColor + multiplier + resetColor + " = " + resultColor + result + resetColor);
 }
 
 // Função com loop for
@@ -221,15 +224,17 @@ calculateMultiplicationTable(5);
 - **`number`**: Número da tabuada (ex: 2)
 - **`multiplier`**: Multiplicador (ex: 1, 2, 3...)
 - **`result`**: Resultado da multiplicação (ex: 2, 4, 6...)
-- **`const colors = [...]`**: Array com códigos de cores
-- **`colors[(multiplier - 1) % colors.length]`**: Seleciona cor baseada no multiplicador
-- **`% colors.length`**: Operador módulo para repetir cores
-- **Cores alternadas**: Cada linha tem cor diferente
+- **`numberColor = "\x1b[36m"`**: Ciano para o número da tabuada
+- **`multiplierColor = "\x1b[32m"`**: Verde para o multiplicador
+- **`resultColor = "\x1b[33m"`**: Amarelo para o resultado
+- **`resetColor = "\x1b[0m"`**: Reset para voltar ao normal
+- **Cores específicas**: Cada parte tem sua cor fixa
 
 **📚 Explicação das Cores no Loop:**
 - **`const result = number * i`**: Calcula resultado antes de imprimir
 - **`printMultiplicationLine(number, i, result)`**: Chama função para imprimir linha
 - **Separação de responsabilidades**: Cálculo e impressão em funções diferentes
+- **Cores consistentes**: Número sempre ciano, multiplicador sempre verde, resultado sempre amarelo
 
 **🎯 Vantagens:**
 - **Menos código**: Uma linha em vez de 10
@@ -258,6 +263,14 @@ Permitir que o usuário digite o número para calcular a tabuada.
 - **Por que usar**: JavaScript puro não tem input nativo, precisa de módulos
 - **Exemplo**: `const readline = require('readline')` importa o módulo readline
 
+**📚 Conceito Detalhado: Arrow Functions**
+- **Arrow Function**: Sintaxe moderna para criar funções
+- **Sintaxe**: `(parâmetros) => { código }`
+- **Exemplo**: `(answer) => { código }`
+- **Vantagem**: Mais concisa que `function(parâmetros) { código }`
+- **Callback**: Função executada após resposta do usuário
+- **Por que usar**: Sintaxe mais limpa e moderna
+
 **🎯 JavaScript com Input:**
 ```javascript
 // Importar módulo readline
@@ -271,9 +284,12 @@ const rl = readline.createInterface({
 
 // Função para imprimir uma linha da tabuada
 function printMultiplicationLine(number, multiplier, result) {
-    const colors = ["\x1b[36m", "\x1b[32m", "\x1b[33m", "\x1b[34m", "\x1b[35m", "\x1b[31m"];
-    const color = colors[(multiplier - 1) % colors.length];
-    console.log(color + number + " x " + multiplier + " = " + result + "\x1b[0m");
+    const numberColor = "\x1b[36m";      // Ciano para o número
+    const multiplierColor = "\x1b[32m";  // Verde para o multiplicador
+    const resultColor = "\x1b[33m";      // Amarelo para o resultado
+    const resetColor = "\x1b[0m";        // Reset para voltar ao normal
+    
+    console.log(numberColor + number + resetColor + " x " + multiplierColor + multiplier + resetColor + " = " + resultColor + result + resetColor);
 }
 
 // Função para calcular tabuada
@@ -300,8 +316,16 @@ rl.question('Digite um número para calcular a tabuada: ', (answer) => {
 - **`require('readline')`**: Importa módulo para input
 - **`createInterface`**: Cria interface de leitura
 - **`question`**: Faz pergunta ao usuário
+- **`(answer) => { ... }`**: Arrow function que recebe a resposta
 - **`parseInt(answer)`**: Converte texto para número
 - **`rl.close()`**: Fecha a interface
+
+**📚 Explicação Detalhada da Arrow Function:**
+- **`(answer) => {`**: Início da arrow function
+- **`answer`**: Parâmetro que recebe a resposta do usuário
+- **`=>`**: Símbolo da arrow function
+- **`{ ... }`**: Bloco de código da função
+- **Callback**: Função executada quando usuário responde
 
 
 **🎯 Como executar:**
@@ -334,9 +358,12 @@ const rl = readline.createInterface({
 
 // Função para imprimir uma linha da tabuada
 function printMultiplicationLine(number, multiplier, result) {
-    const colors = ["\x1b[36m", "\x1b[32m", "\x1b[33m", "\x1b[34m", "\x1b[35m", "\x1b[31m"];
-    const color = colors[(multiplier - 1) % colors.length];
-    console.log(color + number + " x " + multiplier + " = " + result + "\x1b[0m");
+    const numberColor = "\x1b[36m";      // Ciano para o número
+    const multiplierColor = "\x1b[32m";  // Verde para o multiplicador
+    const resultColor = "\x1b[33m";      // Amarelo para o resultado
+    const resetColor = "\x1b[0m";        // Reset para voltar ao normal
+    
+    console.log(numberColor + number + resetColor + " x " + multiplierColor + multiplier + resetColor + " = " + resultColor + result + resetColor);
 }
 
 // Função para calcular tabuada
@@ -401,9 +428,12 @@ const rl = readline.createInterface({
 
 // Função para imprimir uma linha da tabuada
 function printMultiplicationLine(number, multiplier, result) {
-    const colors = ["\x1b[36m", "\x1b[32m", "\x1b[33m", "\x1b[34m", "\x1b[35m", "\x1b[31m"];
-    const color = colors[(multiplier - 1) % colors.length];
-    console.log(color + number + " x " + multiplier + " = " + result + "\x1b[0m");
+    const numberColor = "\x1b[36m";      // Ciano para o número
+    const multiplierColor = "\x1b[32m";  // Verde para o multiplicador
+    const resultColor = "\x1b[33m";      // Amarelo para o resultado
+    const resetColor = "\x1b[0m";        // Reset para voltar ao normal
+    
+    console.log(numberColor + number + resetColor + " x " + multiplierColor + multiplier + resetColor + " = " + resultColor + result + resetColor);
 }
 
 // Função para calcular tabuada
