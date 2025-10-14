@@ -38,38 +38,6 @@ Um **Gerador de Tabuada** que:
 2. **Testar**: `node --version`
 3. **Verificar**: Versão do Node.js aparece
 
-## 📚 Conceito Detalhado: Módulos e Import
-
-**🎯 O que são Módulos?**
-- **Módulo**: Biblioteca de código que já existe no Node.js
-- **Função**: Fornecer funcionalidades prontas para usar
-- **Exemplos**: `readline` (input), `fs` (arquivos), `path` (caminhos)
-- **Vantagem**: Não precisar escrever tudo do zero
-
-**🎯 Como Funciona o require():**
-- **`require()`**: Função do Node.js para importar módulos
-- **Sintaxe**: `const nome = require('nome-do-modulo')`
-- **Módulos nativos**: Já vêm instalados com o Node.js
-- **Módulos externos**: Podem ser instalados com `npm install`
-
-**🎯 Exemplo Prático:**
-```javascript
-// Importar módulo readline
-const readline = require('readline');
-
-// Agora podemos usar as funções do readline
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
-```
-
-**🎯 Por que Precisamos de Módulos?**
-- **JavaScript puro**: Não tem input nativo
-- **Node.js**: Adiciona funcionalidades extras
-- **readline**: Específico para ler entrada do usuário
-- **Reutilização**: Código já testado e otimizado
-
 ## 📝 Passo a Passo
 
 ### **Passo 1: Tabuada Hardcoded (2 x 1 até 2 x 10)**
@@ -246,12 +214,13 @@ Permitir que o usuário digite o número para calcular a tabuada.
 - **question**: Método para fazer pergunta ao usuário
 - **callback**: Função executada após resposta
 
-**📚 Conceito Detalhado: Módulos e Import**
+**📚 Conceito Detalhado: Módulos e require()**
 - **Módulo**: Biblioteca de código que já existe no Node.js
-- **require()**: Função para importar módulos
-- **const**: Variável que não pode ser alterada
-- **readline**: Módulo específico para ler entrada do usuário
+- **require()**: Função do Node.js para importar módulos
+- **Sintaxe**: `const nome = require('nome-do-modulo')`
+- **Módulos nativos**: Já vêm instalados com o Node.js (como readline)
 - **Por que usar**: JavaScript puro não tem input nativo, precisa de módulos
+- **Exemplo**: `const readline = require('readline')` importa o módulo readline
 
 **🎯 JavaScript com Input:**
 ```javascript
@@ -290,12 +259,6 @@ rl.question('Digite um número para calcular a tabuada: ', (resposta) => {
 - **`parseInt(resposta)`**: Converte texto para número
 - **`rl.close()`**: Fecha a interface
 
-**📚 Explicação Detalhada do require():**
-- **`require()`**: Função do Node.js para importar módulos
-- **`'readline'`**: Nome do módulo (entre aspas)
-- **`const readline`**: Armazena o módulo em uma variável
-- **Módulos nativos**: Já vêm instalados com o Node.js
-- **Outros módulos**: Podem ser instalados com `npm install`
 
 **🎯 Como executar:**
 1. **Salvar como**: `tabuada.js`
