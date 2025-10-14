@@ -1,626 +1,422 @@
-# 🎲 Aula 1.1: JavaScript Puro - Simulador de Dados
+# 🧮 Aula 1.1: JavaScript Puro - Gerador de Tabuada
 
 ## 📖 O que vamos aprender
 - **JavaScript Puro**: Sintaxe básica e conceitos fundamentais
-- **DOM**: Manipular elementos HTML com JavaScript
-- **Eventos**: Responder a cliques do usuário
-- **Math**: Gerar números aleatórios
-- **Arrays**: Listas de dados
+- **Console**: Usar console.log para exibir resultados
+- **Variáveis**: Armazenar e manipular dados
 - **Funções**: Organizar código reutilizável
-- **Loops**: Repetir ações
-- **Timers**: Criar animações simples
+- **Loops**: Repetir ações com for
+- **Input**: Receber dados do usuário
+- **Validação**: Verificar se a entrada é válida
+- **Loops de controle**: Repetir até condição ser atendida
 
 ## 🎯 O que vamos criar
-Um **Simulador de Dados** interativo onde o usuário pode:
-- Rolar dados de diferentes tipos (d6, d10, d20)
-- Ver animação dos dados "rolando"
-- Contar quantas vezes rolou cada dado
-- Resetar o contador
-- Interface visual atrativa com tema de jogos
+Um **Gerador de Tabuada** que:
+- Calcula e exibe a tabuada de qualquer número
+- Valida a entrada do usuário (apenas números de 1 a 10)
+- Repete até receber uma entrada válida
+- Mostra o resultado formatado no console
 
-## 🎮 Conceitos de Jogos que Vamos Aplicar
-- **Dados virtuais**: Simular rolagem de dados reais
-- **Sistema de pontuação**: Contar resultados
-- **Feedback visual**: Animações e efeitos
-- **Interface de jogo**: Botões e displays
-- **Estatísticas**: Histórico de rolagens
+## 🎮 Conceitos de Programação que Vamos Aplicar
+- **Cálculos**: Operações matemáticas básicas
+- **Estruturas de controle**: if, for, while
+- **Validação de dados**: Verificar entrada do usuário
+- **Loops**: Repetir operações
+- **Funções**: Organizar código
+- **Console**: Interface de saída
 
 ## 🛠️ Preparação do Ambiente
 
 ### **Passo 1: Criar a Estrutura do Projeto**
-1. **Criar pasta**: `dice-simulator`
-2. **Arquivos necessários**:
-   - `index.html` - Estrutura HTML
-   - `style.css` - Estilos CSS
-   - `script.js` - Lógica JavaScript
-3. **Abrir no navegador**: `index.html`
+1. **Criar pasta**: `tabuada-generator`
+2. **Arquivo principal**: `tabuada.js`
+3. **Executar**: `node tabuada.js`
 
-### **Passo 2: Verificar se o JavaScript está funcionando**
-1. **Abrir o Console do navegador** (F12)
-2. **Testar**: `console.log("JavaScript funcionando!")`
-3. **Verificar**: Mensagem aparece no console
+### **Passo 2: Verificar se o Node.js está funcionando**
+1. **Abrir o terminal**
+2. **Testar**: `node --version`
+3. **Verificar**: Versão do Node.js aparece
 
 ## 📝 Passo a Passo
 
-### **Passo 1: Criar a Estrutura HTML**
+### **Passo 1: Tabuada Hardcoded (2 x 1 até 2 x 10)**
 
 **🎯 O que vamos fazer:**
-Criar a estrutura básica do HTML com elementos que vamos manipular com JavaScript.
+Criar a tabuada do 2 usando console.log com cálculos hardcoded (valores fixos).
 
-**📚 Conceito Detalhado: HTML + JavaScript**
-- **HTML**: Estrutura e conteúdo da página
-- **JavaScript**: Lógica e interatividade
-- **DOM**: Document Object Model - como JavaScript acessa o HTML
-- **Elementos**: Tags HTML que podemos manipular
-
-**🎯 HTML Básico:**
-```html
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulador de Dados</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container">
-        <header>
-            <h1>🎲 Simulador de Dados</h1>
-            <p>Role os dados e veja a magia acontecer!</p>
-        </header>
-
-        <main>
-            <div class="dice-section">
-                <h2>Escolha o tipo de dado:</h2>
-                <div class="dice-buttons">
-                    <button id="d6-btn" class="dice-btn">D6</button>
-                    <button id="d10-btn" class="dice-btn">D10</button>
-                    <button id="d20-btn" class="dice-btn">D20</button>
-                </div>
-            </div>
-
-            <div class="result-section">
-                <h2>Resultado:</h2>
-                <div id="dice-display" class="dice-display">
-                    <span id="dice-value">?</span>
-                </div>
-            </div>
-
-            <div class="stats-section">
-                <h2>Estatísticas:</h2>
-                <div id="stats-display">
-                    <p>Total de rolagens: <span id="total-rolls">0</span></p>
-                    <p>Último resultado: <span id="last-result">-</span></p>
-                </div>
-                <button id="reset-btn" class="reset-btn">Resetar</button>
-            </div>
-        </main>
-    </div>
-
-    <script src="script.js"></script>
-</body>
-</html>
-```
-
-**📚 Explicação dos Elementos HTML:**
-- **`<!DOCTYPE html>`**: Declara que é HTML5
-- **`<html>`**: Elemento raiz da página
-- **`<head>`**: Metadados (não visíveis)
-- **`<body>`**: Conteúdo visível da página
-- **`<div>`**: Container genérico
-- **`<button>`**: Botão clicável
-- **`<span>`**: Texto inline
-- **`<script>`**: Carrega o JavaScript
-
-### **Passo 2: Adicionar Estilos CSS Básicos**
-
-**🎯 O que vamos fazer:**
-Criar estilos básicos para deixar o simulador visualmente atrativo.
-
-**📚 Conceito Detalhado: CSS + JavaScript**
-- **CSS**: Aparência visual dos elementos
-- **Classes**: `.dice-btn`, `.container`, etc.
-- **IDs**: `#dice-display`, `#dice-value`, etc.
-- **Seletores**: Como JavaScript encontra elementos
-
-**🎯 CSS Básico:**
-```css
-/* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.container {
-    background: white;
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    text-align: center;
-    max-width: 500px;
-    width: 100%;
-}
-
-h1 {
-    color: #333;
-    margin-bottom: 0.5rem;
-    font-size: 2.5rem;
-}
-
-p {
-    color: #666;
-    margin-bottom: 2rem;
-}
-
-.dice-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    margin-bottom: 2rem;
-}
-
-.dice-btn {
-    background: #4CAF50;
-    color: white;
-    border: none;
-    padding: 1rem 2rem;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1.2rem;
-    font-weight: bold;
-    transition: all 0.3s ease;
-}
-
-.dice-btn:hover {
-    background: #45a049;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-.dice-display {
-    background: #f0f0f0;
-    border: 3px solid #333;
-    border-radius: 15px;
-    padding: 2rem;
-    margin: 2rem 0;
-    font-size: 4rem;
-    font-weight: bold;
-    color: #333;
-    min-height: 120px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.stats-section {
-    margin-top: 2rem;
-    padding-top: 2rem;
-    border-top: 2px solid #eee;
-}
-
-.reset-btn {
-    background: #f44336;
-    color: white;
-    border: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1rem;
-    margin-top: 1rem;
-}
-
-.reset-btn:hover {
-    background: #da190b;
-}
-```
-
-### **Passo 3: Criar a Lógica JavaScript Básica**
-
-**🎯 O que vamos fazer:**
-Criar as variáveis e funções básicas para o simulador de dados.
-
-**📚 Conceito Detalhado: JavaScript Básico**
-- **Variáveis**: `let`, `const` para armazenar dados
-- **Funções**: `function` para organizar código
-- **DOM**: `document.getElementById()` para acessar elementos
-- **Eventos**: `addEventListener()` para responder a cliques
+**📚 Conceito Detalhado: Console.log**
+- **console.log()**: Função para exibir informações no terminal
+- **String**: Texto entre aspas
+- **Operações matemáticas**: +, -, *, /
+- **Concatenação**: Juntar texto com números
 
 **🎯 JavaScript Básico:**
 ```javascript
-// Variáveis globais
-let totalRolls = 0;
-let lastResult = 0;
+// Tabuada do 2 - hardcoded
+console.log("2 x 1 = 2");
+console.log("2 x 2 = 4");
+console.log("2 x 3 = 6");
+console.log("2 x 4 = 8");
+console.log("2 x 5 = 10");
+console.log("2 x 6 = 12");
+console.log("2 x 7 = 14");
+console.log("2 x 8 = 16");
+console.log("2 x 9 = 18");
+console.log("2 x 10 = 20");
+```
 
-// Função para rolar dados
-function rollDice(maxValue) {
-    // Gerar número aleatório
-    const result = Math.floor(Math.random() * maxValue) + 1;
-    
-    // Atualizar variáveis
-    totalRolls++;
-    lastResult = result;
-    
-    // Atualizar interface
-    updateDisplay(result);
-    updateStats();
-    
-    return result;
+**📚 Explicação do Código:**
+- **`console.log()`**: Exibe texto no terminal
+- **`"2 x 1 = 2"`**: String (texto) entre aspas
+- **Cada linha**: Uma operação da tabuada
+- **Resultado**: Números calculados manualmente
+
+**🎯 Como executar:**
+1. **Salvar como**: `tabuada.js`
+2. **Executar**: `node tabuada.js`
+3. **Ver resultado**: Tabuada aparece no terminal
+
+### **Passo 2: Usar Variável para Trocar o Número**
+
+**🎯 O que vamos fazer:**
+Substituir o número fixo (2) por uma variável para poder trocar facilmente.
+
+**📚 Conceito Detalhado: Variáveis**
+- **Variáveis**: `let` para armazenar dados que podem mudar
+- **const**: Para valores que não mudam
+- **Atribuição**: `=` para dar valor à variável
+- **Reutilização**: Usar a variável em vários lugares
+
+**🎯 JavaScript com Variável:**
+```javascript
+// Usar variável para o número
+let numero = 2;
+
+console.log(numero + " x 1 = " + (numero * 1));
+console.log(numero + " x 2 = " + (numero * 2));
+console.log(numero + " x 3 = " + (numero * 3));
+console.log(numero + " x 4 = " + (numero * 4));
+console.log(numero + " x 5 = " + (numero * 5));
+console.log(numero + " x 6 = " + (numero * 6));
+console.log(numero + " x 7 = " + (numero * 7));
+console.log(numero + " x 8 = " + (numero * 8));
+console.log(numero + " x 9 = " + (numero * 9));
+console.log(numero + " x 10 = " + (numero * 10));
+```
+
+**📚 Explicação do Código:**
+- **`let numero = 2`**: Cria variável com valor 2
+- **`numero + " x 1 = "`**: Concatena variável com texto
+- **`(numero * 1)`**: Calcula o resultado
+- **Para trocar**: Mude apenas `let numero = 3`
+
+**🎯 Vantagens:**
+- **Flexibilidade**: Trocar número em um lugar só
+- **Reutilização**: Variável usada várias vezes
+- **Manutenção**: Mais fácil de modificar
+
+### **Passo 3: Criar Função para Calcular a Tabuada**
+
+**🎯 O que vamos fazer:**
+Criar uma função que recebe um número e calcula sua tabuada.
+
+**📚 Conceito Detalhado: Funções**
+- **function**: Palavra-chave para criar funções
+- **Parâmetros**: Dados que a função recebe
+- **return**: Valor que a função retorna
+- **Reutilização**: Usar a função várias vezes
+
+**🎯 JavaScript com Função:**
+```javascript
+// Função para calcular tabuada
+function calcularTabuada(numero) {
+    console.log("=== Tabuada do " + numero + " ===");
+    console.log(numero + " x 1 = " + (numero * 1));
+    console.log(numero + " x 2 = " + (numero * 2));
+    console.log(numero + " x 3 = " + (numero * 3));
+    console.log(numero + " x 4 = " + (numero * 4));
+    console.log(numero + " x 5 = " + (numero * 5));
+    console.log(numero + " x 6 = " + (numero * 6));
+    console.log(numero + " x 7 = " + (numero * 7));
+    console.log(numero + " x 8 = " + (numero * 8));
+    console.log(numero + " x 9 = " + (numero * 9));
+    console.log(numero + " x 10 = " + (numero * 10));
+    console.log("========================");
 }
 
-// Função para atualizar o display
-function updateDisplay(value) {
-    const diceDisplay = document.getElementById('dice-value');
-    diceDisplay.textContent = value;
+// Usar a função
+calcularTabuada(2);
+calcularTabuada(3);
+calcularTabuada(5);
+```
+
+**📚 Explicação do Código:**
+- **`function calcularTabuada(numero)`**: Cria função com parâmetro
+- **`numero`**: Parâmetro que recebe o valor
+- **`calcularTabuada(2)`**: Chama função com valor 2
+- **Reutilização**: Mesma função para diferentes números
+
+**🎯 Vantagens:**
+- **Organização**: Código mais limpo
+- **Reutilização**: Uma função para vários números
+- **Manutenção**: Modificar em um lugar só
+
+### **Passo 4: Usar Loop For para Imprimir a Tabuada**
+
+**🎯 O que vamos fazer:**
+Substituir os console.log repetidos por um loop for que repete a operação.
+
+**📚 Conceito Detalhado: Loops For**
+- **for**: Palavra-chave para criar loops
+- **i**: Variável contadora (começa em 1)
+- **i <= 10**: Condição para continuar o loop
+- **i++**: Incrementar a variável (i = i + 1)
+
+**🎯 JavaScript com Loop:**
+```javascript
+// Função com loop for
+function calcularTabuada(numero) {
+    console.log("=== Tabuada do " + numero + " ===");
     
-    // Adicionar animação
-    diceDisplay.style.transform = 'scale(1.2)';
-    setTimeout(() => {
-        diceDisplay.style.transform = 'scale(1)';
-    }, 200);
-}
-
-// Função para atualizar estatísticas
-function updateStats() {
-    document.getElementById('total-rolls').textContent = totalRolls;
-    document.getElementById('last-result').textContent = lastResult;
-}
-
-// Função para resetar
-function resetStats() {
-    totalRolls = 0;
-    lastResult = 0;
-    document.getElementById('dice-value').textContent = '?';
-    updateStats();
-}
-
-// Adicionar event listeners
-document.addEventListener('DOMContentLoaded', function() {
-    // Botões de dados
-    document.getElementById('d6-btn').addEventListener('click', () => rollDice(6));
-    document.getElementById('d10-btn').addEventListener('click', () => rollDice(10));
-    document.getElementById('d20-btn').addEventListener('click', () => rollDice(20));
+    for (let i = 1; i <= 10; i++) {
+        console.log(numero + " x " + i + " = " + (numero * i));
+    }
     
-    // Botão de reset
-    document.getElementById('reset-btn').addEventListener('click', resetStats);
+    console.log("========================");
+}
+
+// Usar a função
+calcularTabuada(2);
+calcularTabuada(3);
+calcularTabuada(5);
+```
+
+**📚 Explicação do Loop:**
+- **`let i = 1`**: Inicia contador em 1
+- **`i <= 10`**: Continua enquanto i for menor ou igual a 10
+- **`i++`**: Aumenta i em 1 a cada repetição
+- **`numero * i`**: Calcula o resultado
+
+**🎯 Vantagens:**
+- **Menos código**: Uma linha em vez de 10
+- **Flexibilidade**: Fácil de mudar o limite
+- **Eficiência**: Código mais limpo
+
+### **Passo 5: Permitir Input do Usuário**
+
+**🎯 O que vamos fazer:**
+Permitir que o usuário digite o número para calcular a tabuada.
+
+**📚 Conceito Detalhado: Input do Usuário**
+- **readline**: Módulo do Node.js para input
+- **createInterface**: Criar interface de leitura
+- **question**: Método para fazer pergunta ao usuário
+- **callback**: Função executada após resposta
+
+**🎯 JavaScript com Input:**
+```javascript
+// Importar módulo readline
+const readline = require('readline');
+
+// Criar interface de leitura
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+// Função para calcular tabuada
+function calcularTabuada(numero) {
+    console.log("=== Tabuada do " + numero + " ===");
+    
+    for (let i = 1; i <= 10; i++) {
+        console.log(numero + " x " + i + " = " + (numero * i));
+    }
+    
+    console.log("========================");
+}
+
+// Perguntar ao usuário
+rl.question('Digite um número para calcular a tabuada: ', (resposta) => {
+    const numero = parseInt(resposta);
+    calcularTabuada(numero);
+    rl.close();
 });
 ```
 
-### **Passo 4: Adicionar Animações e Efeitos**
+**📚 Explicação do Código:**
+- **`require('readline')`**: Importa módulo para input
+- **`createInterface`**: Cria interface de leitura
+- **`question`**: Faz pergunta ao usuário
+- **`parseInt(resposta)`**: Converte texto para número
+- **`rl.close()`**: Fecha a interface
+
+**🎯 Como executar:**
+1. **Salvar como**: `tabuada.js`
+2. **Executar**: `node tabuada.js`
+3. **Digitar**: Número desejado
+4. **Ver resultado**: Tabuada aparece
+
+### **Passo 6: Validar Entrada com If**
 
 **🎯 O que vamos fazer:**
-Melhorar a experiência visual com animações de "rolagem" dos dados.
+Verificar se o usuário digitou um número válido (entre 1 e 10).
 
-**📚 Conceito Detalhado: Animações JavaScript**
-- **setInterval**: Executar código repetidamente
-- **clearInterval**: Parar execução
-- **setTimeout**: Executar após delay
-- **CSS Transitions**: Animações suaves
+**📚 Conceito Detalhado: Validação com If**
+- **if**: Palavra-chave para condições
+- **else**: Executar código se condição for falsa
+- **&&**: Operador "E" (ambas condições devem ser verdadeiras)
+- **||**: Operador "OU" (uma das condições deve ser verdadeira)
 
-**🎯 JavaScript com Animações:**
+**🎯 JavaScript com Validação:**
 ```javascript
-// Função para animar a rolagem
-function animateRoll(maxValue, callback) {
-    const diceDisplay = document.getElementById('dice-value');
-    let animationCount = 0;
-    const maxAnimations = 10;
+// Importar módulo readline
+const readline = require('readline');
+
+// Criar interface de leitura
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+// Função para calcular tabuada
+function calcularTabuada(numero) {
+    console.log("=== Tabuada do " + numero + " ===");
     
-    const animation = setInterval(() => {
-        // Mostrar números aleatórios durante a animação
-        const randomValue = Math.floor(Math.random() * maxValue) + 1;
-        diceDisplay.textContent = randomValue;
+    for (let i = 1; i <= 10; i++) {
+        console.log(numero + " x " + i + " = " + (numero * i));
+    }
+    
+    console.log("========================");
+}
+
+// Perguntar ao usuário
+rl.question('Digite um número para calcular a tabuada: ', (resposta) => {
+    const numero = parseInt(resposta);
+    
+    // Validar entrada
+    if (numero >= 1 && numero <= 10) {
+        calcularTabuada(numero);
+    } else {
+        console.log("❌ Erro: Digite um número entre 1 e 10!");
+    }
+    
+    rl.close();
+});
+```
+
+**📚 Explicação da Validação:**
+- **`numero >= 1`**: Verifica se é maior ou igual a 1
+- **`numero <= 10`**: Verifica se é menor ou igual a 10
+- **`&&`**: Ambas condições devem ser verdadeiras
+- **`else`**: Executa se condição for falsa
+
+**🎯 Vantagens:**
+- **Segurança**: Evita erros com números inválidos
+- **Feedback**: Usuário sabe o que está errado
+- **Controle**: Apenas números válidos são processados
+
+### **Passo 7: Manter Entrada em Loop até Receber Valor Válido**
+
+**🎯 O que vamos fazer:**
+Repetir a pergunta até o usuário digitar um número válido.
+
+**📚 Conceito Detalhado: Loops While**
+- **while**: Palavra-chave para loops condicionais
+- **true**: Condição que sempre é verdadeira
+- **break**: Sair do loop
+- **continue**: Pular para próxima iteração
+
+**🎯 JavaScript com Loop de Validação:**
+```javascript
+// Importar módulo readline
+const readline = require('readline');
+
+// Criar interface de leitura
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+// Função para calcular tabuada
+function calcularTabuada(numero) {
+    console.log("=== Tabuada do " + numero + " ===");
+    
+    for (let i = 1; i <= 10; i++) {
+        console.log(numero + " x " + i + " = " + (numero * i));
+    }
+    
+    console.log("========================");
+}
+
+// Função para perguntar e validar
+function perguntarNumero() {
+    rl.question('Digite um número entre 1 e 10: ', (resposta) => {
+        const numero = parseInt(resposta);
         
-        animationCount++;
-        
-        if (animationCount >= maxAnimations) {
-            clearInterval(animation);
-            // Resultado final
-            const finalResult = Math.floor(Math.random() * maxValue) + 1;
-            diceDisplay.textContent = finalResult;
-            callback(finalResult);
+        // Validar entrada
+        if (numero >= 1 && numero <= 10) {
+            calcularTabuada(numero);
+            rl.close();
+        } else {
+            console.log("❌ Erro: Digite um número entre 1 e 10!");
+            console.log("Tente novamente...\n");
+            perguntarNumero(); // Perguntar novamente
         }
-    }, 100);
-}
-
-// Função melhorada para rolar dados
-function rollDice(maxValue) {
-    // Iniciar animação
-    animateRoll(maxValue, (result) => {
-        // Atualizar variáveis
-        totalRolls++;
-        lastResult = result;
-        
-        // Atualizar interface
-        updateDisplay(result);
-        updateStats();
-        
-        // Efeito visual final
-        const diceDisplay = document.getElementById('dice-value');
-        diceDisplay.style.transform = 'scale(1.3)';
-        diceDisplay.style.color = '#4CAF50';
-        
-        setTimeout(() => {
-            diceDisplay.style.transform = 'scale(1)';
-            diceDisplay.style.color = '#333';
-        }, 300);
-    });
-}
-```
-
-### **Passo 5: Adicionar Histórico de Rolagens**
-
-**🎯 O que vamos fazer:**
-Criar um sistema para mostrar o histórico das últimas rolagens.
-
-**📚 Conceito Detalhado: Arrays e Loops**
-- **Arrays**: `[]` para listas de dados
-- **push()**: Adicionar item ao array
-- **slice()**: Pegar parte do array
-- **forEach()**: Executar função para cada item
-- **map()**: Transformar array
-
-**🎯 JavaScript com Histórico:**
-```javascript
-// Array para histórico
-let rollHistory = [];
-
-// Função para adicionar ao histórico
-function addToHistory(result, diceType) {
-    rollHistory.push({
-        result: result,
-        diceType: diceType,
-        timestamp: new Date()
-    });
-    
-    // Manter apenas os últimos 10 resultados
-    if (rollHistory.length > 10) {
-        rollHistory = rollHistory.slice(-10);
-    }
-    
-    updateHistoryDisplay();
-}
-
-// Função para atualizar display do histórico
-function updateHistoryDisplay() {
-    const historyContainer = document.getElementById('history-display');
-    if (!historyContainer) return;
-    
-    historyContainer.innerHTML = '';
-    
-    rollHistory.forEach((roll, index) => {
-        const rollElement = document.createElement('div');
-        rollElement.className = 'history-item';
-        rollElement.innerHTML = `
-            <span>${roll.diceType}: ${roll.result}</span>
-            <span class="timestamp">${roll.timestamp.toLocaleTimeString()}</span>
-        `;
-        historyContainer.appendChild(rollElement);
     });
 }
 
-// Função melhorada para rolar dados
-function rollDice(maxValue) {
-    const diceType = `D${maxValue}`;
-    
-    animateRoll(maxValue, (result) => {
-        // Atualizar variáveis
-        totalRolls++;
-        lastResult = result;
-        
-        // Adicionar ao histórico
-        addToHistory(result, diceType);
-        
-        // Atualizar interface
-        updateDisplay(result);
-        updateStats();
-    });
-}
+// Iniciar o programa
+perguntarNumero();
 ```
 
-### **Passo 6: Adicionar Estatísticas Avançadas**
+**📚 Explicação do Loop:**
+- **`perguntarNumero()`**: Função que pergunta ao usuário
+- **`if (numero >= 1 && numero <= 10)`**: Valida entrada
+- **`perguntarNumero()`**: Chama função novamente se inválido
+- **`rl.close()`**: Fecha apenas quando válido
 
-**🎯 O que vamos fazer:**
-Criar estatísticas mais detalhadas sobre as rolagens.
-
-**📚 Conceito Detalhado: Objetos e Métodos**
-- **Objetos**: `{}` para dados estruturados
-- **Propriedades**: Acessar dados com `.`
-- **Métodos**: Funções dentro de objetos
-- **JSON**: Estrutura de dados
-
-**🎯 JavaScript com Estatísticas:**
-```javascript
-// Objeto para estatísticas
-let stats = {
-    totalRolls: 0,
-    d6Rolls: 0,
-    d10Rolls: 0,
-    d20Rolls: 0,
-    averageResult: 0,
-    bestResult: 0,
-    worstResult: 0
-};
-
-// Função para calcular estatísticas
-function calculateStats() {
-    if (rollHistory.length === 0) return;
-    
-    const results = rollHistory.map(roll => roll.result);
-    stats.averageResult = (results.reduce((a, b) => a + b, 0) / results.length).toFixed(2);
-    stats.bestResult = Math.max(...results);
-    stats.worstResult = Math.min(...results);
-}
-
-// Função para atualizar display de estatísticas
-function updateStatsDisplay() {
-    calculateStats();
-    
-    const statsHTML = `
-        <div class="stats-grid">
-            <div class="stat-item">
-                <h3>Total de Rolagens</h3>
-                <p>${stats.totalRolls}</p>
-            </div>
-            <div class="stat-item">
-                <h3>Média</h3>
-                <p>${stats.averageResult}</p>
-            </div>
-            <div class="stat-item">
-                <h3>Melhor Resultado</h3>
-                <p>${stats.bestResult}</p>
-            </div>
-            <div class="stat-item">
-                <h3>Pior Resultado</h3>
-                <p>${stats.worstResult}</p>
-            </div>
-        </div>
-    `;
-    
-    document.getElementById('stats-display').innerHTML = statsHTML;
-}
-```
-
-### **Passo 7: Adicionar Sons e Efeitos**
-
-**🎯 O que vamos fazer:**
-Adicionar sons de rolagem e efeitos visuais mais avançados.
-
-**📚 Conceito Detalhado: Audio API**
-- **Audio**: `new Audio()` para sons
-- **play()**: Reproduzir som
-- **volume**: Controlar volume
-- **CSS Animations**: Animações avançadas
-
-**🎯 JavaScript com Sons:**
-```javascript
-// Função para tocar som
-function playDiceSound() {
-    const audio = new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBSuBzvLZiTYIG2m98OSfTgwOUarm7bVjGgU4k9fyzHksBSR3x/DdkEAKFF606euoVRQKRp/g8r5sIQUqgc7y2Yk2CBtpvfDkn04MDlGq5u21YxoFOJPX8sx5LAUkd8fw3ZBACg==');
-    audio.volume = 0.3;
-    audio.play().catch(e => console.log('Som não disponível'));
-}
-
-// Função melhorada para rolar dados
-function rollDice(maxValue) {
-    const diceType = `D${maxValue}`;
-    
-    // Tocar som
-    playDiceSound();
-    
-    animateRoll(maxValue, (result) => {
-        // Atualizar variáveis
-        totalRolls++;
-        lastResult = result;
-        
-        // Adicionar ao histórico
-        addToHistory(result, diceType);
-        
-        // Atualizar interface
-        updateDisplay(result);
-        updateStats();
-        updateStatsDisplay();
-    });
-}
-```
-
-### **Passo 8: Adicionar Persistência Local**
-
-**🎯 O que vamos fazer:**
-Salvar o histórico e estatísticas no navegador usando localStorage.
-
-**📚 Conceito Detalhado: LocalStorage**
-- **localStorage**: Armazenar dados no navegador
-- **setItem()**: Salvar dados
-- **getItem()**: Recuperar dados
-- **JSON.stringify()**: Converter objeto para string
-- **JSON.parse()**: Converter string para objeto
-
-**🎯 JavaScript com Persistência:**
-```javascript
-// Função para salvar dados
-function saveData() {
-    const data = {
-        rollHistory: rollHistory,
-        stats: stats,
-        totalRolls: totalRolls
-    };
-    
-    localStorage.setItem('diceSimulator', JSON.stringify(data));
-}
-
-// Função para carregar dados
-function loadData() {
-    const savedData = localStorage.getItem('diceSimulator');
-    
-    if (savedData) {
-        const data = JSON.parse(savedData);
-        rollHistory = data.rollHistory || [];
-        stats = data.stats || stats;
-        totalRolls = data.totalRolls || 0;
-        
-        updateHistoryDisplay();
-        updateStatsDisplay();
-    }
-}
-
-// Carregar dados ao iniciar
-document.addEventListener('DOMContentLoaded', function() {
-    loadData();
-    
-    // Salvar dados a cada rolagem
-    const originalRollDice = rollDice;
-    rollDice = function(maxValue) {
-        originalRollDice(maxValue);
-        saveData();
-    };
-});
-```
+**🎯 Vantagens:**
+- **Persistência**: Não desiste até receber valor válido
+- **Feedback**: Usuário sempre sabe o que fazer
+- **Robustez**: Programa não quebra com entrada inválida
 
 ## 🎯 Resultado Final
 
-### **🎮 Funcionalidades do Simulador:**
-- **Rolagem de dados**: D6, D10, D20
-- **Animações**: Dados "rolando" na tela
-- **Histórico**: Últimas 10 rolagens
-- **Estatísticas**: Média, melhor, pior resultado
-- **Sons**: Efeitos sonoros de rolagem
-- **Persistência**: Dados salvos no navegador
-- **Reset**: Limpar histórico e estatísticas
+### **🧮 Funcionalidades do Gerador de Tabuada:**
+- **Cálculo automático**: Tabuada de qualquer número
+- **Validação de entrada**: Apenas números de 1 a 10
+- **Loop de validação**: Repete até receber entrada válida
+- **Interface de terminal**: Input e output no console
+- **Código organizado**: Funções reutilizáveis
 
 ### **📚 Conceitos JavaScript Aprendidos:**
-- **Variáveis**: `let`, `const`
-- **Funções**: `function`, arrow functions
-- **DOM**: `getElementById`, `addEventListener`
-- **Arrays**: `push`, `slice`, `forEach`, `map`
-- **Objetos**: Propriedades e métodos
-- **Math**: `random`, `floor`, `max`, `min`
-- **Timers**: `setInterval`, `setTimeout`
-- **LocalStorage**: Persistência de dados
-- **Audio**: Reprodução de sons
+- **Console**: `console.log()` para exibir resultados
+- **Variáveis**: `let` para armazenar dados
+- **Funções**: `function` para organizar código
+- **Loops**: `for` para repetir operações
+- **Input**: `readline` para receber dados do usuário
+- **Validação**: `if/else` para verificar entrada
+- **Loops de controle**: Repetir até condição ser atendida
 
-### **🎯 Próximos Passos:**
-Agora que dominamos JavaScript puro, podemos aplicar esses conceitos em React/Next.js para criar jogos mais complexos!
+### **🎯 Progressão Pedagógica:**
+1. **Hardcoded**: Valores fixos para entender o básico
+2. **Variáveis**: Flexibilidade para trocar números
+3. **Funções**: Organização e reutilização de código
+4. **Loops**: Eficiência com `for`
+5. **Input**: Interatividade com usuário
+6. **Validação**: Controle de entrada com `if`
+7. **Loop de validação**: Robustez com repetição
 
 ## 🎉 Parabéns!
 
-Você criou seu primeiro programa JavaScript completo! 🎲✨
+Você criou seu primeiro programa JavaScript completo! 🧮✨
 
 **O que você aprendeu:**
-- **Fundamentos**: Variáveis, funções, eventos
-- **DOM**: Manipular elementos HTML
-- **Interatividade**: Responder a cliques
-- **Animações**: Efeitos visuais
-- **Persistência**: Salvar dados
-- **Sons**: Efeitos sonoros
+- **Fundamentos**: Variáveis, funções, loops
+- **Console**: Interface de saída
+- **Input**: Receber dados do usuário
+- **Validação**: Verificar entrada
+- **Loops**: Repetir operações
+- **Organização**: Código limpo e reutilizável
 
-**Próximo nível**: Aplicar esses conceitos em React para criar jogos ainda mais incríveis! 🚀
+**Próximo nível**: Aplicar esses conceitos em React/Next.js para criar jogos ainda mais incríveis! 🚀
