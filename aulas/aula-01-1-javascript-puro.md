@@ -185,15 +185,20 @@ Substituir os console.log repetidos por um loop for que repete a operação.
 
 **🎯 JavaScript com Loop:**
 ```javascript
+// Função para imprimir uma linha da tabuada
+function printMultiplicationLine(number, multiplier, result) {
+    const colors = ["\x1b[36m", "\x1b[32m", "\x1b[33m", "\x1b[34m", "\x1b[35m", "\x1b[31m"];
+    const color = colors[(multiplier - 1) % colors.length];
+    console.log(color + number + " x " + multiplier + " = " + result + "\x1b[0m");
+}
+
 // Função com loop for
 function calculateMultiplicationTable(number) {
     console.log("\x1b[1m\x1b[37m=== Tabuada do " + number + " ===\x1b[0m");
     
     for (let i = 1; i <= 10; i++) {
-        // Cores alternadas para cada linha
-        const colors = ["\x1b[36m", "\x1b[32m", "\x1b[33m", "\x1b[34m", "\x1b[35m", "\x1b[31m"];
-        const color = colors[(i - 1) % colors.length];
-        console.log(color + number + " x " + i + " = " + (number * i) + "\x1b[0m");
+        const result = number * i;
+        printMultiplicationLine(number, i, result);
     }
     
     console.log("\x1b[1m\x1b[37m========================\x1b[0m");
@@ -209,18 +214,30 @@ calculateMultiplicationTable(5);
 - **`let i = 1`**: Inicia contador em 1
 - **`i <= 10`**: Continua enquanto i for menor ou igual a 10
 - **`i++`**: Aumenta i em 1 a cada repetição
-- **`numero * i`**: Calcula o resultado
+- **`const result = number * i`**: Calcula o resultado
 
-**📚 Explicação das Cores no Loop:**
+**📚 Explicação da Função printMultiplicationLine:**
+- **`function printMultiplicationLine(number, multiplier, result)`**: Função para imprimir uma linha
+- **`number`**: Número da tabuada (ex: 2)
+- **`multiplier`**: Multiplicador (ex: 1, 2, 3...)
+- **`result`**: Resultado da multiplicação (ex: 2, 4, 6...)
 - **`const colors = [...]`**: Array com códigos de cores
-- **`colors[(i - 1) % colors.length]`**: Seleciona cor baseada no índice
+- **`colors[(multiplier - 1) % colors.length]`**: Seleciona cor baseada no multiplicador
 - **`% colors.length`**: Operador módulo para repetir cores
 - **Cores alternadas**: Cada linha tem cor diferente
+
+**📚 Explicação das Cores no Loop:**
+- **`const result = number * i`**: Calcula resultado antes de imprimir
+- **`printMultiplicationLine(number, i, result)`**: Chama função para imprimir linha
+- **Separação de responsabilidades**: Cálculo e impressão em funções diferentes
 
 **🎯 Vantagens:**
 - **Menos código**: Uma linha em vez de 10
 - **Flexibilidade**: Fácil de mudar o limite
 - **Eficiência**: Código mais limpo
+- **Reutilização**: Função `printMultiplicationLine` pode ser usada em outros lugares
+- **Organização**: Separação entre cálculo e impressão
+- **Manutenção**: Mais fácil de modificar a formatação das linhas
 
 ### **Passo 5: Permitir Input do Usuário**
 
