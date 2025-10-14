@@ -101,25 +101,25 @@ Substituir o número fixo (2) por uma variável para poder trocar facilmente.
 **🎯 JavaScript com Variável:**
 ```javascript
 // Usar variável para o número
-let numero = 2;
+let number = 2;
 
-console.log("\x1b[36m" + numero + " x 1 = " + (numero * 1) + "\x1b[0m");
-console.log("\x1b[32m" + numero + " x 2 = " + (numero * 2) + "\x1b[0m");
-console.log("\x1b[33m" + numero + " x 3 = " + (numero * 3) + "\x1b[0m");
-console.log("\x1b[34m" + numero + " x 4 = " + (numero * 4) + "\x1b[0m");
-console.log("\x1b[35m" + numero + " x 5 = " + (numero * 5) + "\x1b[0m");
-console.log("\x1b[31m" + numero + " x 6 = " + (numero * 6) + "\x1b[0m");
-console.log("\x1b[36m" + numero + " x 7 = " + (numero * 7) + "\x1b[0m");
-console.log("\x1b[32m" + numero + " x 8 = " + (numero * 8) + "\x1b[0m");
-console.log("\x1b[33m" + numero + " x 9 = " + (numero * 9) + "\x1b[0m");
-console.log("\x1b[34m" + numero + " x 10 = " + (numero * 10) + "\x1b[0m");
+console.log("\x1b[36m" + number + " x 1 = " + (number * 1) + "\x1b[0m");
+console.log("\x1b[32m" + number + " x 2 = " + (number * 2) + "\x1b[0m");
+console.log("\x1b[33m" + number + " x 3 = " + (number * 3) + "\x1b[0m");
+console.log("\x1b[34m" + number + " x 4 = " + (number * 4) + "\x1b[0m");
+console.log("\x1b[35m" + number + " x 5 = " + (number * 5) + "\x1b[0m");
+console.log("\x1b[31m" + number + " x 6 = " + (number * 6) + "\x1b[0m");
+console.log("\x1b[36m" + number + " x 7 = " + (number * 7) + "\x1b[0m");
+console.log("\x1b[32m" + number + " x 8 = " + (number * 8) + "\x1b[0m");
+console.log("\x1b[33m" + number + " x 9 = " + (number * 9) + "\x1b[0m");
+console.log("\x1b[34m" + number + " x 10 = " + (number * 10) + "\x1b[0m");
 ```
 
 **📚 Explicação do Código:**
-- **`let numero = 2`**: Cria variável com valor 2
-- **`numero + " x 1 = "`**: Concatena variável com texto
-- **`(numero * 1)`**: Calcula o resultado
-- **Para trocar**: Mude apenas `let numero = 3`
+- **`let number = 2`**: Cria variável com valor 2
+- **`number + " x 1 = "`**: Concatena variável com texto
+- **`(number * 1)`**: Calcula o resultado
+- **Para trocar**: Mude apenas `let number = 3`
 
 **🎯 Vantagens:**
 - **Flexibilidade**: Trocar número em um lugar só
@@ -140,31 +140,31 @@ Criar uma função que recebe um número e calcula sua tabuada.
 **🎯 JavaScript com Função:**
 ```javascript
 // Função para calcular tabuada
-function calcularTabuada(numero) {
-    console.log("\x1b[1m\x1b[37m=== Tabuada do " + numero + " ===\x1b[0m");
-    console.log("\x1b[36m" + numero + " x 1 = " + (numero * 1) + "\x1b[0m");
-    console.log("\x1b[32m" + numero + " x 2 = " + (numero * 2) + "\x1b[0m");
-    console.log("\x1b[33m" + numero + " x 3 = " + (numero * 3) + "\x1b[0m");
-    console.log("\x1b[34m" + numero + " x 4 = " + (numero * 4) + "\x1b[0m");
-    console.log("\x1b[35m" + numero + " x 5 = " + (numero * 5) + "\x1b[0m");
-    console.log("\x1b[31m" + numero + " x 6 = " + (numero * 6) + "\x1b[0m");
-    console.log("\x1b[36m" + numero + " x 7 = " + (numero * 7) + "\x1b[0m");
-    console.log("\x1b[32m" + numero + " x 8 = " + (numero * 8) + "\x1b[0m");
-    console.log("\x1b[33m" + numero + " x 9 = " + (numero * 9) + "\x1b[0m");
-    console.log("\x1b[34m" + numero + " x 10 = " + (numero * 10) + "\x1b[0m");
+function calculateMultiplicationTable(number) {
+    console.log("\x1b[1m\x1b[37m=== Tabuada do " + number + " ===\x1b[0m");
+    console.log("\x1b[36m" + number + " x 1 = " + (number * 1) + "\x1b[0m");
+    console.log("\x1b[32m" + number + " x 2 = " + (number * 2) + "\x1b[0m");
+    console.log("\x1b[33m" + number + " x 3 = " + (number * 3) + "\x1b[0m");
+    console.log("\x1b[34m" + number + " x 4 = " + (number * 4) + "\x1b[0m");
+    console.log("\x1b[35m" + number + " x 5 = " + (number * 5) + "\x1b[0m");
+    console.log("\x1b[31m" + number + " x 6 = " + (number * 6) + "\x1b[0m");
+    console.log("\x1b[36m" + number + " x 7 = " + (number * 7) + "\x1b[0m");
+    console.log("\x1b[32m" + number + " x 8 = " + (number * 8) + "\x1b[0m");
+    console.log("\x1b[33m" + number + " x 9 = " + (number * 9) + "\x1b[0m");
+    console.log("\x1b[34m" + number + " x 10 = " + (number * 10) + "\x1b[0m");
     console.log("\x1b[1m\x1b[37m========================\x1b[0m");
 }
 
 // Usar a função
-calcularTabuada(2);
-calcularTabuada(3);
-calcularTabuada(5);
+calculateMultiplicationTable(2);
+calculateMultiplicationTable(3);
+calculateMultiplicationTable(5);
 ```
 
 **📚 Explicação do Código:**
-- **`function calcularTabuada(numero)`**: Cria função com parâmetro
-- **`numero`**: Parâmetro que recebe o valor
-- **`calcularTabuada(2)`**: Chama função com valor 2
+- **`function calculateMultiplicationTable(number)`**: Cria função com parâmetro
+- **`number`**: Parâmetro que recebe o valor
+- **`calculateMultiplicationTable(2)`**: Chama função com valor 2
 - **Reutilização**: Mesma função para diferentes números
 
 **🎯 Vantagens:**
@@ -186,23 +186,23 @@ Substituir os console.log repetidos por um loop for que repete a operação.
 **🎯 JavaScript com Loop:**
 ```javascript
 // Função com loop for
-function calcularTabuada(numero) {
-    console.log("\x1b[1m\x1b[37m=== Tabuada do " + numero + " ===\x1b[0m");
+function calculateMultiplicationTable(number) {
+    console.log("\x1b[1m\x1b[37m=== Tabuada do " + number + " ===\x1b[0m");
     
     for (let i = 1; i <= 10; i++) {
         // Cores alternadas para cada linha
-        const cores = ["\x1b[36m", "\x1b[32m", "\x1b[33m", "\x1b[34m", "\x1b[35m", "\x1b[31m"];
-        const cor = cores[(i - 1) % cores.length];
-        console.log(cor + numero + " x " + i + " = " + (numero * i) + "\x1b[0m");
+        const colors = ["\x1b[36m", "\x1b[32m", "\x1b[33m", "\x1b[34m", "\x1b[35m", "\x1b[31m"];
+        const color = colors[(i - 1) % colors.length];
+        console.log(color + number + " x " + i + " = " + (number * i) + "\x1b[0m");
     }
     
     console.log("\x1b[1m\x1b[37m========================\x1b[0m");
 }
 
 // Usar a função
-calcularTabuada(2);
-calcularTabuada(3);
-calcularTabuada(5);
+calculateMultiplicationTable(2);
+calculateMultiplicationTable(3);
+calculateMultiplicationTable(5);
 ```
 
 **📚 Explicação do Loop:**
@@ -212,9 +212,9 @@ calcularTabuada(5);
 - **`numero * i`**: Calcula o resultado
 
 **📚 Explicação das Cores no Loop:**
-- **`const cores = [...]`**: Array com códigos de cores
-- **`cores[(i - 1) % cores.length]`**: Seleciona cor baseada no índice
-- **`% cores.length`**: Operador módulo para repetir cores
+- **`const colors = [...]`**: Array com códigos de cores
+- **`colors[(i - 1) % colors.length]`**: Seleciona cor baseada no índice
+- **`% colors.length`**: Operador módulo para repetir cores
 - **Cores alternadas**: Cada linha tem cor diferente
 
 **🎯 Vantagens:**
@@ -253,20 +253,20 @@ const rl = readline.createInterface({
 });
 
 // Função para calcular tabuada
-function calcularTabuada(numero) {
-    console.log("=== Tabuada do " + numero + " ===");
+function calculateMultiplicationTable(number) {
+    console.log("=== Tabuada do " + number + " ===");
     
     for (let i = 1; i <= 10; i++) {
-        console.log(numero + " x " + i + " = " + (numero * i));
+        console.log(number + " x " + i + " = " + (number * i));
     }
     
     console.log("========================");
 }
 
 // Perguntar ao usuário
-rl.question('Digite um número para calcular a tabuada: ', (resposta) => {
-    const numero = parseInt(resposta);
-    calcularTabuada(numero);
+rl.question('Digite um número para calcular a tabuada: ', (answer) => {
+    const number = parseInt(answer);
+    calculateMultiplicationTable(number);
     rl.close();
 });
 ```
@@ -275,7 +275,7 @@ rl.question('Digite um número para calcular a tabuada: ', (resposta) => {
 - **`require('readline')`**: Importa módulo para input
 - **`createInterface`**: Cria interface de leitura
 - **`question`**: Faz pergunta ao usuário
-- **`parseInt(resposta)`**: Converte texto para número
+- **`parseInt(answer)`**: Converte texto para número
 - **`rl.close()`**: Fecha a interface
 
 
@@ -308,23 +308,23 @@ const rl = readline.createInterface({
 });
 
 // Função para calcular tabuada
-function calcularTabuada(numero) {
-    console.log("=== Tabuada do " + numero + " ===");
+function calculateMultiplicationTable(number) {
+    console.log("=== Tabuada do " + number + " ===");
     
     for (let i = 1; i <= 10; i++) {
-        console.log(numero + " x " + i + " = " + (numero * i));
+        console.log(number + " x " + i + " = " + (number * i));
     }
     
     console.log("========================");
 }
 
 // Perguntar ao usuário
-rl.question('Digite um número para calcular a tabuada: ', (resposta) => {
-    const numero = parseInt(resposta);
+rl.question('Digite um número para calcular a tabuada: ', (answer) => {
+    const number = parseInt(answer);
     
     // Validar entrada
-    if (numero >= 1 && numero <= 10) {
-        calcularTabuada(numero);
+    if (number >= 1 && number <= 10) {
+        calculateMultiplicationTable(number);
     } else {
         console.log("❌ Erro: Digite um número entre 1 e 10!");
     }
@@ -334,8 +334,8 @@ rl.question('Digite um número para calcular a tabuada: ', (resposta) => {
 ```
 
 **📚 Explicação da Validação:**
-- **`numero >= 1`**: Verifica se é maior ou igual a 1
-- **`numero <= 10`**: Verifica se é menor ou igual a 10
+- **`number >= 1`**: Verifica se é maior ou igual a 1
+- **`number <= 10`**: Verifica se é menor ou igual a 10
 - **`&&`**: Ambas condições devem ser verdadeiras
 - **`else`**: Executa se condição for falsa
 
@@ -367,41 +367,41 @@ const rl = readline.createInterface({
 });
 
 // Função para calcular tabuada
-function calcularTabuada(numero) {
-    console.log("=== Tabuada do " + numero + " ===");
+function calculateMultiplicationTable(number) {
+    console.log("=== Tabuada do " + number + " ===");
     
     for (let i = 1; i <= 10; i++) {
-        console.log(numero + " x " + i + " = " + (numero * i));
+        console.log(number + " x " + i + " = " + (number * i));
     }
     
     console.log("========================");
 }
 
 // Função para perguntar e validar
-function perguntarNumero() {
-    rl.question('Digite um número entre 1 e 10: ', (resposta) => {
-        const numero = parseInt(resposta);
+function askNumber() {
+    rl.question('Digite um número entre 1 e 10: ', (answer) => {
+        const number = parseInt(answer);
         
         // Validar entrada
-        if (numero >= 1 && numero <= 10) {
-            calcularTabuada(numero);
+        if (number >= 1 && number <= 10) {
+            calculateMultiplicationTable(number);
             rl.close();
         } else {
             console.log("❌ Erro: Digite um número entre 1 e 10!");
             console.log("Tente novamente...\n");
-            perguntarNumero(); // Perguntar novamente
+            askNumber(); // Perguntar novamente
         }
     });
 }
 
 // Iniciar o programa
-perguntarNumero();
+askNumber();
 ```
 
 **📚 Explicação do Loop:**
-- **`perguntarNumero()`**: Função que pergunta ao usuário
-- **`if (numero >= 1 && numero <= 10)`**: Valida entrada
-- **`perguntarNumero()`**: Chama função novamente se inválido
+- **`askNumber()`**: Função que pergunta ao usuário
+- **`if (number >= 1 && number <= 10)`**: Valida entrada
+- **`askNumber()`**: Chama função novamente se inválido
 - **`rl.close()`**: Fecha apenas quando válido
 
 **🎯 Vantagens:**
