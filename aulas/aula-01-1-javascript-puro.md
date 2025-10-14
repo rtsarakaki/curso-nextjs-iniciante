@@ -269,15 +269,23 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
+// Função para imprimir uma linha da tabuada
+function printMultiplicationLine(number, multiplier, result) {
+    const colors = ["\x1b[36m", "\x1b[32m", "\x1b[33m", "\x1b[34m", "\x1b[35m", "\x1b[31m"];
+    const color = colors[(multiplier - 1) % colors.length];
+    console.log(color + number + " x " + multiplier + " = " + result + "\x1b[0m");
+}
+
 // Função para calcular tabuada
 function calculateMultiplicationTable(number) {
-    console.log("=== Tabuada do " + number + " ===");
+    console.log("\x1b[1m\x1b[37m=== Tabuada do " + number + " ===\x1b[0m");
     
     for (let i = 1; i <= 10; i++) {
-        console.log(number + " x " + i + " = " + (number * i));
+        const result = number * i;
+        printMultiplicationLine(number, i, result);
     }
     
-    console.log("========================");
+    console.log("\x1b[1m\x1b[37m========================\x1b[0m");
 }
 
 // Perguntar ao usuário
@@ -324,15 +332,23 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
+// Função para imprimir uma linha da tabuada
+function printMultiplicationLine(number, multiplier, result) {
+    const colors = ["\x1b[36m", "\x1b[32m", "\x1b[33m", "\x1b[34m", "\x1b[35m", "\x1b[31m"];
+    const color = colors[(multiplier - 1) % colors.length];
+    console.log(color + number + " x " + multiplier + " = " + result + "\x1b[0m");
+}
+
 // Função para calcular tabuada
 function calculateMultiplicationTable(number) {
-    console.log("=== Tabuada do " + number + " ===");
+    console.log("\x1b[1m\x1b[37m=== Tabuada do " + number + " ===\x1b[0m");
     
     for (let i = 1; i <= 10; i++) {
-        console.log(number + " x " + i + " = " + (number * i));
+        const result = number * i;
+        printMultiplicationLine(number, i, result);
     }
     
-    console.log("========================");
+    console.log("\x1b[1m\x1b[37m========================\x1b[0m");
 }
 
 // Perguntar ao usuário
@@ -383,15 +399,23 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
+// Função para imprimir uma linha da tabuada
+function printMultiplicationLine(number, multiplier, result) {
+    const colors = ["\x1b[36m", "\x1b[32m", "\x1b[33m", "\x1b[34m", "\x1b[35m", "\x1b[31m"];
+    const color = colors[(multiplier - 1) % colors.length];
+    console.log(color + number + " x " + multiplier + " = " + result + "\x1b[0m");
+}
+
 // Função para calcular tabuada
 function calculateMultiplicationTable(number) {
-    console.log("=== Tabuada do " + number + " ===");
+    console.log("\x1b[1m\x1b[37m=== Tabuada do " + number + " ===\x1b[0m");
     
     for (let i = 1; i <= 10; i++) {
-        console.log(number + " x " + i + " = " + (number * i));
+        const result = number * i;
+        printMultiplicationLine(number, i, result);
     }
     
-    console.log("========================");
+    console.log("\x1b[1m\x1b[37m========================\x1b[0m");
 }
 
 // Função para perguntar e validar
