@@ -6,6 +6,7 @@
 - **Variáveis**: Armazenar e manipular dados
 - **Funções**: Organizar código reutilizável
 - **Loops**: Repetir ações com for
+- **Módulos**: Importar bibliotecas com require()
 - **Input**: Receber dados do usuário
 - **Validação**: Verificar se a entrada é válida
 - **Loops de controle**: Repetir até condição ser atendida
@@ -36,6 +37,38 @@ Um **Gerador de Tabuada** que:
 1. **Abrir o terminal**
 2. **Testar**: `node --version`
 3. **Verificar**: Versão do Node.js aparece
+
+## 📚 Conceito Detalhado: Módulos e Import
+
+**🎯 O que são Módulos?**
+- **Módulo**: Biblioteca de código que já existe no Node.js
+- **Função**: Fornecer funcionalidades prontas para usar
+- **Exemplos**: `readline` (input), `fs` (arquivos), `path` (caminhos)
+- **Vantagem**: Não precisar escrever tudo do zero
+
+**🎯 Como Funciona o require():**
+- **`require()`**: Função do Node.js para importar módulos
+- **Sintaxe**: `const nome = require('nome-do-modulo')`
+- **Módulos nativos**: Já vêm instalados com o Node.js
+- **Módulos externos**: Podem ser instalados com `npm install`
+
+**🎯 Exemplo Prático:**
+```javascript
+// Importar módulo readline
+const readline = require('readline');
+
+// Agora podemos usar as funções do readline
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+```
+
+**🎯 Por que Precisamos de Módulos?**
+- **JavaScript puro**: Não tem input nativo
+- **Node.js**: Adiciona funcionalidades extras
+- **readline**: Específico para ler entrada do usuário
+- **Reutilização**: Código já testado e otimizado
 
 ## 📝 Passo a Passo
 
@@ -213,6 +246,13 @@ Permitir que o usuário digite o número para calcular a tabuada.
 - **question**: Método para fazer pergunta ao usuário
 - **callback**: Função executada após resposta
 
+**📚 Conceito Detalhado: Módulos e Import**
+- **Módulo**: Biblioteca de código que já existe no Node.js
+- **require()**: Função para importar módulos
+- **const**: Variável que não pode ser alterada
+- **readline**: Módulo específico para ler entrada do usuário
+- **Por que usar**: JavaScript puro não tem input nativo, precisa de módulos
+
 **🎯 JavaScript com Input:**
 ```javascript
 // Importar módulo readline
@@ -249,6 +289,13 @@ rl.question('Digite um número para calcular a tabuada: ', (resposta) => {
 - **`question`**: Faz pergunta ao usuário
 - **`parseInt(resposta)`**: Converte texto para número
 - **`rl.close()`**: Fecha a interface
+
+**📚 Explicação Detalhada do require():**
+- **`require()`**: Função do Node.js para importar módulos
+- **`'readline'`**: Nome do módulo (entre aspas)
+- **`const readline`**: Armazena o módulo em uma variável
+- **Módulos nativos**: Já vêm instalados com o Node.js
+- **Outros módulos**: Podem ser instalados com `npm install`
 
 **🎯 Como executar:**
 1. **Salvar como**: `tabuada.js`
