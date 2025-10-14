@@ -103,16 +103,16 @@ Substituir o número fixo (2) por uma variável para poder trocar facilmente.
 // Usar variável para o número
 let numero = 2;
 
-console.log(numero + " x 1 = " + (numero * 1));
-console.log(numero + " x 2 = " + (numero * 2));
-console.log(numero + " x 3 = " + (numero * 3));
-console.log(numero + " x 4 = " + (numero * 4));
-console.log(numero + " x 5 = " + (numero * 5));
-console.log(numero + " x 6 = " + (numero * 6));
-console.log(numero + " x 7 = " + (numero * 7));
-console.log(numero + " x 8 = " + (numero * 8));
-console.log(numero + " x 9 = " + (numero * 9));
-console.log(numero + " x 10 = " + (numero * 10));
+console.log("\x1b[36m" + numero + " x 1 = " + (numero * 1) + "\x1b[0m");
+console.log("\x1b[32m" + numero + " x 2 = " + (numero * 2) + "\x1b[0m");
+console.log("\x1b[33m" + numero + " x 3 = " + (numero * 3) + "\x1b[0m");
+console.log("\x1b[34m" + numero + " x 4 = " + (numero * 4) + "\x1b[0m");
+console.log("\x1b[35m" + numero + " x 5 = " + (numero * 5) + "\x1b[0m");
+console.log("\x1b[31m" + numero + " x 6 = " + (numero * 6) + "\x1b[0m");
+console.log("\x1b[36m" + numero + " x 7 = " + (numero * 7) + "\x1b[0m");
+console.log("\x1b[32m" + numero + " x 8 = " + (numero * 8) + "\x1b[0m");
+console.log("\x1b[33m" + numero + " x 9 = " + (numero * 9) + "\x1b[0m");
+console.log("\x1b[34m" + numero + " x 10 = " + (numero * 10) + "\x1b[0m");
 ```
 
 **📚 Explicação do Código:**
@@ -141,18 +141,18 @@ Criar uma função que recebe um número e calcula sua tabuada.
 ```javascript
 // Função para calcular tabuada
 function calcularTabuada(numero) {
-    console.log("=== Tabuada do " + numero + " ===");
-    console.log(numero + " x 1 = " + (numero * 1));
-    console.log(numero + " x 2 = " + (numero * 2));
-    console.log(numero + " x 3 = " + (numero * 3));
-    console.log(numero + " x 4 = " + (numero * 4));
-    console.log(numero + " x 5 = " + (numero * 5));
-    console.log(numero + " x 6 = " + (numero * 6));
-    console.log(numero + " x 7 = " + (numero * 7));
-    console.log(numero + " x 8 = " + (numero * 8));
-    console.log(numero + " x 9 = " + (numero * 9));
-    console.log(numero + " x 10 = " + (numero * 10));
-    console.log("========================");
+    console.log("\x1b[1m\x1b[37m=== Tabuada do " + numero + " ===\x1b[0m");
+    console.log("\x1b[36m" + numero + " x 1 = " + (numero * 1) + "\x1b[0m");
+    console.log("\x1b[32m" + numero + " x 2 = " + (numero * 2) + "\x1b[0m");
+    console.log("\x1b[33m" + numero + " x 3 = " + (numero * 3) + "\x1b[0m");
+    console.log("\x1b[34m" + numero + " x 4 = " + (numero * 4) + "\x1b[0m");
+    console.log("\x1b[35m" + numero + " x 5 = " + (numero * 5) + "\x1b[0m");
+    console.log("\x1b[31m" + numero + " x 6 = " + (numero * 6) + "\x1b[0m");
+    console.log("\x1b[36m" + numero + " x 7 = " + (numero * 7) + "\x1b[0m");
+    console.log("\x1b[32m" + numero + " x 8 = " + (numero * 8) + "\x1b[0m");
+    console.log("\x1b[33m" + numero + " x 9 = " + (numero * 9) + "\x1b[0m");
+    console.log("\x1b[34m" + numero + " x 10 = " + (numero * 10) + "\x1b[0m");
+    console.log("\x1b[1m\x1b[37m========================\x1b[0m");
 }
 
 // Usar a função
@@ -187,13 +187,16 @@ Substituir os console.log repetidos por um loop for que repete a operação.
 ```javascript
 // Função com loop for
 function calcularTabuada(numero) {
-    console.log("=== Tabuada do " + numero + " ===");
+    console.log("\x1b[1m\x1b[37m=== Tabuada do " + numero + " ===\x1b[0m");
     
     for (let i = 1; i <= 10; i++) {
-        console.log(numero + " x " + i + " = " + (numero * i));
+        // Cores alternadas para cada linha
+        const cores = ["\x1b[36m", "\x1b[32m", "\x1b[33m", "\x1b[34m", "\x1b[35m", "\x1b[31m"];
+        const cor = cores[(i - 1) % cores.length];
+        console.log(cor + numero + " x " + i + " = " + (numero * i) + "\x1b[0m");
     }
     
-    console.log("========================");
+    console.log("\x1b[1m\x1b[37m========================\x1b[0m");
 }
 
 // Usar a função
@@ -207,6 +210,12 @@ calcularTabuada(5);
 - **`i <= 10`**: Continua enquanto i for menor ou igual a 10
 - **`i++`**: Aumenta i em 1 a cada repetição
 - **`numero * i`**: Calcula o resultado
+
+**📚 Explicação das Cores no Loop:**
+- **`const cores = [...]`**: Array com códigos de cores
+- **`cores[(i - 1) % cores.length]`**: Seleciona cor baseada no índice
+- **`% cores.length`**: Operador módulo para repetir cores
+- **Cores alternadas**: Cada linha tem cor diferente
 
 **🎯 Vantagens:**
 - **Menos código**: Uma linha em vez de 10
