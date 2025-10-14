@@ -53,17 +53,17 @@ Criar a tabuada do 2 usando console.log com cálculos hardcoded (valores fixos).
 
 **🎯 JavaScript Básico:**
 ```javascript
-// Tabuada do 2 - hardcoded
-console.log("2 x 1 = 2");
-console.log("2 x 2 = 4");
-console.log("2 x 3 = 6");
-console.log("2 x 4 = 8");
-console.log("2 x 5 = 10");
-console.log("2 x 6 = 12");
-console.log("2 x 7 = 14");
-console.log("2 x 8 = 16");
-console.log("2 x 9 = 18");
-console.log("2 x 10 = 20");
+// Tabuada do 2 - hardcoded com cores
+console.log("\x1b[36m2 x 1 = 2\x1b[0m");
+console.log("\x1b[32m2 x 2 = 4\x1b[0m");
+console.log("\x1b[33m2 x 3 = 6\x1b[0m");
+console.log("\x1b[34m2 x 4 = 8\x1b[0m");
+console.log("\x1b[35m2 x 5 = 10\x1b[0m");
+console.log("\x1b[31m2 x 6 = 12\x1b[0m");
+console.log("\x1b[36m2 x 7 = 14\x1b[0m");
+console.log("\x1b[32m2 x 8 = 16\x1b[0m");
+console.log("\x1b[33m2 x 9 = 18\x1b[0m");
+console.log("\x1b[34m2 x 10 = 20\x1b[0m");
 ```
 
 **📚 Explicação do Código:**
@@ -71,6 +71,16 @@ console.log("2 x 10 = 20");
 - **`"2 x 1 = 2"`**: String (texto) entre aspas
 - **Cada linha**: Uma operação da tabuada
 - **Resultado**: Números calculados manualmente
+
+**📚 Conceito Detalhado: Cores ANSI**
+- **`\x1b[36m`**: Código para cor ciano (azul claro)
+- **`\x1b[32m`**: Código para cor verde
+- **`\x1b[33m`**: Código para cor amarela
+- **`\x1b[34m`**: Código para cor azul
+- **`\x1b[35m`**: Código para cor magenta (roxo)
+- **`\x1b[31m`**: Código para cor vermelha
+- **`\x1b[0m`**: Código para resetar cor (voltar ao normal)
+- **Por que usar**: Deixa a tabuada mais visual e atrativa
 
 **🎯 Como executar:**
 1. **Salvar como**: `tabuada.js`
