@@ -255,13 +255,14 @@ Permitir que o usuário digite o número para calcular a tabuada.
 - **question**: Método para fazer pergunta ao usuário
 - **callback**: Função executada após resposta
 
-**📚 Conceito Detalhado: Módulos e require()**
+**📚 Conceito Detalhado: Módulos e import**
 - **Módulo**: Biblioteca de código que já existe no Node.js
-- **require()**: Função do Node.js para importar módulos
-- **Sintaxe**: `const nome = require('nome-do-modulo')`
+- **import**: Sintaxe moderna para importar módulos (ES6)
+- **Sintaxe**: `import nome from 'nome-do-modulo'`
 - **Módulos nativos**: Já vêm instalados com o Node.js (como readline)
 - **Por que usar**: JavaScript puro não tem input nativo, precisa de módulos
-- **Exemplo**: `const readline = require('readline')` importa o módulo readline
+- **Exemplo**: `import readline from 'readline'` importa o módulo readline
+- **package.json**: Precisa de `"type": "module"` para usar import
 
 **📚 Conceito Detalhado: Arrow Functions**
 - **Arrow Function**: Sintaxe moderna para criar funções
@@ -274,7 +275,7 @@ Permitir que o usuário digite o número para calcular a tabuada.
 **🎯 JavaScript com Input:**
 ```javascript
 // Importar módulo readline
-const readline = require('readline');
+import readline from 'readline';
 
 // Criar interface de leitura
 const rl = readline.createInterface({
@@ -313,7 +314,7 @@ rl.question('Digite um número para calcular a tabuada: ', (answer) => {
 ```
 
 **📚 Explicação do Código:**
-- **`require('readline')`**: Importa módulo para input
+- **`import readline from 'readline'`**: Importa módulo para input
 - **`createInterface`**: Cria interface de leitura
 - **`question`**: Faz pergunta ao usuário
 - **`(answer) => { ... }`**: Arrow function que recebe a resposta
@@ -348,7 +349,7 @@ Verificar se o usuário digitou um número válido (entre 1 e 10).
 **🎯 JavaScript com Validação:**
 ```javascript
 // Importar módulo readline
-const readline = require('readline');
+import readline from 'readline';
 
 // Criar interface de leitura
 const rl = readline.createInterface({
@@ -418,7 +419,7 @@ Repetir a pergunta até o usuário digitar um número válido.
 **🎯 JavaScript com Loop de Validação:**
 ```javascript
 // Importar módulo readline
-const readline = require('readline');
+import readline from 'readline';
 
 // Criar interface de leitura
 const rl = readline.createInterface({
