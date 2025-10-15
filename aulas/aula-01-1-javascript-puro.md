@@ -29,9 +29,9 @@ Um **Gerador de Tabuada** que:
 ## 🛠️ Preparação do Ambiente
 
 ### **Passo 1: Criar a Estrutura do Projeto**
-1. **Criar pasta**: `tabuada-generator`
-2. **Arquivo principal**: `tabuada.js`
-3. **Executar**: `node tabuada.js`
+1. **Criar pasta**: `aula-01-1-javascript-puro`
+2. **Arquivo principal**: `multiplication-table.js`
+3. **Executar**: `node multiplication-table.js`
 
 ### **Passo 2: Verificar se o Node.js está funcionando**
 1. **Abrir o terminal**
@@ -83,8 +83,8 @@ console.log("\x1b[34m2 x 10 = 20\x1b[0m");
 - **Por que usar**: Deixa a tabuada mais visual e atrativa
 
 **🎯 Como executar:**
-1. **Salvar como**: `tabuada.js`
-2. **Executar**: `node tabuada.js`
+1. **Salvar como**: `multiplication-table.js`
+2. **Executar**: `node multiplication-table.js`
 3. **Ver resultado**: Tabuada aparece no terminal
 
 ### **Passo 2: Usar Variável para Trocar o Número**
@@ -330,8 +330,8 @@ rl.question('Digite um número para calcular a tabuada: ', (answer) => {
 
 
 **🎯 Como executar:**
-1. **Salvar como**: `tabuada.js`
-2. **Executar**: `node tabuada.js`
+1. **Salvar como**: `multiplication-table.js`
+2. **Executar**: `node multiplication-table.js`
 3. **Digitar**: Número desejado
 4. **Ver resultado**: Tabuada aparece
 
