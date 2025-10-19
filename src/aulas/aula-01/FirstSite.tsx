@@ -1,8 +1,8 @@
-import Card from '@/components/aula-01/Card/Card';
-import ImageCard from '@/components/aula-01/ImageCard/ImageCard';
-import HobbyCard from '@/components/aula-01/HobbyCard/HobbyCard';
-import Header from '@/components/aula-01/Header/Header';
-import Footer from '@/components/aula-01/Footer/Footer';
+import Card from '@/aulas/aula-01/components/Card/Card';
+import ImageCard from '@/aulas/aula-01/components/ImageCard/ImageCard';
+import HobbyCard from '@/aulas/aula-01/components/HobbyCard/HobbyCard';
+import Header from '@/aulas/aula-01/components/Header/Header';
+import Footer from '@/aulas/aula-01/components/Footer/Footer';
 
 export default function FirstSite() {
   // Dados dinâmicos para fotos

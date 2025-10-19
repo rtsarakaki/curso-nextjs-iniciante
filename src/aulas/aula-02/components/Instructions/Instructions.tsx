@@ -5,7 +5,7 @@ export default function Instructions() {
         Como Jogar:
       </h3>
       <ul className="text-lg text-gray-600 space-y-2">
-        <li>• Clique em "Começar Jogo" para iniciar</li>
+        <li>• Clique em &quot;Começar Jogo&quot; para iniciar</li>
         <li>• Clique nas cartas para virá-las</li>
         <li>• Encontre os pares de ícones iguais</li>
         <li>• Complete o jogo com o menor número de movimentos!</li>
