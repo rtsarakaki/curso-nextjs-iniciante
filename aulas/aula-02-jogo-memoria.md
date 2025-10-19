@@ -203,9 +203,10 @@ Um botão é a principal forma de interação do usuário com nosso jogo. Precis
 
 **🎯 O que vamos aprender:**
 - **Elementos HTML**: Como usar a tag `<button>`
-- **Estilização de Botões**: Como criar botões bonitos
-- **Estados Visuais**: Como criar feedback visual
-- **Transições CSS**: Como criar animações suaves
+- **Tailwind CSS**: Framework de estilização utilitária
+- **Estados Visuais**: Como criar feedback visual com Tailwind
+- **Transições**: Como criar animações suaves com Tailwind
+- **Tailwind vs CSS**: Quando usar cada abordagem
 - **Design de Interface**: Como criar elementos atraentes
 
 **📚 Conceito Detalhado: Elementos HTML**
@@ -229,21 +230,76 @@ A tag `<button>` é um elemento HTML que cria um botão clicável na página. É
 - Quando quer executar uma ação
 - Quando precisa de um elemento clicável
 
-**📚 Conceito Detalhado: Estados Visuais**
+**📚 Conceito Detalhado: Tailwind CSS vs CSS Tradicional**
 
-**O que são estados visuais?**
-Estados visuais são diferentes aparências que um elemento pode ter baseado na interação do usuário (normal, hover, active, focus).
+**O que é Tailwind CSS?**
+Tailwind é um framework CSS que usa classes utilitárias para estilizar elementos. Em vez de escrever CSS customizado, você usa classes pré-definidas.
 
-**Como funcionam?**
+**Como funciona?**
+```tsx
+// Tailwind CSS (o que estamos usando)
+<button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+  Clique aqui
+</button>
+
+// CSS Tradicional (como seria sem Tailwind)
+<button className="meu-botao">Clique aqui</button>
+```
 ```css
-/* Estado normal */
-.button { background: blue; }
+/* CSS tradicional */
+.meu-botao {
+  background-color: #3b82f6;
+  color: white;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+.meu-botao:hover {
+  background-color: #1d4ed8;
+}
+```
 
-/* Estado hover (mouse em cima) */
-.button:hover { background: darkblue; }
+**🎯 Vantagens do Tailwind:**
+- **Rapidez**: Estiliza sem sair do JSX
+- **Consistência**: Design system automático
+- **Responsividade**: Classes como `md:`, `lg:` built-in
+- **Manutenção**: Menos CSS customizado para manter
+- **Produtividade**: Desenvolvimento mais rápido
 
-/* Estado active (clicando) */
-.button:active { background: navy; }
+**⚠️ Desvantagens do Tailwind:**
+- **Curva de aprendizado**: Muitas classes para memorizar
+- **HTML verboso**: Classes longas podem poluir o JSX
+- **Customização limitada**: Depende do design system do Tailwind
+- **Bundle size**: Pode incluir classes não utilizadas
+
+**🤔 Quando usar Tailwind vs CSS Tradicional?**
+
+**Use Tailwind quando:**
+- Prototipagem rápida
+- Projetos com design system consistente
+- Equipe pequena/média
+- Foco em produtividade
+
+**Use CSS Tradicional quando:**
+- Design muito customizado
+- Projetos com CSS muito específicos
+- Equipes grandes com designers dedicados
+- Performance crítica (CSS otimizado)
+
+**📚 Conceito Detalhado: Estados Visuais com Tailwind**
+
+**Como criar estados visuais no Tailwind?**
+```tsx
+// Estados com Tailwind
+<button className="
+  bg-blue-500          // Estado normal
+  hover:bg-blue-700    // Estado hover
+  active:bg-blue-900   // Estado active (clicando)
+  focus:ring-2         // Estado focus (teclado)
+  transition-colors    // Transição suave
+">
+  Clique aqui
+</button>
 ```
 
 **Para que servem?**
@@ -252,22 +308,20 @@ Estados visuais são diferentes aparências que um elemento pode ter baseado na 
 - **Acessibilidade**: Facilitar uso para pessoas com deficiência
 - **Profissionalismo**: Interface mais polida e moderna
 
-**Quando usar?**
-- Sempre que criar elementos interativos
-- Quando quer melhorar a experiência do usuário
-- Quando precisa de feedback visual
+**📚 Conceito Detalhado: Transições com Tailwind**
 
-**📚 Conceito Detalhado: Transições CSS**
-
-**O que são transições?**
-Transições são animações suaves entre diferentes estados de um elemento, criando movimento fluido e natural.
-
-**Como funcionam?**
-```css
-.element {
-  transition: propriedade duração timing-function;
-  transition: background-color 0.3s ease;
-}
+**Como criar transições no Tailwind?**
+```tsx
+// Transições com Tailwind
+<div className="
+  transition-all        // Transição em todas as propriedades
+  duration-300         // Duração de 300ms
+  ease-in-out         // Curva de animação suave
+  hover:scale-105      // Escala 105% no hover
+  hover:shadow-lg      // Sombra maior no hover
+">
+  Elemento com transição
+</div>
 ```
 
 **Para que servem?**
@@ -275,11 +329,6 @@ Transições são animações suaves entre diferentes estados de um elemento, cr
 - **Profissionalismo**: Interface mais polida
 - **Experiência**: Movimento mais natural e agradável
 - **Feedback**: Mostrar claramente as mudanças
-
-**Quando usar?**
-- Quando você tem mudanças de estado
-- Quando quer suavizar transições
-- Quando quer criar animações simples
 
 ```tsx
 export default function MemoryGame() {
