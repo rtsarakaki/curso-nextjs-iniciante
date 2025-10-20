@@ -4,6 +4,7 @@ import { useState } from 'react';
 import FirstSite from '@/aulas/aula-01/FirstSite';
 import MemoryGame from '@/aulas/aula-02/MemoryGame';
 import HangmanGame from '@/aulas/aula-03/HangmanGame';
+import Aula04Page from '@/app/aula-04/page';
 
 export default function Home() {
   const [currentLesson, setCurrentLesson] = useState('aula-02');
@@ -12,6 +13,7 @@ export default function Home() {
     { id: 'aula-01', name: 'Aula 1: Meu Primeiro Site Bonito', component: FirstSite },
     { id: 'aula-02', name: 'Aula 2: Jogo da Memória Visual', component: MemoryGame },
     { id: 'aula-03', name: 'Aula 3: Jogo da Forca Interativo', component: HangmanGame },
+    { id: 'aula-04', name: 'Aula 4: Jogo Genius/Simon', component: Aula04Page },
   ];
 
   const CurrentComponent = lessons.find(lesson => lesson.id === currentLesson)?.component || FirstSite;
@@ -58,7 +60,7 @@ export default function Home() {
           </p>
           <div className="flex justify-center space-x-8 text-sm">
             <div>
-              <span className="font-semibold">📖 Aulas:</span> 3 aulas completas
+              <span className="font-semibold">📖 Aulas:</span> 4 aulas completas
             </div>
             <div>
               <span className="font-semibold">⚡ Projetos:</span> Jogos e apps interativos
