@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import FirstSite from '@/aulas/aula-01/FirstSite';
 import MemoryGame from '@/aulas/aula-02/MemoryGame';
+import HangmanGame from '@/aulas/aula-03/HangmanGame';
 
 export default function Home() {
   const [currentLesson, setCurrentLesson] = useState('aula-02');
@@ -10,12 +11,13 @@ export default function Home() {
   const lessons = [
     { id: 'aula-01', name: 'Aula 1: Meu Primeiro Site Bonito', component: FirstSite },
     { id: 'aula-02', name: 'Aula 2: Jogo da Memória Visual', component: MemoryGame },
+    { id: 'aula-03', name: 'Aula 3: Jogo da Forca Interativo', component: HangmanGame },
   ];
 
   const CurrentComponent = lessons.find(lesson => lesson.id === currentLesson)?.component || FirstSite;
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-pink-50">
       {/* Navegação entre aulas */}
       <nav className="bg-white shadow-lg p-4">
         <div className="max-w-6xl mx-auto">
@@ -29,7 +31,7 @@ export default function Home() {
                 onClick={() => setCurrentLesson(lesson.id)}
                 className={`px-4 py-2 rounded-lg font-medium transition-colors ${
                   currentLesson === lesson.id
-                    ? 'bg-blue-600 text-white'
+                    ? 'bg-pink-600 text-white'
                     : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                 }`}
               >
@@ -56,7 +58,7 @@ export default function Home() {
           </p>
           <div className="flex justify-center space-x-8 text-sm">
             <div>
-              <span className="font-semibold">📖 Aulas:</span> 12 aulas completas
+              <span className="font-semibold">📖 Aulas:</span> 3 aulas completas
             </div>
             <div>
               <span className="font-semibold">⚡ Projetos:</span> Jogos e apps interativos
