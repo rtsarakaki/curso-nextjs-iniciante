@@ -5,6 +5,7 @@ import FirstSite from '@/aulas/aula-01/FirstSite';
 import MemoryGame from '@/aulas/aula-02/MemoryGame';
 import HangmanGame from '@/aulas/aula-03/HangmanGame';
 import Aula04Page from '@/app/aula-04/page';
+import AngryBird from '@/aulas/aula-05/AngryBird';  
 
 export default function Home() {
   const [currentLesson, setCurrentLesson] = useState('aula-02');
@@ -14,6 +15,7 @@ export default function Home() {
     { id: 'aula-02', name: 'Aula 2: Jogo da Memória Visual', component: MemoryGame },
     { id: 'aula-03', name: 'Aula 3: Jogo da Forca Interativo', component: HangmanGame },
     { id: 'aula-04', name: 'Aula 4: Jogo Genius/Simon', component: Aula04Page },
+    { id: 'aula-05', name: 'Aula 5: Angry Bird', component: AngryBird },
   ];
 
   const CurrentComponent = lessons.find(lesson => lesson.id === currentLesson)?.component || FirstSite;
